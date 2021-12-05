@@ -1,0 +1,181 @@
+<!doctype html><html lang=zh-tw>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title>[非教學] 學Hugo並發布到Github page | 程式設計懶惰學</title>
+<meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=description content="前言 如果你正在尋找一篇Hugo建立GithubPag的教學文，請你繼續搜尋其他文章， 因為這是我第一次使用Hugo跌跌撞撞的除錯紀錄， 而大部分問題都是我自己不照教學走導致需要Debug的文章， 但如果想知道怎麼出錯解錯就繼續看下去，但不建議跟著做下去。
+Bug1 前幾次hugo server -D啟動正常，後來卻出錯? 本來想說安裝extended版本比較好，所以重新用snap安裝穩定版， 結果啟動伺服器得到以下結果：
+hugo v0.89.4 linux/amd64 BuildDate=2021-11-17T14:49:26Z Error: Error building site: TOCSS: failed to transform &#34;ananke/css/main.css&#34; (text/css). Check your Hugo installation; you need the extended version to build SCSS/SASS.: this feature is not available in your current Hugo version, see https://goo.gl/YMrWcn for more information Built in 14 ms 我是在Ubuntu的環境下用 snap install hugo安裝Hugo， 而錯誤的原因是用extended版產生部落格，後面又重新切換Hugo穩定版， 但原本的部落格資料需要SCSS/SASS的支援所以才會出現這樣的錯誤。
+解法 因為懶得重新生成檔案，乾脆就用SCSS版本的Hugo：
+snap remove hugo snap install hugo --channel=extended 或是使用官方提供的方法切換版本：">
+<meta name=generator content="Hugo 0.89.4">
+<meta name=ROBOTS content="NOINDEX, NOFOLLOW">
+<link rel=stylesheet href=/ananke/css/main.min.css>
+<meta property="og:title" content="[非教學] 學Hugo並發布到Github page">
+<meta property="og:description" content="前言 如果你正在尋找一篇Hugo建立GithubPag的教學文，請你繼續搜尋其他文章， 因為這是我第一次使用Hugo跌跌撞撞的除錯紀錄， 而大部分問題都是我自己不照教學走導致需要Debug的文章， 但如果想知道怎麼出錯解錯就繼續看下去，但不建議跟著做下去。
+Bug1 前幾次hugo server -D啟動正常，後來卻出錯? 本來想說安裝extended版本比較好，所以重新用snap安裝穩定版， 結果啟動伺服器得到以下結果：
+hugo v0.89.4 linux/amd64 BuildDate=2021-11-17T14:49:26Z Error: Error building site: TOCSS: failed to transform &#34;ananke/css/main.css&#34; (text/css). Check your Hugo installation; you need the extended version to build SCSS/SASS.: this feature is not available in your current Hugo version, see https://goo.gl/YMrWcn for more information Built in 14 ms 我是在Ubuntu的環境下用 snap install hugo安裝Hugo， 而錯誤的原因是用extended版產生部落格，後面又重新切換Hugo穩定版， 但原本的部落格資料需要SCSS/SASS的支援所以才會出現這樣的錯誤。
+解法 因為懶得重新生成檔案，乾脆就用SCSS版本的Hugo：
+snap remove hugo snap install hugo --channel=extended 或是使用官方提供的方法切換版本：">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://example.org/posts/my-first-post/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-11-27T23:03:49+08:00">
+<meta property="article:modified_time" content="2021-11-27T23:03:49+08:00">
+<meta itemprop=name content="[非教學] 學Hugo並發布到Github page">
+<meta itemprop=description content="前言 如果你正在尋找一篇Hugo建立GithubPag的教學文，請你繼續搜尋其他文章， 因為這是我第一次使用Hugo跌跌撞撞的除錯紀錄， 而大部分問題都是我自己不照教學走導致需要Debug的文章， 但如果想知道怎麼出錯解錯就繼續看下去，但不建議跟著做下去。
+Bug1 前幾次hugo server -D啟動正常，後來卻出錯? 本來想說安裝extended版本比較好，所以重新用snap安裝穩定版， 結果啟動伺服器得到以下結果：
+hugo v0.89.4 linux/amd64 BuildDate=2021-11-17T14:49:26Z Error: Error building site: TOCSS: failed to transform &#34;ananke/css/main.css&#34; (text/css). Check your Hugo installation; you need the extended version to build SCSS/SASS.: this feature is not available in your current Hugo version, see https://goo.gl/YMrWcn for more information Built in 14 ms 我是在Ubuntu的環境下用 snap install hugo安裝Hugo， 而錯誤的原因是用extended版產生部落格，後面又重新切換Hugo穩定版， 但原本的部落格資料需要SCSS/SASS的支援所以才會出現這樣的錯誤。
+解法 因為懶得重新生成檔案，乾脆就用SCSS版本的Hugo：
+snap remove hugo snap install hugo --channel=extended 或是使用官方提供的方法切換版本："><meta itemprop=datePublished content="2021-11-27T23:03:49+08:00">
+<meta itemprop=dateModified content="2021-11-27T23:03:49+08:00">
+<meta itemprop=wordCount content="236">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="[非教學] 學Hugo並發布到Github page">
+<meta name=twitter:description content="前言 如果你正在尋找一篇Hugo建立GithubPag的教學文，請你繼續搜尋其他文章， 因為這是我第一次使用Hugo跌跌撞撞的除錯紀錄， 而大部分問題都是我自己不照教學走導致需要Debug的文章， 但如果想知道怎麼出錯解錯就繼續看下去，但不建議跟著做下去。
+Bug1 前幾次hugo server -D啟動正常，後來卻出錯? 本來想說安裝extended版本比較好，所以重新用snap安裝穩定版， 結果啟動伺服器得到以下結果：
+hugo v0.89.4 linux/amd64 BuildDate=2021-11-17T14:49:26Z Error: Error building site: TOCSS: failed to transform &#34;ananke/css/main.css&#34; (text/css). Check your Hugo installation; you need the extended version to build SCSS/SASS.: this feature is not available in your current Hugo version, see https://goo.gl/YMrWcn for more information Built in 14 ms 我是在Ubuntu的環境下用 snap install hugo安裝Hugo， 而錯誤的原因是用extended版產生部落格，後面又重新切換Hugo穩定版， 但原本的部落格資料需要SCSS/SASS的支援所以才會出現這樣的錯誤。
+解法 因為懶得重新生成檔案，乾脆就用SCSS版本的Hugo：
+snap remove hugo snap install hugo --channel=extended 或是使用官方提供的方法切換版本：">
+</head>
+<body class="ma0 avenir bg-near-white">
+<header>
+<div class=bg-black>
+<nav class="pv3 ph3 ph4-ns" role=navigation>
+<div class="flex-l justify-between items-center center">
+<a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
+程式設計懶惰學
+</a>
+<div class="flex-l items-center">
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main class=pb7 role=main>
+<article class="flex-l flex-wrap justify-between mw8 center ph3">
+<header class="mt4 w-100">
+<aside class="instapaper_ignoref b helvetica tracked">
+POSTS
+</aside>
+<div id=sharing class=mt3>
+<a href="https://www.facebook.com/sharer.php?u=http://example.org/posts/my-first-post/" class="facebook no-underline" aria-label="share on Facebook"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765 50.32h6.744V33.998h4.499l.596-5.624h-5.095l.007-2.816c0-1.466.14-2.253 2.244-2.253h2.812V17.68h-4.5c-5.405.0-7.307 2.729-7.307 7.317v3.377h-3.369v5.625h3.369V50.32zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</a>
+<a href="https://twitter.com/share?url=http://example.org/posts/my-first-post/&text=[%e9%9d%9e%e6%95%99%e5%ad%b8]%20%e5%ad%b8Hugo%e4%b8%a6%e7%99%bc%e5%b8%83%e5%88%b0Github%20page" class="twitter no-underline" aria-label="share on Twitter"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://example.org/posts/my-first-post/&title=[%e9%9d%9e%e6%95%99%e5%ad%b8]%20%e5%ad%b8Hugo%e4%b8%a6%e7%99%bc%e5%b8%83%e5%88%b0Github%20page" class="linkedin no-underline" aria-label="share on LinkedIn"><svg height="32" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</a>
+</div>
+<h1 class="f1 athelas mt3 mb1">[非教學] 學Hugo並發布到Github page</h1>
+<time class="f6 mv4 dib tracked" datetime=2021-11-27T23:03:49+08:00>November 27, 2021</time>
+</header>
+<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id=前言>前言</h1>
+<p>如果你正在尋找一篇Hugo建立GithubPag的教學文，請你繼續搜尋其他文章，
+因為這是我第一次使用Hugo跌跌撞撞的除錯紀錄，
+而大部分問題都是我自己不照教學走導致需要Debug的文章，
+但如果想知道怎麼出錯解錯就繼續看下去，但不建議跟著做下去。</p>
+<h2 id=bug1-前幾次hugo-server--d啟動正常後來卻出錯>Bug1 前幾次hugo server -D啟動正常，後來卻出錯?</h2>
+<p>本來想說安裝extended版本比較好，所以重新用snap安裝穩定版，
+結果啟動伺服器得到以下結果：</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>hugo v0.89.4 linux/amd64 BuildDate<span style=color:#f92672>=</span>2021-11-17T14:49:26Z
+Error: Error building site: TOCSS: failed to transform <span style=color:#e6db74>&#34;ananke/css/main.css&#34;</span> <span style=color:#f92672>(</span>text/css<span style=color:#f92672>)</span>. Check your Hugo installation; you need the extended version to build SCSS/SASS.: this feature is not available in your current Hugo version, see https://goo.gl/YMrWcn <span style=color:#66d9ef>for</span> more information
+Built in <span style=color:#ae81ff>14</span> ms
+</code></pre></div><p>我是在Ubuntu的環境下用 <code>snap install hugo</code>安裝Hugo，
+而錯誤的原因是用extended版產生部落格，後面又重新切換Hugo穩定版，
+但原本的部落格資料需要SCSS/SASS的支援所以才會出現這樣的錯誤。</p>
+<h2 id=解法>解法</h2>
+<p>因為懶得重新生成檔案，乾脆就用SCSS版本的Hugo：</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>snap remove hugo
+snap install hugo --channel<span style=color:#f92672>=</span>extended
+</code></pre></div><p>或是使用官方提供的方法切換版本：</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>snap refresh hugo --channel<span style=color:#f92672>=</span>extended
+</code></pre></div><h2 id=產生一個githubpage的儲存庫>產生一個GithubPage的儲存庫</h2>
+<p>基本上遇到的問題也只有上面的版本問題，
+接著一路照著官方教學建立文章看結果，
+最後使用hugo -D 建立靜態的HTML檔案，確認public資料夾是否產生資料。</p>
+<p>接著來搞定github page的設定
+我參考的是<a href=https://docs.github.com/en/pages/quickstart>GihubPage的官方教學</a></p>
+<p>反正照著做在Github建立出一個 username.github.io的儲存庫（Repository)，
+後面發布的部落格就是存在這個儲存庫。
+<img src=/images/2021-12-05%E5%BB%BA%E7%AB%8Bgithubpage%E6%93%B7%E5%9C%96.png alt=建立GithubPage的儲存庫 title=建立GithubPage的儲存庫></p>
+<p>接著準備將本地端內容更新到GithubPage的儲存庫。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git init <span style=color:#75715e># 在本地端建一個Git儲存庫</span>
+git branch -m master main <span style=color:#75715e># 把本地預設的分支名稱從master改成main</span>
+git commit -am <span style=color:#e6db74>&#39;init blog&#39;</span><span style=color:#75715e># 把本地端所有檔案都加入版本管理，並產生一個Git commit紀錄。</span>
+git remote add origin https://github.com/你的Github帳號/你的Github帳號.github.io.git
+git push origin main <span style=color:#75715e>#把本地儲存庫的main分支版本 -&gt; 遠端origin這個儲存庫</span>
+</code></pre></div><h3 id=但應該100會出現以下這個錯誤>但應該100%會出現以下這個錯誤</h3>
+<p><img src=/images/2021-12-05%E7%84%A1%E6%B3%95%E7%9B%B4%E6%8E%A5gitpush.png alt=無法gitpush title=無法gitpush因為push無法直接合併>
+當前的git push無法直接合併，因為git自動合併至少需要前面的commit是可以對得上的</p>
+<h2 id=bug2-所以第一件事就是把遠端的分支差異移到本地端>Bug2 所以第一件事就是把遠端的分支差異移到本地端</h2>
+<p>先說明一下底下的指令將會導致一些問題發生，因為這篇文章是篇Debug文章</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git fetch <span style=color:#75715e># </span>
+</code></pre></div><p>執行git fetch後的結果：
+<img src=/images/2021-12-05gitfetch%E5%BE%8C%E7%9A%84%E7%B5%90%E6%9E%9C.png alt="git fetch後的結果" title="git fetch後的結果">
+可以注意到本地端多了一個斷掉的分支(Branch)叫做origin/main，
+且Commit的時間在比本地端的main還早，因為那是之前在Github上手動建時產生的Commit。</p>
+<p>但這時候如果直接下git merge origin/main會出現fatal: 拒絕合併無關的歷史，
+我怎麼知道&mldr;因為我試過&mldr;早知道乖乖用git pull的方式就好。</p>
+<h2 id=挽救解法>挽救解法</h2>
+<p>重新git pull遠端，然後以rebase的方式解決分支衝突問題</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git pull origin main --rebase --allow-unrelated-histories
+</code></pre></div><p>可以注意到main和origin/main終於合併成一條線
+<img src=/images/2021-12-05%E6%88%90%E5%8A%9F%E7%9A%84gitmerge%E4%BA%86.png alt="重新以git pull方式重做" title="重新以git pull方式重做"></p>
+<p>終於可以成功git push到遠端</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git push origin main <span style=color:#75715e>#將在本地端合併好的main分支，重新推上遠端origin</span>
+</code></pre></div><h2 id=最終關卡是設定github-action>最終關卡是設定Github Action</h2>
+<p>在部落資料夾開一個檔案
+.github/workflows/gh-pages.yml
+包含以下內容：</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>name: github pages
+
+on:
+  push:
+    branches:
+      - main  <span style=color:#75715e># Set a branch to deploy</span>
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  <span style=color:#75715e># Fetch Hugo themes (true OR recursive)</span>
+          fetch-depth: <span style=color:#ae81ff>0</span>    <span style=color:#75715e># Fetch all history for .GitInfo and .Lastmod</span>
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: <span style=color:#e6db74>&#39;latest&#39;</span>
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        <span style=color:#66d9ef>if</span>: github.ref <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;refs/heads/main&#39;</span>
+        with:
+          github_token: <span style=color:#e6db74>${</span>{ secrets.GITHUB_TOKEN <span style=color:#e6db74>}</span><span style=color:#f92672>}</span>
+          publish_dir: ./public
+</code></pre></div><ul class=pa0>
+</ul>
+<div class="mt6 instapaper_ignoref">
+</div>
+</div>
+<aside class="w-30-l mt6-l">
+</aside>
+</article>
+</main>
+<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+<div class="flex justify-between">
+<a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=http://example.org/>
+&copy; 程式設計懶惰學 2021
+</a>
+<div>
+</div>
+</div>
+</footer>
+</body>
+</html>
