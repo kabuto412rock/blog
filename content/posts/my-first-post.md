@@ -124,7 +124,7 @@ jobs:
           publish_dir: ./public
 ```
 
-02 先讓git版本管理，重新
+02 先讓git版本管理，重新test
 ```bash
 git add .
 git commit -am '成功建立Github Action的設定檔'
