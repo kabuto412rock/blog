@@ -86,7 +86,7 @@ git push origin main #將在本地端合併好的main分支，重新推上遠端
 ```
 
 ## 最終關卡是設定Github Action
-在部落資料夾開一個檔案
+01 在blog資料夾開一個檔案
 .github/workflows/gh-pages.yml 
 包含以下內容：
 ```bash
@@ -122,4 +122,11 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+```
+
+02 先讓git版本管理，重新
+```bash
+git add .
+git commit -am '成功建立Github Action的設定檔'
+git push
 ```
