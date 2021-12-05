@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>程式設計的Hammer</title>
+    <title>程式設計懶惰學</title>
     <link>http://example.org/</link>
-    <description>Recent content on 程式設計的Hammer</description>
+    <description>Recent content on 程式設計懶惰學</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <lastBuildDate>Sat, 27 Nov 2021 23:03:49 +0800</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
@@ -13,11 +13,11 @@
       <pubDate>Sat, 27 Nov 2021 23:03:49 +0800</pubDate>
       
       <guid>http://example.org/posts/my-first-post/</guid>
-      <description>用Hugo寫部落格 第一次啟動出狀況 本來想用一般的hugo穩定版就好，因為目前還沒有想用SCSS調整Blog的版面，結果啟動伺服器得到以下結果：
+      <description>用Hugo寫部落格 第一次啟動出狀況 本來想說照著官方文件用一般的hugo穩定版就好，因為目前還沒有想用SCSS調整Blog的版面，結果啟動伺服器得到以下結果：
 hugo v0.89.4 linux/amd64 BuildDate=2021-11-17T14:49:26Z Error: Error building site: TOCSS: failed to transform &amp;#34;ananke/css/main.css&amp;#34; (text/css). Check your Hugo installation; you need the extended version to build SCSS/SASS.: this feature is not available in your current Hugo version, see https://goo.gl/YMrWcn for more information Built in 14 ms 因為我是在Ubuntu的環境下用 snap install hugo安裝Hugo， 但因為官方文件預設推薦的Theme是需要SCSS/SASS的支援，所以才會出現這樣的錯誤。
 如果要重來，可以先刪除在重裝：
 snap remove hugo snap install hugo --channel=extended 或是使用官方提供的方法切換版本：
-snap refresh hugo --channel=extended </description>
+snap refresh hugo --channel=extended 基本上遇到的問題也只有上面的版本問題， 接著一路照著官方教學建立文章看結果， 最後使用hugo -D 建立靜態的HTML檔案。</description>
     </item>
     
   </channel>
