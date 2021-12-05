@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'localhost:1313/'
 languageCode = 'zh-tw'
 title = "程式設計懶惰學"
-theme= "hugo-theme-stack"
+theme= "ananke"
