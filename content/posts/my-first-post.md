@@ -57,7 +57,7 @@ git push origin main #把本地儲存庫的main分支版本 -> 遠端origin這�
 
 ### 但應該100%會出現以下這個錯誤
 ![無法gitpush](/images/2021-12-05無法直接gitpush.png '無法gitpush因為push無法直接合併')
-當前的git push無法直接合併，因為git自動合併至少需要前面的commit是可以對得上的。
+當前的git push無法直接合併，因為git自動合併至少需要前面的commit是可以對得上的
 
 ## Bug2 所以第一件事就是把遠端的分支差異移到本地端
 先說明一下底下的指令將會導致一些問題發生，因為這篇文章是篇Debug文章
@@ -72,11 +72,54 @@ git fetch #
 但這時候如果直接下git merge origin/main會出現fatal: 拒絕合併無關的歷史，
 我怎麼知道...因為我試過...早知道乖乖用git pull的方式就好。
 
-## 挽救解法：重新git pull遠端，然後以rebase的方式解決分支衝突問題。
+## 挽救解法
+重新git pull遠端，然後以rebase的方式解決分支衝突問題
 ```bash
 git pull origin main --rebase --allow-unrelated-histories
 ```
-
 可以注意到main和origin/main終於合併成一條線
 ![重新以git pull方式重做](/images/2021-12-05成功的gitmerge了.png '重新以git pull方式重做')
 
+終於可以成功git push到遠端
+```bash
+git push origin main #將在本地端合併好的main分支，重新推上遠端origin
+```
+
+## 最終關卡是設定Github Action
+在部落資料夾開一個檔案
+.github/workflows/gh-pages.yml 
+包含以下內容：
+```bash
+name: github pages
+
+on:
+  push:
+    branches:
+      - main  # Set a branch to deploy
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+```
