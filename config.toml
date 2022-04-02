@@ -1,4 +1,4 @@
 baseURL = 'localhost:1313/'
 languageCode = 'zh-tw'
-title = "程式設計懶惰學"
+title = "程式開發者的冒險"
 theme= "ananke"
