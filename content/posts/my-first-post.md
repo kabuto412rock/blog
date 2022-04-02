@@ -2,6 +2,7 @@
 title: "[Debug過程] 學Hugo並發布到Github page"
 date: 2021-11-27T23:03:49+08:00
 draft: true
+type: post
 ---
 
 # 前言
@@ -124,7 +125,7 @@ jobs:
           publish_dir: ./public
 ```
 
-02 先讓git版本管理，重新
+02 先讓git版本管理，重新測試GithubAction
 ```bash
 git add .
 git commit -am '成功建立Github Action的設定檔'

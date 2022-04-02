@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/home/kabuto/focus/hugo/blog",
+	"sourceRoot": "/home/kabuto/focus/hugo/myblog",
 	"sources": [
 		"stdin"
 	],
