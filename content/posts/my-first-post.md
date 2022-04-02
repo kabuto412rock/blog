@@ -1,7 +1,7 @@
 ---
 title: "[Debug過程] 學Hugo並發布到Github page"
 date: 2021-11-27T23:03:49+08:00
-draft: true
+draft: false
 type: post
 ---
 
