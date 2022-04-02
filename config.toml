@@ -1,4 +1,4 @@
-baseURL = 'https://kabuto412rock.github.io'
+baseURL = 'https://kabuto412rock.github.io/posts'
 languageCode = 'zh-tw'
 title = "程式開發者的冒險"
 theme= "ananke"
