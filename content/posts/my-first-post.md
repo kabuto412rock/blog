@@ -1,7 +1,7 @@
 ---
-title: "[非教學] 學Hugo並發布到Github page"
+title: "[Debug過程] 學Hugo並發布到Github page"
 date: 2021-11-27T23:03:49+08:00
-draft: false
+draft: true
 ---
 
 # 前言
@@ -124,7 +124,7 @@ jobs:
           publish_dir: ./public
 ```
 
-02 先讓git版本管理，重新test
+02 先讓git版本管理，重新
 ```bash
 git add .
 git commit -am '成功建立Github Action的設定檔'
