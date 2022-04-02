@@ -105,6 +105,56 @@
   
   
   
+    
+    
+
+    <div class="pa3 pa4-ns w-100 w-70-ns center">
+      
+       
+          <h1 class="flex-none">
+            Recent Posts
+          </h1>
+        
+
+      
+
+      <section class="w-100 mw8">
+        
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/my-first-post/" class="color-inherit dim link">
+            [Debug過程] 學Hugo並發布到Github page
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          前言 如果你正在尋找一篇Hugo建立GithubPag的教學文，請你繼續搜尋其他文章， 因為這是我第一次使用Hugo跌跌撞撞的除錯紀錄， 而大部分問題都是我自己不照教學走導致需要Debug的文章， 但如果想知道怎麼出錯解錯就繼續看下去，但不建議跟著做下去。
+Bug1 前幾次hugo server -D啟動正常，後來卻出錯? 本來想說安裝extended版本比較好，所以重新用snap安裝穩定版， 結果啟動伺服器得到以下結果：
+hugo v0.89.4 linux/amd64 BuildDate=2021-11-17T14:49:26Z Error: Error building site: TOCSS: failed to transform &#34;ananke/css/main.css&#34; (text/css). Check your Hugo installation; you need the extended version to build SCSS/SASS.: this feature is not available in your current Hugo version, see https://goo.gl/YMrWcn for more information Built in 14 ms 我是在Ubuntu的環境下用 snap install hugo安裝Hugo， 而錯誤的原因是用extended版產生部落格，後面又重新切換Hugo穩定版， 但原本的部落格資料需要SCSS/SASS的支援所以才會出現這樣的錯誤。
+解法 因為懶得重新生成檔案，乾脆就用SCSS版本的Hugo：
+snap remove hugo snap install hugo --channel=extended 或是使用官方提供的方法切換版本：
+        </div>
+          <a href="/posts/my-first-post/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+      </section>
+
+      
+
+      </div>
+  
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>程式設計懶惰學</title>
+    <title>程式開發者的冒險</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="">
-    <meta name="generator" content="Hugo 0.89.4" />
+    <meta name="generator" content="Hugo 0.96.0" />
     
     
       <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -26,15 +26,15 @@
 
     
     
-      <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="程式設計懶惰學" />
-      <link href="/posts/index.xml" rel="feed" type="application/rss+xml" title="程式設計懶惰學" />
+      <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="程式開發者的冒險" />
+      <link href="/posts/index.xml" rel="feed" type="application/rss+xml" title="程式開發者的冒險" />
       
     
     
     <meta property="og:title" content="Posts" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://example.org/posts/" />
+<meta property="og:url" content="https://kabuto412rock.github.io/posts/" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
@@ -54,7 +54,7 @@
   <div class="flex-l justify-between items-center center">
     <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
       
-        程式設計懶惰學
+        程式開發者的冒險
       
     </a>
     <div class="flex-l items-center">
@@ -103,15 +103,15 @@
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
       <a href="/posts/my-first-post/" class="link black dim">
-        [Debug] 學Hugo並發布到Github page
+        [Debug過程] 學Hugo並發布到Github page
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      用Hugo寫部落格 第一次啟動出狀況 本來想說照著官方文件用一般的hugo穩定版就好，因為目前還沒有想用SCSS調整Blog的版面，結果啟動伺服器得到以下結果：
-hugo v0.89.4 linux/amd64 BuildDate=2021-11-17T14:49:26Z Error: Error building site: TOCSS: failed to transform &#34;ananke/css/main.css&#34; (text/css). Check your Hugo installation; you need the extended version to build SCSS/SASS.: this feature is not available in your current Hugo version, see https://goo.gl/YMrWcn for more information Built in 14 ms 因為我是在Ubuntu的環境下用 snap install hugo安裝Hugo， 但因為官方文件預設推薦的Theme是需要SCSS/SASS的支援，所以才會出現這樣的錯誤。
-如果要重來，可以先刪除在重裝：
+      前言 如果你正在尋找一篇Hugo建立GithubPag的教學文，請你繼續搜尋其他文章， 因為這是我第一次使用Hugo跌跌撞撞的除錯紀錄， 而大部分問題都是我自己不照教學走導致需要Debug的文章， 但如果想知道怎麼出錯解錯就繼續看下去，但不建議跟著做下去。
+Bug1 前幾次hugo server -D啟動正常，後來卻出錯? 本來想說安裝extended版本比較好，所以重新用snap安裝穩定版， 結果啟動伺服器得到以下結果：
+hugo v0.89.4 linux/amd64 BuildDate=2021-11-17T14:49:26Z Error: Error building site: TOCSS: failed to transform &#34;ananke/css/main.css&#34; (text/css). Check your Hugo installation; you need the extended version to build SCSS/SASS.: this feature is not available in your current Hugo version, see https://goo.gl/YMrWcn for more information Built in 14 ms 我是在Ubuntu的環境下用 snap install hugo安裝Hugo， 而錯誤的原因是用extended版產生部落格，後面又重新切換Hugo穩定版， 但原本的部落格資料需要SCSS/SASS的支援所以才會出現這樣的錯誤。
+解法 因為懶得重新生成檔案，乾脆就用SCSS版本的Hugo：
 snap remove hugo snap install hugo --channel=extended 或是使用官方提供的方法切換版本：
-snap refresh hugo --channel=extended 基本上遇到的問題也只有上面的版本問題， 接著一路照著官方教學建立文章看結果， 最後使用hugo -D 建立靜態的HTML檔案。
     </div>
   </div>
 </div>
@@ -122,8 +122,8 @@ snap refresh hugo --channel=extended 基本上遇到的問題也只有上面的�
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
-    &copy;  程式設計懶惰學 2021 
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://kabuto412rock.github.io/" >
+    &copy;  程式開發者的冒險 2022 
   </a>
     <div>
 
