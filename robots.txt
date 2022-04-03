@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://kabuto412rock.github.io/sitemap.xml
