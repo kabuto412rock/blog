@@ -28,7 +28,7 @@ draft: false
 2. 不弄髒本地環境，想刪就刪
 3. 替換依賴容易，Ex: MySQL -> Postgresl  
 
-Docker基本上語法不複雜設定起來也很容易，尤其在建立不熟系的環境亂試也可以，
+Docker基本上語法不複雜設定起來也很容易，尤其在建立不熟悉的環境亂試也可以，
 且因為Docker有cache layer的關係，所以修改重新跑docker-compose up 也很快就可以建立。
 
 廢話不多說，開始部屬吧...
