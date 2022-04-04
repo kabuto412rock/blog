@@ -38,5 +38,6 @@ hugo v0.89.4 linux/amd64 BuildDate=2021-11-17T14:49:26Z Error: Error building si
 snap remove hugo snap install hugo --channel=extended 或是使用官方提供的方法切換版本：</description>
     </item>
     
+    
   </channel>
 </rss>
