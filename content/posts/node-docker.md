@@ -115,7 +115,8 @@ $ docker-compose down
 ```
 
 ## 建置說明
-docker-compose.yaml，我由上而下說明每一個名稱會比較快，
+說明一下docker-compose.yaml內的細節，因為這些設定的屬性都是docker-compose up時參考的定義，一定要了解一下。
+
 #### version  
   是說明使用docker-compose.yaml的語法版本，是給Docker CLI看的版本名稱，此處為3.1
 #### services
