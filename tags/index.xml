@@ -8,6 +8,43 @@
       <url>https://kabuto412rock.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://kabuto412rock.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://kabuto412rock.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 03 Apr 2022 22:22:27 +0800</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker</title>
+      <link>https://kabuto412rock.github.io/tags/docker/</link>
+      <pubDate>Sun, 03 Apr 2022 22:22:27 +0800</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nodejs</title>
+      <link>https://kabuto412rock.github.io/tags/nodejs/</link>
+      <pubDate>Sun, 03 Apr 2022 22:22:27 +0800</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/tags/nodejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debug</title>
+      <link>https://kabuto412rock.github.io/tags/debug/</link>
+      <pubDate>Sat, 27 Nov 2021 23:03:49 +0800</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/tags/debug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://kabuto412rock.github.io/tags/hugo/</link>
+      <pubDate>Sat, 27 Nov 2021 23:03:49 +0800</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

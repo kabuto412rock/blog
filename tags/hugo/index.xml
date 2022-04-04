@@ -1,30 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on 程式開發者的冒險</title>
-    <link>https://kabuto412rock.github.io/posts/</link>
-    <description>Recent content in Posts on 程式開發者的冒險</description>
+    <title>hugo on 程式開發者的冒險</title>
+    <link>https://kabuto412rock.github.io/tags/hugo/</link>
+    <description>Recent content in hugo on 程式開發者的冒險</description>
     <image>
       <url>https://kabuto412rock.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://kabuto412rock.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 03 Apr 2022 22:22:27 +0800</lastBuildDate><atom:link href="https://kabuto412rock.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>[教學] 使用Docker建立Nodejs開發環境範本</title>
-      <link>https://kabuto412rock.github.io/posts/node-docker/</link>
-      <pubDate>Sun, 03 Apr 2022 22:22:27 +0800</pubDate>
-      
-      <guid>https://kabuto412rock.github.io/posts/node-docker/</guid>
-      <description>大綱
- 前言 為什麼要用Docker部屬 Node.js (Express.js)  建置流程 資料夾結構 (啟動前) 資料夾結構 (啟動後) 建置說明  version services app (實際上可以取你自己喜歡的名稱web-app之類的)     結語  前言 最近想紀錄一下可重複使用的程式碼片段，這樣之後找就從自己的部落格找會比較方便，尤其是最近常用Docker建立部屬環境。
-為什麼要用Docker部屬 雖然網路上可以找到很多理由，但我的理由是：
- 使用git版本控制，設定檔本身就取代環境建置說明文件 不弄髒本地環境，想刪就刪 替換依賴容易，Ex: MySQL -&amp;gt; Postgresl  Docker基本上語法不複雜設定起來也很容易，尤其在建立不熟系的環境亂試也可以， 且因為Docker有cache layer的關係，所以修改重新跑docker-compose up 也很快就可以建立。
-廢話不多說，開始部屬吧&amp;hellip;
-Node.js (Express.js) 建置流程  建立相關的檔案＆安裝Express（主要是為了產生package.json）  $ mkdir node-demo &amp;amp;&amp;amp; cd node-demo $ mkdir app $ touch app/package.json &amp;amp;&amp;amp; touch app/index.js &amp;amp;&amp;amp; touch docker-compose.yaml 複製以下程式碼貼到對應的檔案  app/package.json
-{  &amp;#34;name&amp;#34;: &amp;#34;node-demo&amp;#34;,  &amp;#34;version&amp;#34;: &amp;#34;1.</description>
-    </item>
-    
+    <lastBuildDate>Sat, 27 Nov 2021 23:03:49 +0800</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Debug過程] 學Hugo並發布到Github page</title>
       <link>https://kabuto412rock.github.io/posts/my-first-post/</link>
