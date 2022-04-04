@@ -117,6 +117,10 @@ menu:
       name: tags
       url: /tags/
       weight: 20
+    - identifier: 搜尋
+      name: search
+      url: /search/
+      weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
 # markup:
@@ -126,3 +130,8 @@ menu:
 #         guessSyntax: true
 #         lineNos: true
 #         style: monokai
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # is necessary
