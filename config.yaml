@@ -19,7 +19,7 @@ params:
   title: ExampleSite
   description: "ExampleSite description"
   keywords: [Blog, Portfolio, PaperMod]
-  author: Me
+  author: 宗嘉
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
@@ -71,7 +71,7 @@ params:
   # home-info mode
   homeInfoParams:
     Title: "哈囉，冒險者們 🧙‍♂️🔥  "
-    Content: 歡迎來到我的部落格～希望能找到適合你的程式魔法
+    Content: 歡迎來到宗嘉的部落格～希望能找到適合你的程式魔法
 
   socialIcons:
     - name: github
@@ -92,8 +92,9 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/<path_to_repo>/content"
-    Text: "Suggest Changes" # edit text
+    URL: "https://github.com/kabuto412rock/kabuto412rock.github.io/blob/main/content"
+
+    Text: "編輯內容" # edit text
     appendFilePath: true # to append file path to Edit link
 
   # for search
@@ -108,10 +109,10 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: categories
-      name: categories
-      url: /categories/
-      weight: 10
+    # - identifier: categories
+    #   name: categories
+    #   url: /categories/
+    #   weight: 10
     - identifier: tags
       name: tags
       url: /tags/
