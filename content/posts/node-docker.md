@@ -11,10 +11,13 @@ draft: false
 - [前言](#前言)
 - [為什麼要用Docker部屬](#為什麼要用docker部屬)
 - [Node.js (Express.js)](#nodejs-expressjs)
-  - [建置流程](#建置流程)
-  - [資料夾結構 (啟動前)](#資料夾結構-啟動前)
-  - [資料夾結構 (啟動後)](#資料夾結構-啟動後)
-  - [建置說明](#建置說明)
+  - [建置流程Ver 1(快速克隆 -> 趕時間)](#建置流程ver-1快速克隆---趕時間)
+  - [建置流程Ver 2 (手動 -> 練習過程)](#建置流程ver-2-手動---練習過程)
+  - [node-demo/app/package.json](#node-demoapppackagejson)
+  - [node-demo/app/src/index.js](#node-demoappsrcindexjs)
+  - [node-demo/docker-compose.yaml](#node-demodocker-composeyaml)
+  - [資料夾結構](#資料夾結構)
+  - [docker-compose建置說明](#docker-compose建置說明)
       - [version](#version)
       - [services](#services)
       - [app (實際上可以取你自己喜歡的名稱web-app之類的)](#app-實際上可以取你自己喜歡的名稱web-app之類的)
@@ -33,23 +36,40 @@ Docker基本上語法不複雜設定起來也很容易，尤其在建立不熟�
 
 廢話不多說，開始部屬吧...
 # Node.js (Express.js) 
-## 建置流程
+## 建置流程Ver 1(快速克隆 -> 趕時間)
+1. 直接使用git clone語法下載範例
+  ```bash 
+  $ git clone https://github.com/kabuto412rock/node-demo.git --branch express_template --single-branch
+  ```
+2. 啟動服務、關閉服務
+```bash
+# 進到目錄底層
+$ cd node-demo
+# 啟動Docker服務
+(node-demo) $ docker-compose up -d
+# 停止Docker服務
+(node-demo) $ docker-compose down
+```
+3. 檢查實際結果 http://localhost/
+ 
+## 建置流程Ver 2 (手動 -> 練習過程)
 1. 建立相關的檔案＆安裝Express（主要是為了產生package.json）
 ```bash
-$ mkdir node-demo && cd node-demo 
-$ mkdir app
-$ touch app/package.json && touch app/index.js && touch docker-compose.yaml
+$ mkdir -p node-demo/app/src
+$ cd node-demo
+$ touch app/package.json && touch app/src/index.js && touch docker-compose.yaml
 ```
 2. 複製以下程式碼貼到對應的檔案  
 
-app/package.json
+node-demo/app/package.json
+---
 ```json
 {
   "name": "node-demo",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon src/index.js"
   },
   "license": "MIT",
   "dependencies": {
@@ -60,7 +80,9 @@ app/package.json
   }
 }
 ```
-app/index.js
+
+node-demo/app/src/index.js
+---
 ```javascript
 const express = require("express");
 const port = 8000;
@@ -74,7 +96,9 @@ app.get("/", (req, res) => {
 app.listen(port);
 
 ```
-docker-compose.yaml
+
+node-demo/docker-compose.yaml
+---
 ```yaml
 version: '3.1'
 services:
@@ -85,36 +109,33 @@ services:
       - 80:8000
     working_dir: /app
     volumes:
-      - ./app:/app
+      - './app/src:/app/src'
+      - './app/package.json:/app/package.json'
+      - './app/yarn.lock:/app/yarn.lock'
 ```
 
 3. 啟動服務、關閉服務
 ```bash
+# 進到目錄底層
+$ cd node-demo
 # 啟動Docker服務
-$ docker-compose up -d
+(node-demo) $ docker-compose up -d
 # 停止Docker服務
-$ docker-compose down
+(node-demo) $ docker-compose down
 ```
 4. 檢查實際結果 http://localhost/
 
-## 資料夾結構 (啟動前)
+## 資料夾結構
 ```yaml
 ├── app
-│   ├── index.js
-│   └── package.json
-└── docker-compose.yaml
-```
-## 資料夾結構 (啟動後)
-```yaml
-├── app
-│   ├── index.js
-│   ├── node_modules [程式依賴目錄]
 │   ├── package.json
+│   ├── src
+│   │   └── index.js
 │   └── yarn.lock
 └── docker-compose.yaml
 ```
 
-## 建置說明
+## docker-compose建置說明
 說明一下docker-compose.yaml內的細節，因為這些設定的屬性都是docker-compose up時參考的定義，一定要了解一下。
 
 #### version  
@@ -137,13 +158,13 @@ working_dir:
 volumes:
   掛載本地端的./app到容器內的/app，修改本地端./app內的資料夾同時會修改到容器內的/app的程式碼，反之亦然。
 
-  不使用DockerFile的COPY的方式，是因為nodemon會監控檔案的變化，COPY的方式只是一次性的複製到容器內，而非持續性。
+  不使用DockerFile的COPY的方式，是因為nodemon會監控檔案的變化，COPY的方式只是啟動時一次性的複製到容器內，而非持續性。
 ```
 
 # 結語
-這篇文章先描述過程不解釋原理，只是想避免在操作過程、解釋原理這兩件事交錯，因為我想之後可能也會來看這篇文章，但有時真不會看什麼原理（畢竟已經很清楚了）。
+這篇文章開頭先描述過程不解釋原理，只是想避免在操作過程、解釋原理這兩件事交錯，因為我想之後可能也會來看這篇文章，但有時真不會看什麼原理（畢竟已經很清楚了）。
 
-雖然使用Node.js通常還會結合資料庫，但鑑於這篇是第一篇Docker文章，就先不提高文章知識難度，也囉唆多寫一點docker-compose細節的部份。
+雖然使用Node.js通常還會結合資料庫，但鑑於這篇是第一篇Docker文章，就先不提高文章知識難度，但最後還是囉唆地多寫一點docker-compose細節的部份。
 
 下一篇應該彙整併MongoDB，感謝你的閱讀。
 
