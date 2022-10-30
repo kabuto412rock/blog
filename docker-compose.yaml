@@ -1,0 +1,12 @@
+# docker-compose.yml
+version: '3'
+services:
+  server:
+    image: klakegg/hugo:ext-ubuntu
+    container_name: hugo-blog
+    tty: true
+    command: shell
+    volumes:
+      - ".:/src"
+    ports:
+      - "1313:1313"
