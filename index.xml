@@ -12,12 +12,12 @@
     <lastBuildDate>Sun, 30 Oct 2022 04:00:14 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux指令-設定檔案讀寫權限 chmod</title>
-      <link>https://kabuto412rock.github.io/posts/jjj/</link>
+      <link>https://kabuto412rock.github.io/posts/chmod-777/</link>
       <pubDate>Sun, 30 Oct 2022 04:00:14 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/posts/jjj/</guid>
+      <guid>https://kabuto412rock.github.io/posts/chmod-777/</guid>
       <description>問題: WSL2跑Docker也可以寫原本在Ubuntu寫的hugo，又不用額外安裝homebrew 想用VSCode編輯Docker容器產生的文章後，發現我VSCode竟然沒有權限修改檔案。
-解法: 辦法很簡單，讓檔案被誰都可以更改就好。
+解法: 辦法很簡單，修改檔案權限全開
 chmod -R 777 content/ 這篇是用來測試Github action是否還有正常運作</description>
     </item>
     
