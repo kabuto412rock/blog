@@ -15,7 +15,8 @@ docker exec -it hugo-blog bash
 ```bash
 # 
 # 新增文章
-hugo  new 
+hugo new posts/gen-import-file.md
+
 ```
 
 
