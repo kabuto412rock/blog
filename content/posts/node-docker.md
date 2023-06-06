@@ -25,6 +25,7 @@ draft: false
 # 前言
 最近想紀錄一下可重複使用的程式碼片段，這樣之後找就從自己的部落格找會比較方便，尤其是最近常用Docker建立部屬環境。
 
+想看docker-compose建置Express + MYSQL環境，[請走這](../express-mysql-docker)
 # 為什麼要用Docker部屬
 雖然網路上可以找到很多理由，但我的理由是：
 1. 使用git版本控制，設定檔本身就取代環境建置說明文件
@@ -166,6 +167,5 @@ volumes:
 
 雖然使用Node.js通常還會結合資料庫，但鑑於這篇是第一篇Docker文章，就先不提高文章知識難度，但最後還是囉唆地多寫一點docker-compose細節的部份。
 
-下一篇應該彙整併MongoDB，感謝你的閱讀。
-
+下一篇應該彙整併~~MongoDB~~，感謝你的閱讀。
 

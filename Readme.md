@@ -1,8 +1,8 @@
 # 紀錄一下Hugo的啟動和日常操作
 
 ## 如何啟動
-> 記得在分支 `main`分支啟動容器做調整
-> public目錄屬於輸出 靜態html的部分，由github action在我git push之後自動執行
+> 記得在`main`分支啟動容器做調整，當我git push之後會自動執行github action
+> 最後Github Action會在`gh-pages`分支public目錄屬於輸出 靜態html的部分
 
 ```bash
 # 啟動Hugo容器並將當前資料夾與容器內的/src目錄進行同步
@@ -13,10 +13,10 @@ docker exec -it hugo-blog bash
 
 ## 常用的hugo指令
 ```bash
-# 
+# 啟動開發用blog server
+hugo server
 # 新增文章
 hugo new posts/gen-import-file.md
-
 ```
 
 
