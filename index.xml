@@ -10,7 +10,21 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 10 Sep 2023 02:35:25 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Sep 2023 07:51:40 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 01 開發遊戲前先設定目標策略</title>
+      <link>https://kabuto412rock.github.io/posts/it-day1/</link>
+      <pubDate>Sun, 10 Sep 2023 07:51:40 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day1/</guid>
+      <description>前言 最終目標是做一個個人版的紙牌接龍，中途也會嘗試做一些延伸的紙牌遊戲。
+遊戲的畫面預計會使用我不熟悉的前端框架 Vue3，若有充足的時間我也會結合後端去做整合， 此次參賽也是為了督促自己在前端的技術進步。
+原本是想單純參加自我挑戰組， 因為曾在2014參賽第9天就中斷，所以接下來想先在Day 1設定一些目標讓自己可以達成， 過了9年後的我可不想在同個地方掛彩。
+中短期目標 目前預計想完成的目標如下:
+前期目標 可以玩牌的畫面 產生紙牌 拖曳紙牌 洗牌 中期目標 紙牌動畫移動 紙牌翻轉 使用前面的技術實現心臟病遊戲 後期目標 紙牌接龍 今日目標-建好專案 建立Vue3專案並啟動成功 npm create vue@latest cd ithelp-pokergame &amp;amp;&amp;amp; npm run dev 2. 在新專案中建好git repo
+git init git commit -am &amp;#39;initial&amp;#39; 在Github建好一個新的儲存庫 ithelp-pokergame 將本地的git庫跟Github的庫連上對應 git remote add origin https://github.com/kabuto412rock/ithelp-pokergame.git 決定聽從Github老大的main分支選擇，後來又比較奇怪的方式推上Github的Repo過程 # 先在本地建一個main分支 git checkout -b main # 砍了本地原始master分支 git branch -D master # 嘗試拖拉儲存庫 git pull # 設定本地main和遠端main分支對應 git branch --set-upstream-to=origin/main main # 乾脆直接把本地分支全部強推上遠端 git push -f 自己使用平板畫了一隻小狐狸，也替換到了畫面上，但畫面徹底跑版&amp;hellip; 小結 記錄好自己的目標後，Vue建立專案和元件的方式跟React很像， 後面git的步驟只是記錄我是雷包，還好是因為空專案才可以放心執行git push -f</description>
+    </item>
+    
     <item>
       <title>參加2023鐵人賽前的自我回顧</title>
       <link>https://kabuto412rock.github.io/posts/adventure-again/</link>
