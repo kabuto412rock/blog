@@ -79,7 +79,7 @@ Card.vue的樣板很簡單是因為把一些轉換顏色物件的部分移到我
 </template>
 ```
 
-在的部分使用到**v-for**去執行迴圈在GameBoard元件產生52張牌
+使用到**v-for**去執行迴圈在GameBoard元件產生52張牌
 ```jsx
 // GameBoard.vue
 <template>
