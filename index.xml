@@ -10,7 +10,17 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 11 Sep 2023 11:36:54 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Sep 2023 03:51:05 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 03 完成卡牌自動翻面的效果，但還不完整</title>
+      <link>https://kabuto412rock.github.io/posts/it-day3/</link>
+      <pubDate>Tue, 12 Sep 2023 03:51:05 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day3/</guid>
+      <description>原本今天預計製作發牌和卡牌自動翻面的效果，希望兩個都能有動畫效果， 但現實的能力讓我想先說說今天的開發方式
+實際思考/開發的過程 卡牌翻面 想像的實作過程 沿用原本的Card.vue內的樣板，在裡面分成兩個div區塊， 一個div區塊放正面有花色數字的牌面，另一個則放一張背圖。 在Card.vue內撰寫 @click 去改變卡片的狀態 撰寫CSS的動畫去實現翻面的過程 現實開發 先調整撲克牌背面的樣板，花了些時間讓圖片不會超出卡牌寬高 background-size: cover; 上網查詢是怎麼做翻轉撲克的效果，甚至查到有人做出6個div欄位做出3D方塊，但嘗試改成只有前後的div欄位但發現景深會產生兩張卡片交疊的一點位移就放棄這個寫法 意外查到IT邦上有個純CSS挑戰撲克翻轉，所以就先照著原作的CSS翻轉寫法調整Card.vue樣板 並且添加@click 會觸發emit將點到的卡牌數字回傳至上層進行更新 // Card.vue &amp;lt;template&amp;gt; &amp;lt;div class=&amp;#34;card &amp;#34; @click=&amp;#34;emit(&amp;#39;poker-flip&amp;#39;, value)&amp;#34; :class=&amp;#34;backCardClass&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;card-front&amp;#34; :class=&amp;#34;numberClass&amp;#34;&amp;gt;{{ content }}&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;card-back&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; 因為我Vue3是採用SFC(Single-File Components)的寫法，所以定義emit的方式如下所示: // Card.vue const emit = defineEmits([&amp;#34;poker-flip&amp;#34;]); 在上層的元件要接會使用剛剛定義在defineEmits的名稱 @poker-flip // GameBoard.vue 其他都略 &amp;lt;Card v-for=&amp;#34;card in boardCards&amp;#34; key=&amp;#34;card.value&amp;#34; :value=&amp;#34;card.value&amp;#34; :isOpen=&amp;#34;card.isOpen&amp;#34; @poker-flip=&amp;#34;toggleFlip&amp;#34; /&amp;gt; 可能因為練習過ReactJS官網的的關係，知道狀態提升(Lifting State Up)的概念，所以目前所有卡牌資料依然是先放在上層的GameBoard.vue裡面，toggleFlip是我撰寫 // GameBoard.vue function toggleFlip(num) { // 找到對應的開牌狀態且翻轉 const targetIdx = boardCards.</description>
+    </item>
+    
     <item>
       <title>Day 02 調整css調整桌面&amp;產生52張紙牌</title>
       <link>https://kabuto412rock.github.io/posts/it-day2/</link>
