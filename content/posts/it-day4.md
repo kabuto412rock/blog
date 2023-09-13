@@ -1,5 +1,5 @@
 ---
-title: "Day04 調整翻牌效果&實作洗牌&外加撲克牌連連看"
+title: "Day 04 調整翻牌效果&實作洗牌&外加撲克牌連連看"
 date: 2023-09-13T06:25:37Z
 # weight: 1
 # aliases: ["/first"]
@@ -17,7 +17,7 @@ draft: false
 // Card.vue
 <template>
     <div class="card " @click="emit('poker-flip', value)">
-        <Transition name="card-flip" @click="isOPen = !isOPen">
+        <Transition name="card-flip">
             <div v-if="isOpen" class="card-front" :class="numberClass">{{ content }}</div>
             <div v-else class="card-back"></div>
         </Transition>
