@@ -10,7 +10,19 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 12 Sep 2023 03:51:05 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Sep 2023 06:25:37 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day04 調整翻牌效果&amp;實作洗牌&amp;外加撲克牌連連看</title>
+      <link>https://kabuto412rock.github.io/posts/it-day4/</link>
+      <pubDate>Wed, 13 Sep 2023 06:25:37 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day4/</guid>
+      <description>改變翻牌效果 研究Transition的文件後發現跟我想像的動畫變換不同，官方用法&amp;lt;Transition&amp;gt;&amp;lt;/Transition&amp;gt; 包裹內的新舊元件其中一個在動畫過程會先被移除掉或新增，但我先前設計好的CSS會是兩個元素都存在只是一個會被轉到CSS效果轉到背後，因此我的水平翻轉動畫需要兩個元素都存在HTML上。
+為了在時間內完成，我打消原本水平翻轉的作法，我改採Transition結合v-if的方式去顯示卡牌正反兩面， 發現用漸進式出現消失也是不錯的效果，以下是樣板的改變:
+// Card.vue &amp;lt;template&amp;gt; &amp;lt;div class=&amp;#34;card &amp;#34; @click=&amp;#34;emit(&amp;#39;poker-flip&amp;#39;, value)&amp;#34;&amp;gt; &amp;lt;Transition name=&amp;#34;card-flip&amp;#34; @click=&amp;#34;isOPen = !isOPen&amp;#34;&amp;gt; &amp;lt;div v-if=&amp;#34;isOpen&amp;#34; class=&amp;#34;card-front&amp;#34; :class=&amp;#34;numberClass&amp;#34;&amp;gt;{{ content }}&amp;lt;/div&amp;gt; &amp;lt;div v-else class=&amp;#34;card-back&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/Transition&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; 參考Vue官方的範例， 在style添加以下後綴是-enter-active/leave-active/-enter-from/-leave-to的class，是為了讓Transition知道動畫要如何改變。
+// Card.vue &amp;lt;style scoped&amp;gt; .card-flip-enter-active, .card-flip-leave-active { transition: all 0.5s ease-out; } .card-flip-enter-from, .card-flip-leave-to { opacity: 0; } {/* 略 */} 實作洗牌 實作兩個函數存於utils/poker-helper.js 洗牌的函數shuffle，洗牌採用的演算法參考看別人文章實作 Fisher-Yates 演算法，雖然沒有 function shuffle(deck) { let length = deck.length; for (let i = 0; i &amp;lt; length; i++) { let rand_to_swap = Math.</description>
+    </item>
+    
     <item>
       <title>Day 03 完成卡牌自動翻面的效果，但還不完整</title>
       <link>https://kabuto412rock.github.io/posts/it-day3/</link>
