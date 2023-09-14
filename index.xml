@@ -10,7 +10,19 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 13 Sep 2023 06:25:37 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Sep 2023 03:20:17 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 05 引入Vue Router切換頁面</title>
+      <link>https://kabuto412rock.github.io/posts/it-day5/</link>
+      <pubDate>Thu, 14 Sep 2023 03:20:17 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day5/</guid>
+      <description>因為想留著昨天完成的撲克牌連連看，預計將不同遊戲的頁面可以做保留並切換， 所以我打算在做牌堆之前，首先應該要了解Vue3在路由頁面的實作是如何切換頁面。
+引入 Vue Router 接下來步驟我是參考『直接使用npm create vue@latest指令產生預設攜帶有用Vue Router專案的檔案架構』 下去調整的，所以步驟草率請敬請見諒。
+安裝依賴Vue Router npm install vue-router@4 在src底下新增兩個資料夾views和router 在views資料夾底下新增兩個頁面檔Game1View.vue和HomeView.vue src ├─App.vue ├─main.js ├─views | ├─Game1View.vue # 撲克連連看 | └─HomeView.vue # 首頁 ├─utils | ├─constants.js | └─poker-helper.js ├─router | └─index.js ├─components | ├─Card.vue | ├─FoxyHeader.vue | ├─GameBoard.vue | 略... 如果想知道是怎麼產生樹狀目錄，我是在src目錄下執行npx treer -e ./result.txt 便會 將樹狀結構寫到當前的result.txt文件中
+定義路由應對應的元件，routes的部分可以有預先載入的功能 // router/index.js import { createRouter, createWebHistory } from &amp;#39;vue-router&amp;#39; import HomeView from &amp;#39;../views/HomeView.vue&amp;#39; const router = createRouter({ history: createWebHistory(import.</description>
+    </item>
+    
     <item>
       <title>Day 04 調整翻牌效果&amp;實作洗牌&amp;外加撲克牌連連看</title>
       <link>https://kabuto412rock.github.io/posts/it-day4/</link>
