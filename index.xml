@@ -10,7 +10,20 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 14 Sep 2023 03:20:17 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Sep 2023 04:08:21 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 06 實現自訂義牌堆</title>
+      <link>https://kabuto412rock.github.io/posts/it-day6/</link>
+      <pubDate>Fri, 15 Sep 2023 04:08:21 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day6/</guid>
+      <description>今日目標 研究如何製作牌堆 製作牌堆 製作CardBox元件負責用來擺放卡片的容器，所以結構上就只是比原本卡片元件的稍寬，所以設計成可放子元件進去的樣板，然後當沒放牌時會產生跟牌一個寬高的隱藏區塊到slot裡面。
+// CardBox.vue &amp;lt;template &amp;gt; &amp;lt;div class=&amp;#34;card-box&amp;#34;&amp;gt; &amp;lt;slot&amp;gt; &amp;lt;div class=&amp;#34;card&amp;#34; style=&amp;#34;visibility: hidden;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/slot&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; 所以目前首頁是長這樣，放了兩個空的CardBox佔位置。
+// HomeView.vue &amp;lt;div style=&amp;#34;display: grid; grid-template-columns: 1fr 1fr;&amp;#34;&amp;gt; &amp;lt;CardBox&amp;gt;&amp;lt;/CardBox&amp;gt; &amp;lt;CardBox&amp;gt;&amp;lt;/CardBox&amp;gt; &amp;lt;/div&amp;gt; 接著思考如何實作卡牌從A點發到B點，看著畫面思考發現， 不如今天就來實作兩邊卡堆點擊後會移動到對方卡堆的功能。
+這邊為了簡單驗證想法，定義函數geneateDeck(5, true)生成五張卡牌依序是梅花A~5(設為開牌)， 我預計實驗兩個卡堆，所以函數也就設計以下兩個非常相似的函數， 功用正是將卡堆的最後一張卡彈出，並推到另一個牌堆。
+// HomeView.vue const fstCards = ref(geneateDeck(5, true)); const secondCards = ref([]); const moveCardFromAToB = () =&amp;gt; { const card = fstCards.value.pop(); if (card === undefined) return; secondCards.value.push(card); }; const moveCardFromBToA = () =&amp;gt; { const card = secondCards.</description>
+    </item>
+    
     <item>
       <title>Day 05 引入Vue Router切換頁面</title>
       <link>https://kabuto412rock.github.io/posts/it-day5/</link>
