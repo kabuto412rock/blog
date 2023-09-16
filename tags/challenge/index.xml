@@ -10,7 +10,23 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 15 Sep 2023 23:48:02 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Sep 2023 07:22:58 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 08 牌堆的卡牌移動動畫 (尚未發布)</title>
+      <link>https://kabuto412rock.github.io/posts/it-day8/</link>
+      <pubDate>Sat, 16 Sep 2023 07:22:58 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day8/</guid>
+      <description>重點提醒: 沒有真的成功實作卡牌無中斷的移動 在實作的過程中遇到了一些問題，找到替代方案先記錄下來。
+最初的思路 在前一篇文章中，我們已經完成了牌堆的製作，接下來我們要來製作牌堆的卡牌移動動畫。 在開始實作之前，我必須決定要用CSS或是JS實現?
+如果牌堆的位置永遠是固定的，或許可以用CSS來實現，但是我們要移動的是牌堆位置不一定永遠在那， 而且牌堆的卡牌數量是不固定的，更加深了預設的座標位置，所以我想這必須用JS來實現， 至少需要JS取得動態元素的位置。
+動畫的實作 第一個問題對我來說是，我要怎麼知道卡牌的位置? 起始和結束的位置都是不固定的，所以我必須要先取得卡牌的位置，才能夠進行動畫的實作。
+取得當前牌堆的位置的方法有很多種，我在這邊使用的是getBoundingClientRect()， 這個方法可以取得當前元素的相對位置+寬高，但是這個方法是在DOM上的，所以我利用const cardBox = ref(null)設定一個參考， Vue3會自動找到template中使用ref=&amp;quot;cardBox&amp;quot;的元素，並且將其綁定到cardBox上，這樣我就可以在&amp;lt;script setup&amp;gt;中使用cardBox.value來取得HTML元素本身。
+因為元件渲染掛載畫面上便會觸發onMounted事件，所以我在onMounted中取得元素的位置，並且透過emit傳遞卡片的絕對位置給父元件。
+至於為什麼是絕對位置，因為我們要移動的是卡片，而不是牌堆，所以我們必須要知道卡片的絕對位置，才能夠進行移動。 雖然後來我失敗了，但是我還是想記錄一下這個方法，因為我覺得這個方法還是很有用的。
+// CardColumn.vue &amp;lt;script setup&amp;gt; // ... const cardBox = ref(null); onMounted(() =&amp;gt; { const rect = cardBox.value.getBoundingClientRect(); const x = window.scrollX + rect.left; const y = window.scrollY + rect.top; emit(&amp;#39;position&amp;#39;, { x, y }); }) &amp;lt;/script&amp;gt; &amp;lt;template &amp;gt; &amp;lt;div class=&amp;#34;card-box&amp;#34; :class=&amp;#34;{ &amp;#39;empty-card-box&amp;#39;: isEmpty }&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;card&amp;#34; style=&amp;#34;visibility: hidden;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div style=&amp;#34;visibility: visible; position: absolute; z-index: 5;&amp;#34; ref=&amp;#34;cardBox&amp;#34;&amp;gt; &amp;lt;div style=&amp;#34;; display: grid; grid-template-rows: repeat(13, 2rem);&amp;#34;&amp;gt; &amp;lt;Card v-for=&amp;#34;(card, index) in cards&amp;#34; @click=&amp;#34;(event) =&amp;gt; onClick(event.</description>
+    </item>
+    
     <item>
       <title>Day 07 卡牌垂直重疊</title>
       <link>https://kabuto412rock.github.io/posts/it-day7/</link>
