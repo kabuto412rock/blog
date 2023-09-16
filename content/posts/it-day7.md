@@ -49,6 +49,7 @@ draft: false
 
 程式碼: https://github.com/kabuto412rock/ithelp-pokergame/tree/day07
 
+{{< youtube J3rLYKwUTeA >}}
 ## 參考資料
 - [GRID GARDEN](https://cssgridgarden.com/)
 - [CSS Grid Layout](https://developer.mozilla.org/zh-TW/docs/Web/CSS/CSS_Grid_Layout)
