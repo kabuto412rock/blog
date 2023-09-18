@@ -10,7 +10,26 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 16 Sep 2023 07:22:58 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Sep 2023 05:13:22 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 09 拖曳紙牌的效果(一)</title>
+      <link>https://kabuto412rock.github.io/posts/it-day9/</link>
+      <pubDate>Mon, 18 Sep 2023 05:13:22 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day9/</guid>
+      <description>玩紙牌接龍最重要的就是卡牌會移來移去，之前都是用點的移動定點， 今天來試試看如何撰寫拖曳紙牌的功能。
+安裝依賴 因為重頭學習理解拖曳，對我來說太麻煩也太無聊， 乾脆就使用現成的套件Vue.Draggable吧!
+因為使用的是Vue3專案，所以必須安裝有標註next的版本。
+npm i -S vuedraggable@next 單一列表的拖曳使用 我也還在理解該套件中，接下來的過程會盡可能去蕪存菁，但不失細節。
+首先一定要先引入vuedraggable，如下所示:
+&amp;lt;script setup&amp;gt; import draggable from &amp;#39;vuedraggable&amp;#39; // ...other template &amp;lt;/script&amp;gt; 樣板的部分則如下:
+&amp;lt;template&amp;gt; &amp;lt;draggable :list=&amp;#34;firstCardStack&amp;#34; itemKey=&amp;#34;value&amp;#34; @change=&amp;#34;console.log&amp;#34; style=&amp;#34;display: grid; grid-template-columns: repeat(13, 3rem);&amp;#34;&amp;gt; &amp;lt;template #item=&amp;#34;{ element, index }&amp;#34;&amp;gt; &amp;lt;Card :value=&amp;#34;element.value&amp;#34; :isOpen=&amp;#34;element.isOpen&amp;#34; /&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;/draggable&amp;gt; &amp;lt;/template&amp;gt; 這樣的寫法在通常就已可運用，接下來讓我們來逐一理解&amp;lt;draggable&amp;gt;每個欄位的意義和預設行為&amp;hellip;
+:list 首先:list內設定的是一個參考到陣列的ref或reactive變數，只要裡面參考到的是Array即可， 這可以讓&amp;lt;draggable&amp;gt;明白當列表項目被拖曳移動時自動修改的對象。
+// 此處genearateDeck(20, true)會回傳20個物件的Array物件 const firstCardStack = ref(geneateDeck(20, true)); // 為求簡單也能寫成底下這樣 // const firstCardStack = ref([]); itemKey屬性 第二個重要的屬性是itemKey，代表前面陣列中每一個元素的唯一值，基本上就跟v-for內用到的:key有相同作用，可讓元件從itemKey明白內部元素的差異進而去做列表更新。
+此處會設定itemKey=&amp;quot;value&amp;quot;，是因為參考的陣列firstCardStack每一個元素的構造如下:
+{ value: number, // 撲克牌值，Ex: 0 對應 ♣A isOpen: boolean // 開牌狀態，Ex: false 對應 蓋牌樣式 } 嘗試過不添加itemKey仍可拖曳且參考的陣列有更新，但會發生UI不會刷新的窘境🤣</description>
+    </item>
+    
     <item>
       <title>Day 08 牌堆的卡牌移動動畫</title>
       <link>https://kabuto412rock.github.io/posts/it-day8/</link>
