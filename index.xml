@@ -10,7 +10,24 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 18 Sep 2023 05:13:22 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Sep 2023 03:49:59 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 10 拖曳紙牌的效果(二)限制內部拖曳</title>
+      <link>https://kabuto412rock.github.io/posts/it-day10/</link>
+      <pubDate>Tue, 19 Sep 2023 03:49:59 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day10/</guid>
+      <description>今天來研究兩個列表的拖曳和如何限制列表的拖曳，學習內容主要來自vue.draggable文件的內容和親身實作進行分析。
+先實現兩個列表的拖曳 昨天已學過如何製作單一列表的拖曳，先將相同的&amp;lt;draggable&amp;gt;內容複製往下貼， 複製的另一個&amp;lt;draggable&amp;gt;只需要調整屬性:list成想要對應的另一個陣列，並且兩個&amp;lt;draggable&amp;gt;添加相同的屬性group則自動實現兩個列表拖曳的關聯。
+&amp;lt;template&amp;gt; &amp;lt;div&amp;gt; &amp;lt;draggable :list=&amp;#34;firstCardStack&amp;#34; group=&amp;#34;pokers&amp;#34; itemKey=&amp;#34;value&amp;#34;&amp;gt; &amp;lt;template #item=&amp;#34;{ element, index }&amp;#34;&amp;gt; &amp;lt;Card :value=&amp;#34;element.value&amp;#34; :isOpen=&amp;#34;element.isOpen&amp;#34; /&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;/draggable&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;draggable :list=&amp;#34;secondCardStack&amp;#34; group=&amp;#34;pokers&amp;#34; itemKey=&amp;#34;value&amp;#34;&amp;gt; &amp;lt;template #item=&amp;#34;{ element, index }&amp;#34;&amp;gt; &amp;lt;Card :value=&amp;#34;element.value&amp;#34; :isOpen=&amp;#34;element.isOpen&amp;#34; /&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;/draggable&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; 如何限制列表的拖曳 前面已先實現了兩列表的拖曳，但為求理解仍保留著@change=&amp;quot;console.log&amp;quot;，在限制拖曳之前，我必須先觀察拖曳完成前能得到的資訊，所以我必須先觀察變動後@change實際印了什麼有用的資訊。
+因為如果只是要單純限制一個&amp;lt;draggable&amp;gt;不能拖曳移入移出，只需要設定屬性:move=&amp;quot;() =&amp;gt; false&amp;quot;，但我想做的不僅僅如此。
+不同牌堆的移動 將牌堆1的梅花A移動到牌堆2後，可觀察到開發人員工具的Console依序印出兩個物件:
+內含added屬性，且added物件本身包含陣列移動的元素element和目標陣列內的新位置newIndex 內含removed屬性，且removed物件本身包含陣列移動的元素element和原陣列內的舊位置oldIndex 這兩個@change是由各自受影響的Draggable所觸發，但內含的元素是相同的
+同牌堆的移動 將同牌堆的第三張牌(梅花3)移動到第六張牌(梅花6)的位置，則只印出一個包含屬性moved的物件， 且moved物件本身包含陣列移動的元素本身element和新位置newIndex和舊位置oldIndex的資訊。 從此可推測，如果要禁止同牌堆內的移動，只需要禁止moved的行為。
+禁止同牌堆的內部拖曳 從官方文件中可查到屬性:move對應的函數只要回傳false即可取消此次的拖曳。
+function onMoveCallback(evt, originalEvent){ ... // return false; — for cancel } 這邊我只印出參數evt得到的資料，內容跟@change不一樣的超乎想像多資訊😫，而且跟@change不同的是，這個:move對應函數只要拖曳卡牌到某一張卡的上面就會觸發一次 但好險&amp;hellip;如果只需要判斷是否在同個牌堆只需要看evt內的屬性from, to是否為相同DOM元素即可， 因為from、to分別代表拖曳的元素是 來自哪一個draggable元件 和 即將放置在哪一個draggable元件。</description>
+    </item>
+    
     <item>
       <title>Day 09 拖曳紙牌的效果(一)</title>
       <link>https://kabuto412rock.github.io/posts/it-day9/</link>
