@@ -78,7 +78,7 @@ function limitLocalMove(evt, originalEvent) {
 明天預計實作牌堆需要在特定順序才能進行拖曳、如何一次拖曳多筆元素。
 
 程式碼: https://github.com/kabuto412rock/ithelp-pokergame/tree/day10
-{{< youtube 1jFp0j0CjJ0 >}}
+{{< youtube OEXkbjLAwcQ >}}
 
 **參考**
 - [vue.draggable.next#move](https://github.com/SortableJS/vue.draggable.next#move)
