@@ -17,11 +17,11 @@
       <pubDate>Wed, 20 Sep 2023 03:25:18 +0000</pubDate>
       
       <guid>https://kabuto412rock.github.io/posts/it-day11/</guid>
-      <description>今日預計實作只實作如何一次拖曳 多張卡牌
+      <description>今日預計只實作如何一次拖曳 多張卡牌
 多張卡牌拖曳的考察研究 這部分可能會讓很多人(我)失望，因為vue.draggable.next最近一次的合併更新在2021年8月， 所以目前Vue3無法像原本Vue2能使用vue.draggable的Multi-drag的擴充功能，所以我捨棄使用套件原生多筆拖曳的想法和 拖曳多張牌完美的畫面效果。
 如果願意改變資料結構為巢狀Vue3版本還是有辦法對巢狀物件進行一次性的拖曳，但對我來說在未來資料處理的靈活性降低又提高判斷卡牌順序的複雜度因此不考慮。
 想法邏輯 從來源牌堆先拖曳一張牌A移動到目標牌堆的指定位置 將來源牌堆中A牌後的剩餘卡片複製到目標牌堆的指定位置後方 刪除來源牌堆原A位置後的剩餘元素 實作後發現其實可以先複製一份來源牌堆、目標牌堆移動後的結果，後續處理會更為靈活。
-實作邏輯 在:move對應的函數中判斷可拖曳時，產生『若拖曳成功後，來源/目標陣列的新狀態』並封裝成一個函數儲存至ref變數changeOption。 function limitLocalMove(evt) { // 限制同個牌堆無法拖曳 const result = evt.from !== evt.to; if (result) { // 取得牌堆的來源、目標名稱，對應reactive`cardStacks`內的名稱 const from = getDomName(evt.from); const to = getDomName(evt.to); const draggedContext = evt.draggedContext const { index, futureIndex } = draggedContext; // 產生多筆拖曳後，來源牌堆、目的牌堆的陣列變動後的結果 const newFromCards = cardStacks[from].slice(0, index); const newToCards = [ ...cardStacks[to].slice(0, futureIndex), ...cardStacks[from].slice(index), ...cardStacks[to].slice(futureIndex) ]; // 將變動牌堆的函數暫存，預計等到拖曳完成後執行 changeOption.value = () =&amp;gt; { cardStacks[from] = newFromCards; cardStacks[to] = newToCards; changeOption.</description>
+實作邏輯 在:move對應的函數中判斷可拖曳時，產生『若拖曳成功後，來源/目標陣列的新狀態』並封裝成一個箭頭函數儲存至ref變數changeOption。 function limitLocalMove(evt) { // 限制同個牌堆無法拖曳 const result = evt.from !== evt.to; if (result) { // 取得牌堆的來源、目標名稱，對應reactive`cardStacks`內的名稱 const from = getDomName(evt.from); const to = getDomName(evt.to); const draggedContext = evt.draggedContext const { index, futureIndex } = draggedContext; // 產生多筆拖曳後，來源牌堆、目的牌堆的陣列變動後的結果 const newFromCards = cardStacks[from].slice(0, index); const newToCards = [ ...cardStacks[to].slice(0, futureIndex), ...cardStacks[from].slice(index), ...cardStacks[to].slice(futureIndex) ]; // 將變動牌堆的函數暫存，預計等到拖曳完成後執行 changeOption.value = () =&amp;gt; { cardStacks[from] = newFromCards; cardStacks[to] = newToCards; changeOption.</description>
     </item>
     
     <item>
