@@ -33,7 +33,10 @@ function limitLocalMove(evt) {
 
     // 只能移動目標牌堆的最後一張牌
     result = result && futureIndex == cardStacks[to].length;
-    // 中間略
+    
+    if (result) {
+        // 中間略
+    }
     return result;
 }
 ```
@@ -57,7 +60,7 @@ onMounted(() => {
 因為多一個牌堆除了調整樣板，但同樣也在新牌堆樣板添加`ref="third"`，方便接下來在`:move`中判斷拖曳來源的`DOM`是對應`cardStacks`內的哪個陣列。
 
 看到這邊聰明的讀者大概想到又要調整`:move`函數內的變數`result`，Bingo!  
-只需要在函數內`if(result){`的上方添加底下程式碼:
+只需要在函數內`if (result) {`的上方添加底下程式碼:
 ```js
 // 移動的牌必須是開著的
 result = result && cardStacks[from][index].isOpen;
