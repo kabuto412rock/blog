@@ -10,7 +10,19 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 20 Sep 2023 03:25:18 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Sep 2023 04:36:25 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 12 實作拖曳卡牌只能置放到目標牌堆的牌尾、蓋牌無法拖曳</title>
+      <link>https://kabuto412rock.github.io/posts/it-day12/</link>
+      <pubDate>Thu, 21 Sep 2023 04:36:25 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day12/</guid>
+      <description>今天預計實作接龍紙牌的拖曳規則
+拖曳卡牌只能置放到目標牌堆的牌尾 -&amp;gt; 只能置放至目標最後 牌堆只有打開的牌才能進行拖曳 -&amp;gt; 蓋牌無法拖曳 拖曳卡牌只能置放到目標牌堆的牌尾 檢查方式很簡單，首先將昨日的:move函數內的變數result判斷先改成用let宣告， 因為不能任意插入前面的順序，所以增加判斷只有新目標位置futureIndex等於目標牌堆陣列的長度cardStacks[to].length時才可以進行移動。
+如果要移動到的目標牌堆沒有牌，futureIndex就需要等於0 如果要移動到目標牌堆有1張牌，futureIndex就需要等於1 總之目標牌堆有N張牌，futureIndex就要為N，以此類推&amp;hellip; 實際程式碼 function limitLocalMove(evt) { // 限制同個牌堆無法拖曳 let result = evt.from !== evt.to; // 取得牌堆的來源、目標名稱，對應reactive`cardStacks`內的名稱 const from = getDomName(evt.from); const to = getDomName(evt.to); const { index, futureIndex } = evt.draggedContext; // 只能移動目標牌堆的最後一張牌 result = result &amp;amp;&amp;amp; futureIndex == cardStacks[to].length; // 中間略 return result; } 牌堆只有打開的牌才能進行拖曳 先初始化改為39張牌均分給3個牌堆且將所有牌都闔上， 這樣接下來才能測試闔牌狀態不能拖曳。
+const cardStacks = reactive({ first: [], second: [], third: [] }); onMounted(() =&amp;gt; { const data = geneateDeck(39, false); cardStacks.</description>
+    </item>
+    
     <item>
       <title>Day 11 拖曳紙牌的效果(三)如何一次拖曳多張卡牌</title>
       <link>https://kabuto412rock.github.io/posts/it-day11/</link>
