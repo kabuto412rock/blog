@@ -10,7 +10,22 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 21 Sep 2023 04:36:25 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Sep 2023 04:58:26 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day13 牌尾自動翻牌、限制疊牌順序</title>
+      <link>https://kabuto412rock.github.io/posts/it-day13/</link>
+      <pubDate>Fri, 22 Sep 2023 04:58:26 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day13/</guid>
+      <description>今日預計實作項目:
+☑️ 只能對牌尾進行翻牌 ☑️ 牌尾自動翻牌 ☑️ 限制疊牌順序 只能對牌尾進行翻牌 新增函數openCard(cards, element)因為需要確認點擊卡牌確實是在牌尾， 所以需要參數cards對應原本的卡牌陣列、參數element對應點擊的卡牌元素。
+檢查牌尾就單純檢查element的數字(value)是否跟陣列cards的最後一筆數字相同， 在這邊的情況不用擔心cards的長度為0，因為所在牌堆沒有卡牌自然就不會渲染使用openCard函數的&amp;lt;Card&amp;gt;元件。
+/** 開牌函數 * @param {Card[]} cards * @param {Card} element */ function openCard(cards, element) { let same = cards[cards.length - 1].value == element.value; if (same) { element.isOpen = true; } } 調整每一個&amp;lt;Card&amp;gt;元件的@click監聽，以下以第1牌堆的樣板舉例:
+&amp;lt;Card :value=&amp;#34;element.value&amp;#34; :isOpen=&amp;#34;element.isOpen&amp;#34; @click=&amp;#34;openCard(cardStacks.first, element)&amp;#34; /&amp;gt; 第2、3牌堆只需將cardStacks.first中的first替換成對應陣列second和third， 雖然下一步牌尾會自動翻牌不需要人去手動翻開、但還是要避免有人去對非牌尾的開牌。
+牌尾自動翻牌 這部分我是依賴Vue本身的watch去監聽牌堆的變化， 跟上一個步驟很像的取得最後一張牌lastCard並打開isOpen = true，不一樣的是需要真的檢查牌堆是否為空的情況，避免出現undefined的Error
+watch(cardStacks, (stacks) =&amp;gt; { // 檢查每組牌堆最後一張 [&amp;#39;first&amp;#39;, &amp;#39;second&amp;#39;, &amp;#39;third&amp;#39;].forEach(cardName =&amp;gt; { if (stacks[cardName].</description>
+    </item>
+    
     <item>
       <title>Day 12 實作拖曳卡牌只能置放到目標牌堆的牌尾、蓋牌無法拖曳</title>
       <link>https://kabuto412rock.github.io/posts/it-day12/</link>
