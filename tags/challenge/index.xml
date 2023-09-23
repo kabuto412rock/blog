@@ -10,7 +10,18 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 Sep 2023 04:58:26 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Sep 2023 00:33:59 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day14 接龍發牌區功能實作(一)發牌循環</title>
+      <link>https://kabuto412rock.github.io/posts/it-day14/</link>
+      <pubDate>Sat, 23 Sep 2023 00:33:59 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day14/</guid>
+      <description>為了實現接龍發牌區功能，必須先思考如何讓撲克牌循環利用，這部分程式碼我是先拆一個頁面來練習實作，避免單一頁面的程式碼邏輯太過混亂。
+發牌區的樣板 今日實作的目標會是一個左邊移牌區右邊發牌堆結合在一起的， 點擊發牌堆會將牌發到移牌區顯示，移牌區最多同時顯示三張牌。
+實作的樣板程式碼 // DealerAreaView.vue &amp;lt;GameBoard&amp;gt; &amp;lt;div class=&amp;#34;text&amp;#34;&amp;gt;發牌區&amp;lt;/div&amp;gt; &amp;lt;div style=&amp;#34;display: grid; grid-template-columns: 1.5fr 1fr; gap:3rem; width: fit-content;&amp;#34;&amp;gt; &amp;lt;!-- 移牌區 - 左邊水平疊牌最多三張 --&amp;gt; &amp;lt;div style=&amp;#34;display: grid; grid-template-columns: repeat(3, 3rem);&amp;#34;&amp;gt; &amp;lt;div v-for=&amp;#34;card in canTakeCards&amp;#34; :key=&amp;#34;card.value&amp;#34;&amp;gt; &amp;lt;Card :value=&amp;#34;card.value&amp;#34; :isOpen=&amp;#34;true&amp;#34; /&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;!-- 發牌堆 --&amp;gt; &amp;lt;div class=&amp;#34;card-box&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;card&amp;#34; style=&amp;#34;visibility: hidden;&amp;#34;&amp;gt; &amp;lt;div style=&amp;#34;visibility: visible; width: 100%;height: 100%; &amp;#34;&amp;gt; &amp;lt;Transition name=&amp;#34;slide-left&amp;#34;&amp;gt; &amp;lt;div v-if=&amp;#34;deckState == &amp;#39;empty&amp;#39;&amp;#34;&amp;gt;無牌可用&amp;lt;/div&amp;gt; &amp;lt;div v-else-if=&amp;#34;deckState == &amp;#39;full&amp;#39;&amp;#34; class=&amp;#34;card&amp;#34; @click=&amp;#34;clickCard&amp;#34;&amp;gt;重新循環&amp;lt;/div&amp;gt; &amp;lt;div v-else-if=&amp;#34;deckState == &amp;#39;normal&amp;#39;&amp;#34; @click=&amp;#34;clickCard&amp;#34; class=&amp;#34;card-back&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/Transition&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/GameBoard&amp;gt; 可以注意到發牌堆使用&amp;lt;Transition&amp;gt;包裹，裡面的元件使用v-if和v-else-if去判斷三種情況顯示元件， 這邊使用到的deckState是一個計算結果。</description>
+    </item>
+    
     <item>
       <title>Day13 牌尾自動翻牌、限制疊牌順序</title>
       <link>https://kabuto412rock.github.io/posts/it-day13/</link>
