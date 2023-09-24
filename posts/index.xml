@@ -10,7 +10,21 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 23 Sep 2023 00:33:59 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Sep 2023 12:19:58 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day15 接龍發牌區功能實作(二)拖曳功能及CSS發牌動畫</title>
+      <link>https://kabuto412rock.github.io/posts/it-day15/</link>
+      <pubDate>Sat, 23 Sep 2023 12:19:58 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day15/</guid>
+      <description>前言 今天要來補強昨日缺少的拖曳功能和將整個頁面封裝成提供整合至接龍遊戲的元件發牌區。
+移牌區改為可拖曳 首先將移牌區的部分調整成從原生HTML元素div替換成這幾天都在使用draggable元件，程式碼如下:
+&amp;lt;!-- 移牌區 - 左邊水平疊牌最多三張 --&amp;gt; &amp;lt;draggable :list=&amp;#34;canTakeCards&amp;#34; group=&amp;#34;pokers&amp;#34; itemKey=&amp;#34;value&amp;#34; class=&amp;#34;list-group&amp;#34; &amp;gt; &amp;lt;template #item=&amp;#34;{ element, index }&amp;#34;&amp;gt; &amp;lt;Card :value=&amp;#34;element.value&amp;#34; :isOpen=&amp;#34;element.isOpen&amp;#34; /&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;/draggable&amp;gt; 發牌區調整動畫 雖然移牌區感覺在加牌的時候應該要套用動畫，但無奈vue.draggable.next的transition-group有Bug存在且已被官方棄養，在issue也有許多類似問題issue with transition-group in composition API就不細講。
+不論是Vue2使用的vue.draggable或Vue3使用的vue.draggable.next都是對SortableJS進行包裝的容器，基本上不滿意的話只能自己重封裝實現只是CP值不高，所以我不考慮這麼做。
+這不代表選擇放棄動畫，打算以CSS來實現以下動畫效果。 實際調整 首先調整樣板程式碼，主要是針對有牌時添加對應的class&amp;quot;card-back animtion&amp;quot;，也順便將點擊事件@click移到外層div:
+&amp;lt;!-- 發牌堆 --&amp;gt; &amp;lt;div class=&amp;#34;card-box&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;card &amp;#34; style=&amp;#34;visibility: hidden;&amp;#34;&amp;gt; &amp;lt;div style=&amp;#34;visibility: visible; width: 100%;height: 100%;&amp;#34; @click=&amp;#34;clickCard&amp;#34;&amp;gt; &amp;lt;Transition name=&amp;#34;slide-left&amp;#34;&amp;gt; &amp;lt;div v-if=&amp;#34;deckState == &amp;#39;empty&amp;#39;&amp;#34;&amp;gt;無牌可用&amp;lt;/div&amp;gt; &amp;lt;div v-else-if=&amp;#34;deckState == &amp;#39;full&amp;#39;&amp;#34; class=&amp;#34;card&amp;#34;&amp;gt;重新循環&amp;lt;/div&amp;gt; &amp;lt;div v-else-if=&amp;#34;deckState == &amp;#39;normal&amp;#39;&amp;#34; class=&amp;#34;card-back animation&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/Transition&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; 添加對應CSS實現點擊後往左快速位移一次的效果</description>
+    </item>
+    
     <item>
       <title>Day14 接龍發牌區功能實作(一)發牌循環</title>
       <link>https://kabuto412rock.github.io/posts/it-day14/</link>
