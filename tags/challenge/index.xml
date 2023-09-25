@@ -10,7 +10,22 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 23 Sep 2023 12:19:58 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Sep 2023 07:05:48 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day16 接龍發牌區功能實作(三)拖曳與疊牌區整合</title>
+      <link>https://kabuto412rock.github.io/posts/it-day16/</link>
+      <pubDate>Mon, 25 Sep 2023 07:05:48 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day16/</guid>
+      <description>前言 今天要來處理&amp;lt;DealerArea&amp;gt;內的元素如何整合拖曳移動到7個牌堆， 這部分會拆成2個部分來看:
+可將&amp;lt;DealerArea&amp;gt;卡牌移入至牌堆上方，且遵守移動遊戲規則的條件 其他牌堆的牌無法移入&amp;lt;DealerArea&amp;gt;牌堆中 實作將&amp;lt;DealerArea&amp;gt;卡牌移入牌堆 這邊在DragDemo.vue中設定提供給發牌區&amp;lt;DealerArea&amp;gt;判斷用的:move函數，因為這個函數不像函數limitLocalMove函數是同時給7個牌堆各自使用，所以可以看到沒有特別提到from的部分，因為不用特別想就可以知道一定是來自(from)發牌區。
+如果不清楚limitLocalMove是做什麼的，這部分從第10天~第12天的文章都有提到，主要是對應&amp;lt;draggable&amp;gt;元件的:move函數判斷使否可拖曳成功。
+檢查疊牌遊戲規則的部分就由函數checkNextOk判斷，幾天前寫好的函數重新複用了👍 這邊只要result回傳true就會讓卡牌移動自動產生變化。
+// DragDemo.vue /** 發牌區移動 */ function dealerMove(evt) { const to = getDomName(evt.to); const dealerCard = evt.draggedContext.element; // 檢查疊牌順序、花色是否正確 const result = checkNextOk(cardStacks[to], dealerCard); return result; } 樣板的部分就是小調整而已:
+// DragDemo.vue &amp;lt;DealerArea :deck=&amp;#34;cardStacks.delaerStacks&amp;#34; :moveCard=&amp;#34;dealerMove&amp;#34; /&amp;gt; 結果看起來拖曳過去是沒問題，但本該移動過去的元素也仍留在原地， 如下圖GIF出現了2個梅花9，此為禁忌的二重身問題💀必須修正。 修正陰魂不散的元素 因為還是有拖曳成功，只是舊資料殘留在發牌區的陣列cardStacks.delaerStacks，所以只要在拖曳完成時，將發牌區的陣列去除已經發出去的那一張牌即可，以下是修正後的程式碼:
+// DragDemo.vue function dealerMove(evt) { const to = getDomName(evt.to); const dealerCard = evt.draggedContext.element; // 檢查疊牌順序、花色是否正確 const result = checkNextOk(cardStacks[to], dealerCard); if (result) { changeOption.</description>
+    </item>
+    
     <item>
       <title>Day15 接龍發牌區功能實作(二)拖曳功能及CSS發牌動畫</title>
       <link>https://kabuto412rock.github.io/posts/it-day15/</link>
