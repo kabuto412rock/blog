@@ -10,7 +10,20 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 25 Sep 2023 07:05:48 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Sep 2023 03:54:14 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 17 實作結算牌堆元件(一)樣板&amp;資料結構</title>
+      <link>https://kabuto412rock.github.io/posts/it-day17/</link>
+      <pubDate>Tue, 26 Sep 2023 03:54:14 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day17/</guid>
+      <description>前言 今日要製作結算牌堆，跟中間的7疊牌不同，結算牌堆只有4堆且只能允許同花色疊在上面，必須由小到大(A-&amp;gt;K)放上去，放上去的牌會擋住底下的牌。
+修正發牌區拖曳Bug 在開發今日功能前，測試遊玩發牌區到中間七牌堆發現能任意插到七牌堆的中間， 在函數dealerMove中補上evt.draggedContext.futureIndex == cardStacks[to].length的判斷後才正常，以下是修正後的程式碼:
+/** 發牌區移動 */ function dealerMove(evt) { const to = getDomName(evt.to); const dealerCard = evt.draggedContext.element; // 只能移動至目標牌堆的最後一張牌 let result = futureIndex == cardStacks[to].length; // 檢查疊牌順序、花色是否正確 result = result &amp;amp;&amp;amp; checkNextOk(cardStacks[to], dealerCard); if (result) { changeOption.value = () =&amp;gt; { cardStacks.delaerStacks = cardStacks.delaerStacks.filter(card =&amp;gt; card.value !== dealerCard.value); changeOption.value = null; }; } return result; } 製作結算牌堆樣板 看一下草稿圖，接著想像畫面應該會有四個長方塊並排，四個長方都有個底圖對應花色， 底圖上方都可以擺一張牌。
+跟製作發牌區&amp;lt;DealerArea&amp;gt;相同，打算先做出元件&amp;lt;FinishedArea&amp;gt;在整合進原本的接龍區塊， 以下是目前的樣板程式碼:
+// FinishedArea.vue &amp;lt;template&amp;gt; &amp;lt;div style=&amp;#34;display: flex;&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;card club&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;card diamond&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;card heart&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;card spade&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; 補上拖曳的樣板前，這部分會需要考慮四個牌堆的資料， 所以資料結構就設計成四個花色各自對應1個Card陣列的狀態</description>
+    </item>
+    
     <item>
       <title>Day16 接龍發牌區功能實作(三)拖曳與疊牌區整合</title>
       <link>https://kabuto412rock.github.io/posts/it-day16/</link>
