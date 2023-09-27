@@ -17,8 +17,7 @@
       <pubDate>Wed, 27 Sep 2023 06:51:23 +0000</pubDate>
       
       <guid>https://kabuto412rock.github.io/posts/it-day18/</guid>
-      <description>前言 昨天完成結算牌堆樣版的部分，原本要來處理整合拖曳到接龍的部分。
-所以今天只會在頁面發牌區練習包含
+      <description>前言 昨天完成結算牌堆樣版的部分，今天接著處理整合拖曳到接龍之前的步驟， 先調整結算牌堆的內部結構、方法。
 調整結算牌堆 FinishedArea 先調整結算牌堆&amp;lt;FinishedArea /&amp;gt;內部需要的props結構，就底下這三種:
 props.fourCards對應四個牌堆的陣列 props.moveCard對應&amp;lt;draggable&amp;gt;元件的屬性:move判斷是否可以拖曳成功的函數 props.change對應&amp;lt;draggable&amp;gt;內的列表更新時觸發的函數(這部分等等再說明) 程式碼如下:
 // FinishedArea.vue const props = defineProps({ fourCards: { type: Object, required: true, validator: (value) =&amp;gt; { return ( value.hasOwnProperty(&amp;#39;club&amp;#39;) &amp;amp;&amp;amp; value.hasOwnProperty(&amp;#39;diamond&amp;#39;) &amp;amp;&amp;amp; value.hasOwnProperty(&amp;#39;heart&amp;#39;) &amp;amp;&amp;amp; value.hasOwnProperty(&amp;#39;spade&amp;#39;) ); }, }, moveCard: { type: Function, default: () =&amp;gt; { return false; } }, change: { type: Function, default: () =&amp;gt; { return false; } } }) 然後結算牌堆就像發牌區一樣，卡牌陣列都是由外部props傳入且props的陣列內容都會變動， 所以也需要watch監控props.fourCards變化調整元件內的fourCards內的值。
