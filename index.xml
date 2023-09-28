@@ -10,7 +10,23 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 27 Sep 2023 06:51:23 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Sep 2023 03:28:44 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day 19 實作結算牌堆元件(三)整合至接龍頁面</title>
+      <link>https://kabuto412rock.github.io/posts/it-day19/</link>
+      <pubDate>Thu, 28 Sep 2023 03:28:44 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day19/</guid>
+      <description>前言 今天會實作發牌區、7牌堆的牌可以拖曳到結算牌堆，並改遵守結算盤堆的疊牌規則。
+整理重複的函數 先將昨天在DealerAreaView.vue撰寫的程式碼移動到拖曳練習的頁面DragDemo.vue。
+樣板的部分是沒什麼問題，麻煩會有太多函數宣告出現在DragDemo.vue，所以將常數FOUR_SUITS和判斷結算牌堆規則的checkNextOk2函數先移入常用的utils/之中。
+設定結算牌堆用的資料 在原本的cardStack中添加針對結算牌堆四花色的撲克牌陣列
+// DragDemo.vue const cardStacks = reactive({ // 略... /** @type {Card[]} */ club: [], /** @type {Card[]} */ diamond: [], /** @type {Card[]} */ heart: [], /** @type {Card[]} */ spade: [] }); 因為&amp;lt;FinishedArea /&amp;gt;的屬性:fourCard只有要求傳入的物件需要有對應花色字串的key就可以，沒有硬性要求不能有其他屬性， 所以樣板的傳值我就簡單設定cardStacks傳入，如下程式碼:
+&amp;lt;!-- DragDemo.vue --&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div class=&amp;#34;text&amp;#34;&amp;gt;發牌區&amp;lt;/div&amp;gt; &amp;lt;DealerArea :deck=&amp;#34;cardStacks.delaerStacks&amp;#34; :moveCard=&amp;#34;dealerMove&amp;#34; /&amp;gt; &amp;lt;div class=&amp;#34;text&amp;#34;&amp;gt;結算牌堆&amp;lt;/div&amp;gt; &amp;lt;FinishedArea :fourCards=&amp;#34;cardStacks&amp;#34; @doms=&amp;#34;setFourCardDoms&amp;#34; :change=&amp;#34;cardChange&amp;#34; /&amp;gt; &amp;lt;/div&amp;gt; 在DragDemo.vue中對變數cardStacks新增四個key調整，而原本的函數getDomName(dom)也要跟著調整， 主要除了上層對應7個牌堆、也需要對應到結算牌堆的HTML元素。
+底下程式碼中使用花色列表FOUR_SUITS一個個檢查， 若有相同的元素則回傳結算牌堆的花色名稱 (club/diamond/heart/spade)，否則依然回傳none。
+// DragDemo.vue function getDomName(dom) { if (dom == first.</description>
+    </item>
+    
     <item>
       <title>Day 18 實作結算牌堆元件(二) 整合拖曳相容不同規則</title>
       <link>https://kabuto412rock.github.io/posts/it-day18/</link>
