@@ -8,13 +8,17 @@ tags: ["challenge"]
 draft: false
 ---
 ## 前言
-今天會實作`發牌區`、`7牌堆`的牌可以拖曳到`結算牌堆`，並改遵守結算盤堆的疊牌規則。
+今天會實作`發牌區`、`7牌堆`的牌可以拖曳到`結算牌堆`，且拖曳的過程需遵守`結算牌堆`的同色疊牌由A至K的規則。
 
 ## 整理重複的函數
 先將昨天在`DealerAreaView.vue`撰寫的程式碼移動到拖曳練習的頁面`DragDemo.vue`。
 
-樣板的部分是沒什麼問題，麻煩會有太多函數宣告出現在`DragDemo.vue`，所以將常數`FOUR_SUITS`和判斷結算牌堆規則的`checkNextOk2`函數先移入常用的`utils/`之中。
-
+樣板的部分是沒什麼問題，只是發現有太多函數宣告出現在`DragDemo.vue`，所以將常數`FOUR_SUITS`和判斷結算牌堆規則的`checkNextOk2`函數先移入工具目錄`utils/`內的程式碼，`DragDemo.vue`改用`import`的方式載入通用的常數、函數。
+```js
+// DragDemo.vue
+import { FOUR_SUITS } from '../utils/constants';
+import { geneateShuffleDeck, checkNextOk, checkNextOk2 } from "../utils/poker-helper";
+```
 ## 設定結算牌堆用的資料
 在原本的`cardStack`中添加針對結算牌堆四花色的撲克牌陣列
 ```js
@@ -27,7 +31,7 @@ const cardStacks = reactive({
      /** @type {Card[]} */ spade: []
 });
 ```
-因為`<FinishedArea />`的屬性`:fourCard`只有要求傳入的物件需要有對應花色字串的key就可以，沒有硬性要求不能有其他屬性，
+因為`<FinishedArea />`的屬性`:fourCard`只有要求傳入的物件需要有對應花色名稱的**KEY**就可以，沒有硬性要求不能有其他屬性，
 所以樣板的傳值我就簡單設定`cardStacks`傳入，如下程式碼:
 ```vue
 <!-- DragDemo.vue  -->
@@ -94,7 +98,7 @@ function setFourCardDoms(cardDomMaps) {
 
 ## 調整拖曳至結算牌堆的規則
 ### 發牌區拖曳
-主要是調整內部變數`result`的判斷，如果拖曳目標位置名稱`to`是結算牌堆的花色則走屬於`checkNextOk2`的判斷，否則是走`checkNextOk`的不同花色疊牌判斷，至於`if (result)`內的並沒有調整。
+主要是調整內部變數`result`的布林判斷，如果拖曳目標位置名稱`to`是結算牌堆的花色則走屬於`checkNextOk2`的判斷，否則是走`checkNextOk`的不同花色疊牌判斷，至於`if (result)`內的並沒有調整。
 ```js
 /** 發牌區移動 */
 function dealerMove(evt) {
@@ -123,8 +127,7 @@ function dealerMove(evt) {
 ```
 
 ### 7牌堆拖曳
-這部分跟發牌區拖曳一樣，只改動`result`的IF判斷如果要是針對`結算牌堆`則改用`checkNextOk2`，目前測試應該是沒問題，
-直接上縮減版的程式碼:
+這部分跟**發牌區拖曳**一樣只改動`result`的布林判斷，如果是針對`結算牌堆`則改用`checkNextOk2`，目前測試應該是沒問題，直接上縮減後的程式碼:
 ```js
 function limitLocalMove(evt) {
     // 略
