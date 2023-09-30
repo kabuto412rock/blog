@@ -10,7 +10,20 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 29 Sep 2023 03:39:17 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Sep 2023 23:38:40 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day21 顯示接龍分數、遊戲時間</title>
+      <link>https://kabuto412rock.github.io/posts/it-day21/</link>
+      <pubDate>Fri, 29 Sep 2023 23:38:40 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day21/</guid>
+      <description>前言 今天預計實作的項目顯示分數、顯示遊玩時間， 但實作顯示分數必須配合實作累計分數的功能，不然分數都不會變動也是尷尬😂。
+儲存分數、遊玩時間的變數宣告:
+const gameScore = ref(0); const gameTime = ref(0); const gameTimer = ref(null); 實作遊戲分數 實作分數累計規則 先整理出接龍的分數在什麼情況會增加?
+從發牌區移出則加10分，因為發牌區的牌不會被重新移入所以不用擔心重複加分。 // DragDemo.vue /** 發牌區移動 */ function dealerMove(evt) { // 略 if(result){ changeOption.value = () =&amp;gt; { // 略 gameScore.value += 10; } } } 7牌堆的牌被打開則加5分，因為被打開的牌不會被蓋回去。 原本程式就會將7牌堆最一張牌設為打開，改判斷最後一張原本是蓋牌才開牌、加5分避免分數重複累加。
+// DragDemo.vue watch(cardStacks, (stacks) =&amp;gt; { // 檢查每組牌堆最後一張 validNames.forEach(cardName =&amp;gt; { if (stacks[cardName].length &amp;gt; 0) { const lastCard = stacks[cardName][stacks[cardName].length - 1]; if (!lastCard.isOpen) { lastCard.</description>
+    </item>
+    
     <item>
       <title>Day20 實作結算牌堆元件(四) 實作移入7牌堆的拖曳&amp;遊戲重置</title>
       <link>https://kabuto412rock.github.io/posts/it-day20/</link>
