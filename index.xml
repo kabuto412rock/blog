@@ -10,7 +10,20 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 29 Sep 2023 23:38:40 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Oct 2023 01:10:38 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day22 接龍移牌提示</title>
+      <link>https://kabuto412rock.github.io/posts/it-day22/</link>
+      <pubDate>Sun, 01 Oct 2023 01:10:38 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day22/</guid>
+      <description>前言 今天要實作接龍移牌提示，以下是會需要處理的題目:
+怎麼取得場上牌的拖曳路線? 找到拖曳路線後，如何顯示要拖曳至哪個地方的提示(文字or動畫)? 取得拖曳路線 目前可知拖曳區塊有7牌堆、發牌區、結算牌堆，其中卡牌可拖曳的方向有:
+7牌堆可以內部自拖曳或結算牌堆 發牌區只能拖曳至7牌堆、結算牌堆 結算牌堆只能拖曳至7牌堆 初步分析: 可以先計算可以移入7牌堆、結算牌堆牌尾的撲克牌
+預計執行步驟: 計算出7牌堆、結算牌堆各自牌尾後能放什麼牌，儲存在Map 從發牌區/7牌堆/結算牌堆依序判斷可拖曳卡牌的數字是否存在Map中? 是，回傳比對成功的結果: { &amp;#34;可拖曳卡牌所在的牌堆&amp;#34;, &amp;#34;拖曳卡牌在牌堆的位置&amp;#34;, &amp;#34;預計移入的牌堆&amp;#34;} 否，繼續比對下一張直到無牌可比 實際程式碼 參數帶入要計算的全部牌堆，計算回傳每張牌可被移入的牌堆。 因為有可能出現梅花A可以移入結算牌堆或7牌堆的情況，所以實作設計成一張牌只會對應一個牌堆，此例梅花A會優先被移入結算牌堆。
+// utils/poker-helper.js /** * 找出7牌堆、結算牌堆各牌尾後要接的牌 * @param {CardStacks} cardstacks * @returns {Map&amp;lt;Number, String&amp;gt;} Map&amp;lt;撲克牌編號, 目標牌堆名稱&amp;gt; */ function findTailCards(cardstacks) { const result = new Map(); // 找出可拖曳至7牌堆尾巴的牌 SEVEN_STACKS.forEach((name) =&amp;gt; { const stack = cardstacks[name]; if (stack.length === 0) { [12, 25, 38, 51].forEach((value) =&amp;gt; { result.set(value, name); }); return; } const lastCard = stack[stack.</description>
+    </item>
+    
     <item>
       <title>Day21 顯示接龍分數、遊戲時間</title>
       <link>https://kabuto412rock.github.io/posts/it-day21/</link>
