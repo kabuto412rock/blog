@@ -51,7 +51,7 @@ onMounted(() => {
     validNames.forEach((name, idx) => {
         cardStacks[name] = data.slice(everyIndex[idx], everyIndex[idx + 1]);
     });
-    cardStacks.delaerStacks = data.slice(28).map(card => ({ ...card, isOpen: true }));
+    cardStacks.dealerStacks = data.slice(28).map(card => ({ ...card, isOpen: true }));
 });
 ```
 
@@ -71,7 +71,7 @@ let dealer = reactive({ index: 0 });
 </script>
 <template>
     <div class="text">發牌區</div>
-    <DealerArea :dealer="dealer" :deck="cardStacks.delaerStacks" :moveCard="dealerMove" />
+    <DealerArea :dealer="dealer" :deck="cardStacks.dealerStacks" :moveCard="dealerMove" />
 </template>
 ```
 
@@ -104,7 +104,7 @@ function resetGame() {
         cardStacks[name] = data.slice(everyIndex[idx], everyIndex[idx + 1]);
     });
     // 發牌區
-    cardStacks.delaerStacks = data.slice(28).map(card => ({ ...card, isOpen: true }));
+    cardStacks.dealerStacks = data.slice(28).map(card => ({ ...card, isOpen: true }));
     // 結算牌堆區
     FOUR_SUITS.forEach(name => {
         cardStacks[name] = [];

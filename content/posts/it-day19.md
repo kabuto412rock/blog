@@ -37,7 +37,7 @@ const cardStacks = reactive({
 <!-- DragDemo.vue  -->
 <div>
     <div class="text">發牌區</div>
-    <DealerArea :deck="cardStacks.delaerStacks" :moveCard="dealerMove" />
+    <DealerArea :deck="cardStacks.dealerStacks" :moveCard="dealerMove" />
     <div class="text">結算牌堆</div>
     <FinishedArea :fourCards="cardStacks" @doms="setFourCardDoms" :change="cardChange" />
 </div>
@@ -118,7 +118,7 @@ function dealerMove(evt) {
     }
     if (result) {
         changeOption.value = () => {
-            cardStacks.delaerStacks = cardStacks.delaerStacks.filter(card => card.value !== dealerCard.value);
+            cardStacks.dealerStacks = cardStacks.dealerStacks.filter(card => card.value !== dealerCard.value);
             changeOption.value = null;
         };
     }

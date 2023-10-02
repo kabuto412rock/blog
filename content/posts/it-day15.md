@@ -104,7 +104,7 @@ const { deck } = defineProps(
 但不清楚為什麼初始化結束後，`<DealerArea />`仍顯示無牌可用。
 ```vue
 /** DragDemo.vue */
-<DealerArea :deck="cardStacks.delaerStacks" />
+<DealerArea :deck="cardStacks.dealerStacks" />
 ```
 
 查詢網路資料後，才知道原來子組件`props`如果會整個異動的話需要用`watch`去監控變化才會重新觸發渲染，

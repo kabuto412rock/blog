@@ -36,14 +36,14 @@ function dealerMove(evt) {
 樣板的部分就是小調整而已:
 ```vue
 // DragDemo.vue
-<DealerArea :deck="cardStacks.delaerStacks" :moveCard="dealerMove" />
+<DealerArea :deck="cardStacks.dealerStacks" :moveCard="dealerMove" />
 ```
 結果看起來拖曳過去是沒問題，但本該移動過去的元素也仍留在原地，
 如下圖GIF出現了2個梅花9，此為禁忌的二重身問題💀必須修正。
 ![Day16有Bug的拖曳.gif](/images/Day16有Bug的拖曳.gif)
 
 ## 修正陰魂不散的元素
-因為還是有拖曳成功，只是舊資料殘留在發牌區的陣列`cardStacks.delaerStacks`，所以只要在拖曳完成時，將發牌區的陣列去除已經發出去的那一張牌即可，以下是修正後的程式碼:
+因為還是有拖曳成功，只是舊資料殘留在發牌區的陣列`cardStacks.dealerStacks`，所以只要在拖曳完成時，將發牌區的陣列去除已經發出去的那一張牌即可，以下是修正後的程式碼:
 ```js
 // DragDemo.vue
 function dealerMove(evt) {
@@ -54,7 +54,7 @@ function dealerMove(evt) {
     const result = checkNextOk(cardStacks[to], dealerCard);
     if (result) {
         changeOption.value = () => {
-            cardStacks.delaerStacks = cardStacks.delaerStacks.filter(card => card.value !== dealerCard.value);
+            cardStacks.dealerStacks = cardStacks.dealerStacks.filter(card => card.value !== dealerCard.value);
             changeOption.value = null;
         };
     }

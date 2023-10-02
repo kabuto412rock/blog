@@ -27,7 +27,7 @@ function dealerMove(evt) {
     result = result && checkNextOk(cardStacks[to], dealerCard);
     if (result) {
         changeOption.value = () => {
-            cardStacks.delaerStacks = cardStacks.delaerStacks.filter(card => card.value !== dealerCard.value);
+            cardStacks.dealerStacks = cardStacks.dealerStacks.filter(card => card.value !== dealerCard.value);
             changeOption.value = null;
         };
     }

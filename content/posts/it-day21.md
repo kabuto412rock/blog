@@ -76,7 +76,7 @@ watch(cardStacks, (stacks) => {
        // 略
        if (result) {
            changeOption.value = () => {
-               cardStacks.delaerStacks = cardStacks.delaerStacks.filter(card => card.value !== dealerCard.value);
+               cardStacks.dealerStacks = cardStacks.dealerStacks.filter(card => card.value !== dealerCard.value);
                gameScore.value += 10 + (isToFinishedArea ? 15 : 0);
                changeOption.value = null;
            };
