@@ -10,7 +10,22 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 01 Oct 2023 01:10:38 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Oct 2023 03:45:32 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day23 連點2下自動移牌</title>
+      <link>https://kabuto412rock.github.io/posts/it-day23/</link>
+      <pubDate>Mon, 02 Oct 2023 03:45:32 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day23/</guid>
+      <description>前言 今天要實做的是點擊自動移牌的功能也算是昨天提示的延伸，差別只在會實際移動卡牌。
+我打算連點移牌功能只做在七牌堆和發牌區，結算牌堆就不提供此功能。
+實作過程 處理連點事件 調整發牌區/七牌堆的卡片元件&amp;lt;Card&amp;gt;添加對應的屬性@dblclick=&amp;quot;emit(&#39;card-click&#39;, element)&amp;quot;， 這會讓卡牌元件&amp;lt;Card&amp;gt;被連點兩下(Double Click)時，向父元件發送事件card-click然後攜帶的參數element則是Card物件
+// Card { value: 0, // 卡牌對應數值，Ex: 梅花A isOpen: false, // 是否已開牌 } 然後修改上層樣板(DragDemo.vue)的部分:
+為了接收card-click事件進行處理，在發牌區的樣板修改成有添加@card-click=&amp;quot;(card) =&amp;gt; clickAutoMove(&#39;dealerStacks&#39;, card) 在七牌堆的樣板，這七行依序添加屬性@dblcick 第一牌堆 @dblclick=&amp;quot;clickAutoMove(&#39;first&#39;, element)&amp;quot; 第二牌堆 @dblclick=&amp;quot;clickAutoMove(&#39;second&#39;, element)&amp;quot; 中間略&amp;hellip; 第七牌堆的屬性 @dblclick=&amp;quot;clickAutoMove(&#39;seventh&#39;, element)&amp;quot; 處理自動移動的邏輯 這邊出現的新函數clickAutoMove(fromName, card)，主要是用來處理自動移動的邏輯，流程如下:
+先利用findFollowDeckName找出card可以拖曳到的牌堆名稱，然後依照優先順序排序(結算牌堆排第一)。 如果沒有找到對應的牌堆，則不執行後續。 取出第一個牌堆名稱當作目標牌堆 接著就判斷來源牌堆是發牌堆還是七牌堆，來做不同的處理(修改對應牌組陣列 還有 加分等等) 可以參考下方的程式碼片段:
+// DragDemo.vue /** * 自動移動 * @param {String} fromName 來自的牌堆名稱 * @param {Card} card 想移動的牌 */ function clickAutoMove(fromName, card) { const toNames = findFollowDeckName(cardStacks, card).</description>
+    </item>
+    
     <item>
       <title>Day22 接龍移牌提示</title>
       <link>https://kabuto412rock.github.io/posts/it-day22/</link>
@@ -63,7 +78,7 @@ onMounted(() =&amp;gt; { const data = geneateShuffleDeck(52); const everyIndex =
 樣板的部分是沒什麼問題，只是發現有太多函數宣告出現在DragDemo.vue，所以將常數FOUR_SUITS和判斷結算牌堆規則的checkNextOk2函數先移入工具目錄utils/內的程式碼，DragDemo.vue改用import的方式載入通用的常數、函數。
 // DragDemo.vue import { FOUR_SUITS } from &amp;#39;../utils/constants&amp;#39;; import { geneateShuffleDeck, checkNextOk, checkNextOk2 } from &amp;#34;../utils/poker-helper&amp;#34;; 設定結算牌堆用的資料 在原本的cardStack中添加針對結算牌堆四花色的撲克牌陣列
 // DragDemo.vue const cardStacks = reactive({ // 略... /** @type {Card[]} */ club: [], /** @type {Card[]} */ diamond: [], /** @type {Card[]} */ heart: [], /** @type {Card[]} */ spade: [] }); 因為&amp;lt;FinishedArea /&amp;gt;的屬性:fourCard只有要求傳入的物件需要有對應花色名稱的KEY就可以，沒有硬性要求不能有其他屬性， 所以樣板的傳值我就簡單設定cardStacks傳入，如下程式碼:
-&amp;lt;!-- DragDemo.vue --&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div class=&amp;#34;text&amp;#34;&amp;gt;發牌區&amp;lt;/div&amp;gt; &amp;lt;DealerArea :deck=&amp;#34;cardStacks.delaerStacks&amp;#34; :moveCard=&amp;#34;dealerMove&amp;#34; /&amp;gt; &amp;lt;div class=&amp;#34;text&amp;#34;&amp;gt;結算牌堆&amp;lt;/div&amp;gt; &amp;lt;FinishedArea :fourCards=&amp;#34;cardStacks&amp;#34; @doms=&amp;#34;setFourCardDoms&amp;#34; :change=&amp;#34;cardChange&amp;#34; /&amp;gt; &amp;lt;/div&amp;gt; 在DragDemo.</description>
+&amp;lt;!-- DragDemo.vue --&amp;gt; &amp;lt;div&amp;gt; &amp;lt;div class=&amp;#34;text&amp;#34;&amp;gt;發牌區&amp;lt;/div&amp;gt; &amp;lt;DealerArea :deck=&amp;#34;cardStacks.dealerStacks&amp;#34; :moveCard=&amp;#34;dealerMove&amp;#34; /&amp;gt; &amp;lt;div class=&amp;#34;text&amp;#34;&amp;gt;結算牌堆&amp;lt;/div&amp;gt; &amp;lt;FinishedArea :fourCards=&amp;#34;cardStacks&amp;#34; @doms=&amp;#34;setFourCardDoms&amp;#34; :change=&amp;#34;cardChange&amp;#34; /&amp;gt; &amp;lt;/div&amp;gt; 在DragDemo.</description>
     </item>
     
     <item>
@@ -87,7 +102,7 @@ props.fourCards對應四個牌堆的陣列 props.moveCard對應&amp;lt;draggable
       <guid>https://kabuto412rock.github.io/posts/it-day17/</guid>
       <description>前言 今日要製作結算牌堆，跟中間的7疊牌不同，結算牌堆只有4堆且只能允許同花色疊在上面，必須由小到大(A-&amp;gt;K)放上去，放上去的牌會擋住底下的牌。
 修正發牌區拖曳Bug 在開發今日功能前，測試遊玩發牌區到中間七牌堆發現能任意插到七牌堆的中間， 在函數dealerMove中補上evt.draggedContext.futureIndex == cardStacks[to].length的判斷後才正常，以下是修正後的程式碼:
-/** 發牌區移動 */ function dealerMove(evt) { const to = getDomName(evt.to); const dealerCard = evt.draggedContext.element; // 只能移動至目標牌堆的最後一張牌 let result = futureIndex == cardStacks[to].length; // 檢查疊牌順序、花色是否正確 result = result &amp;amp;&amp;amp; checkNextOk(cardStacks[to], dealerCard); if (result) { changeOption.value = () =&amp;gt; { cardStacks.delaerStacks = cardStacks.delaerStacks.filter(card =&amp;gt; card.value !== dealerCard.value); changeOption.value = null; }; } return result; } 製作結算牌堆樣板 看一下草稿圖，接著想像畫面應該會有四個長方塊並排，四個長方都有個底圖對應花色， 底圖上方都可以擺一張牌。
+/** 發牌區移動 */ function dealerMove(evt) { const to = getDomName(evt.to); const dealerCard = evt.draggedContext.element; // 只能移動至目標牌堆的最後一張牌 let result = futureIndex == cardStacks[to].length; // 檢查疊牌順序、花色是否正確 result = result &amp;amp;&amp;amp; checkNextOk(cardStacks[to], dealerCard); if (result) { changeOption.value = () =&amp;gt; { cardStacks.dealerStacks = cardStacks.dealerStacks.filter(card =&amp;gt; card.value !== dealerCard.value); changeOption.value = null; }; } return result; } 製作結算牌堆樣板 看一下草稿圖，接著想像畫面應該會有四個長方塊並排，四個長方都有個底圖對應花色， 底圖上方都可以擺一張牌。
 跟製作發牌區&amp;lt;DealerArea&amp;gt;相同，打算先做出元件&amp;lt;FinishedArea&amp;gt;在整合進原本的接龍區塊， 以下是目前的樣板程式碼:
 // FinishedArea.vue &amp;lt;template&amp;gt; &amp;lt;div style=&amp;#34;display: flex;&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;card club&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;card diamond&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;card heart&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;card spade&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; 補上拖曳的樣板前，這部分會需要考慮四個牌堆的資料， 所以資料結構就設計成四個花色各自對應1個Card陣列的狀態</description>
     </item>
@@ -103,7 +118,7 @@ props.fourCards對應四個牌堆的陣列 props.moveCard對應&amp;lt;draggable
 如果不清楚limitLocalMove是做什麼的，這部分從 第10天~第12天 的文章都有提到，主要是對應&amp;lt;draggable&amp;gt;元件的:move函數判斷使否可拖曳成功。
 檢查疊牌遊戲規則的部分就由函數checkNextOk判斷，幾天前寫好的函數重新複用了👍 這邊只要result回傳true就會讓卡牌移動自動產生變化。
 // DragDemo.vue /** 發牌區移動 */ function dealerMove(evt) { const to = getDomName(evt.to); const dealerCard = evt.draggedContext.element; // 檢查疊牌順序、花色是否正確 const result = checkNextOk(cardStacks[to], dealerCard); return result; } 樣板的部分就是小調整而已:
-// DragDemo.vue &amp;lt;DealerArea :deck=&amp;#34;cardStacks.delaerStacks&amp;#34; :moveCard=&amp;#34;dealerMove&amp;#34; /&amp;gt; 結果看起來拖曳過去是沒問題，但本該移動過去的元素也仍留在原地， 如下圖GIF出現了2個梅花9，此為禁忌的二重身問題💀必須修正。 修正陰魂不散的元素 因為還是有拖曳成功，只是舊資料殘留在發牌區的陣列cardStacks.delaerStacks，所以只要在拖曳完成時，將發牌區的陣列去除已經發出去的那一張牌即可，以下是修正後的程式碼:
+// DragDemo.vue &amp;lt;DealerArea :deck=&amp;#34;cardStacks.dealerStacks&amp;#34; :moveCard=&amp;#34;dealerMove&amp;#34; /&amp;gt; 結果看起來拖曳過去是沒問題，但本該移動過去的元素也仍留在原地， 如下圖GIF出現了2個梅花9，此為禁忌的二重身問題💀必須修正。 修正陰魂不散的元素 因為還是有拖曳成功，只是舊資料殘留在發牌區的陣列cardStacks.dealerStacks，所以只要在拖曳完成時，將發牌區的陣列去除已經發出去的那一張牌即可，以下是修正後的程式碼:
 // DragDemo.vue function dealerMove(evt) { const to = getDomName(evt.to); const dealerCard = evt.draggedContext.element; // 檢查疊牌順序、花色是否正確 const result = checkNextOk(cardStacks[to], dealerCard); if (result) { changeOption.</description>
     </item>
     
