@@ -10,7 +10,24 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 02 Oct 2023 03:45:32 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Oct 2023 03:42:16 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day24 紙牌接龍-結算畫面</title>
+      <link>https://kabuto412rock.github.io/posts/it-day24/</link>
+      <pubDate>Tue, 03 Oct 2023 03:42:16 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day24/</guid>
+      <description>前言 目前實作的紙牌接龍還沒有結算畫面，所以今天就來做!
+初步思考 製作結算畫面本身不是問題，畢竟畫面沒有要做得超級漂亮的情況下都是沒問題的!
+問題是何時跳出結算畫面? 我想到的情形有兩種:
+結算牌堆四堆都集完13張的情況 畫面中7牌堆的牌全部已經打開的情況 我個人認為是判斷第一種判斷結算牌堆的方式實作起來比較簡單。
+實作邏輯 製作檢查完成牌組的函數 宣告一個函數checkSolitaireGameDone負責檢查紙牌接龍是否完成。
+依序檢查各結算牌堆，若數量不為13就直接回傳 否false 最後就回傳 是true 程式碼如下:
+/** * 檢查紙牌接龍是否完成 * @param {CardStacks} cardStacks */ function checkSolitaireGameDone(cardStacks) { for (let i = 0; i &amp;lt; FOUR_SUITS.length; i++) { if (cardStacks[FOUR_SUITS[i]].length !== 13) return false; } return true; } 監控觸發檢查 不意外的又使用到watch這個關鍵字做監控，這部分就是跟Day4的連連看一樣， 當**牌堆cardStacks**發生變化就去觸發檢查，判定完成就使用alert跳出結算訊息。
+使用者點擊alert()之後，才會執行重設遊戲的函數resetGame()
+// DragDemo.vue watch(cardStacks, (newCardStacks) =&amp;gt; { const isDone = checkSolitaireGameDone(newCardStacks); if (isDone) { alert(`遊戲結束，花費時間: ${gameTime.value} 秒 總分數: ${gameScore.value}!!!`); resetGame(); } }) 小結 今天在實作結算畫面的過程雖然遇到一些Bug，但不影響遊戲可以正常跳出結算訊息並重置。</description>
+    </item>
+    
     <item>
       <title>Day23 連點2下自動移牌</title>
       <link>https://kabuto412rock.github.io/posts/it-day23/</link>
