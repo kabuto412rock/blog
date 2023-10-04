@@ -10,7 +10,22 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 03 Oct 2023 03:42:16 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Oct 2023 03:05:48 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day25 紙牌接龍-結算畫面採用Modal和修正移牌優先權</title>
+      <link>https://kabuto412rock.github.io/posts/it-day25/</link>
+      <pubDate>Wed, 04 Oct 2023 03:05:48 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day25/</guid>
+      <description>前言 今天會調整結算畫面的顯示、修正連點移牌的優先權錯誤(應該最優先移入結算牌堆)。
+結算畫面調整 安裝套件 昨日完成的結算畫面是跳出來的瀏覽器訊息，畫面完全看各家的瀏覽器制式化只能點確認，即使擋住原本的遊戲畫面是我想要的效果，但更想要的是可客製化頁面的互動視窗Modal。
+雖然可以自己土炮撰寫Modal但看帳號名字就知道我很懶，我打算撿現成的套件看能不能快速客製化介面&amp;hellip;然後就找到bootstrap-vue-next這個套件，聽名字就知道是針對Vue3特別拉出來的實現。
+先照著官方文件安裝依賴:
+npm i bootstrap bootstrap-vue-next npm i unplugin-vue-components -D 這個 unplugin-vue-components 主要是方便自動載入有副作用(side effect)的功能到你的元件中，詳細可參考官方說明，畢竟Bootstrap有副作用才方便?!
+接著調整vite.config.js的內容，主要是在plugins屬性對應的陣列中添加Components 包裹 BootstrapVueNextResolver的依賴:
+// vite.config.js import { fileURLToPath, URL } from &amp;#39;node:url&amp;#39; import { defineConfig } from &amp;#39;vite&amp;#39; import vue from &amp;#39;@vitejs/plugin-vue&amp;#39; import Components from &amp;#39;unplugin-vue-components/vite&amp;#39; import {BootstrapVueNextResolver} from &amp;#39;unplugin-vue-components/resolvers&amp;#39; // https://vitejs.dev/config/ export default defineConfig({ plugins: [ vue(), Components({ resolvers: [BootstrapVueNextResolver()], }), ], resolve: { alias: { &amp;#39;@&amp;#39;: fileURLToPath(new URL(&amp;#39;./src&amp;#39;, import.meta.url)) } } }) 最後在main.</description>
+    </item>
+    
     <item>
       <title>Day24 紙牌接龍-結算畫面</title>
       <link>https://kabuto412rock.github.io/posts/it-day24/</link>
