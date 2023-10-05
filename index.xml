@@ -10,7 +10,21 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 04 Oct 2023 03:05:48 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 05 Oct 2023 02:04:38 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day26 實作功能【返回上一步】</title>
+      <link>https://kabuto412rock.github.io/posts/it-day26/</link>
+      <pubDate>Thu, 05 Oct 2023 02:04:38 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day26/</guid>
+      <description>前言 因為玩接龍有時會有按錯步，這時候沒有返回上一步的機制就只能硬著頭皮玩下去或按重置，今天想解決這個問題。
+開發前的思考 在ReactJS官方學習文件中OOXX遊戲Tic-Tac-Toe也有提到時光旅行的實作，基本上就是每一步更動後的結果狀態都推入(Push)陣列變數history裡面，時光回朔就是將結果狀態直接設為history[index]。
+目前開發下來的程式碼大概要回到上一步的只有分數、牌組、發牌的索引， 經過的時間應該就不用上一步。
+實作過程 儲存遊戲變化的歷史 首先宣告一個負責儲存歷史的ref變數history
+const history = ref([]); 宣告函數pushStateToHistory()負責撰寫把最新的狀態推入history
+累積超過30個後會將最舊的狀態移除再推入最新的狀態，避免暫存太多的上一步驟。 因為reactive的關係所以不得不手動深度複製每張卡牌，這也是為什麼要做elemFunc的原因 /** 儲存當前狀態到歷史紀錄 */ function pushStateToHistory() { if (history.value.length &amp;gt; 30) { const startIndex = history.value.length - 30; history.value = history.value.slice(startIndex, history.value.length); } const elemFunc = (card) =&amp;gt; ({ &amp;#34;value&amp;#34;: card.value, &amp;#34;isOpen&amp;#34;: card.isOpen, &amp;#34;isDone&amp;#34;: card.isDone, }); history.value = [ ...history.value, { &amp;#34;cardStacks&amp;#34;: { first: cardStacks.first.slice().map(elemFunc), second: cardStacks.second.slice().map(elemFunc), third: cardStacks.third.slice().map(elemFunc), fourth: cardStacks.fourth.slice().map(elemFunc), fifth: cardStacks.fifth.slice().map(elemFunc), sixth: cardStacks.sixth.slice().map(elemFunc), seventh: cardStacks.</description>
+    </item>
+    
     <item>
       <title>Day25 紙牌接龍-結算畫面採用Modal和修正移牌優先權</title>
       <link>https://kabuto412rock.github.io/posts/it-day25/</link>
