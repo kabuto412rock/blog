@@ -10,7 +10,22 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Oct 2023 02:04:38 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Oct 2023 05:25:00 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day27 當牌全開時自動結算</title>
+      <link>https://kabuto412rock.github.io/posts/it-day27/</link>
+      <pubDate>Fri, 06 Oct 2023 05:25:00 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day27/</guid>
+      <description>前言 如標題所言，今天要做的就是補上『當牌全開時視為已完成遊戲』自動結算遊戲時間、分數， 有實際在現實世界中用撲克牌玩過接龍的應該知道其實最麻煩的就是收牌結尾，因為最後只是慢慢把所有牌都移到結算牌堆。
+事先說明: 此篇不會實作自動移牌的動畫效果。
+開發前思考 判斷牌全開不難! 不需要判斷全部牌是否已打開， 只需要判斷7牌堆每堆最上面第一張牌是否已打開，若有蓋著那就不能結算， 若每堆第一張都沒蓋著就可以開始結算。
+結算分數時只需要考慮補上發牌區、移牌區有幾張牌，再用加分的方式計算最後的總分。
+實作過程 修改遊戲結算時機 原本函數checkSolitaireGameDone(cardStacks)是判斷結算牌堆集滿13張牌則當作遊戲結束，但思考過後結算牌堆都集滿13張等同於七牌區的牌全空一樣會回應true，因此放心調整為檢查七牌堆的最上方開牌的狀態當作遊戲結束的依據。
+// poker-helper.js /** * 檢查紙牌接龍是否完成 * @param {CardStacks} cardStacks */ function checkSolitaireGameDone(cardStacks) { // 檢查每組牌堆第一張牌覆蓋著，就代表遊戲還沒結束 const isDone = SEVEN_STACKS.reduce((prev, stackName) =&amp;gt; { const stack = cardStacks[stackName]; if (stack.length &amp;gt; 0 &amp;amp;&amp;amp; (!stack[0].isOpen)) { return false; } return prev; }, true); return isDone; } 計算剩餘牌數&amp;amp;結算分數 新增函數getRemainCardCount(cardStacks)計算並返回發牌區和七牌堆的剩餘牌數
+// poker-helper.js /** * 計算剩餘在發牌區和7牌堆的張數 * @param {CardStacks} cardStacks * @returns {Object} {dealer: number, seven: number} */ function getRemainCardCount(cardStacks) { let dealerStacksCount = cardStacks[&amp;#39;dealerStacks&amp;#39;].</description>
+    </item>
+    
     <item>
       <title>Day26 實作功能【返回上一步】</title>
       <link>https://kabuto412rock.github.io/posts/it-day26/</link>
