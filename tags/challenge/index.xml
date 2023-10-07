@@ -10,7 +10,27 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 06 Oct 2023 05:25:00 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Oct 2023 07:34:01 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day28 評估是否無牌可走，建議棄權的提示(嘗試失敗)</title>
+      <link>https://kabuto412rock.github.io/posts/it-day28/</link>
+      <pubDate>Sat, 07 Oct 2023 07:34:01 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day28/</guid>
+      <description>前言 因為在玩紙牌接龍的過程中可能會被玩到進入無解的情況，也就是再怎麼移動撲克牌都無法完成，所以如何在遊玩中告知玩家這件事情蠻重要的，避免不必要的嘗試。
+思考如何實現 老實說這篇文章可能是對我來說最難寫的，雖然身為開發者可以知道7牌堆全部的蓋牌底下是什麼花色數字， 但如何知道場上已經無解又是一回事。
+基本上不考慮暴力的窮舉法，其實查到的結果大致可以推導無解的情況，不論是先天或是後天操作導致的無解都是因為疊在蓋牌上方的牌無法移動導致蓋牌無法打開，所以昨天自動結算才可以依照已經沒有蓋牌的情況下當作全部完成。
+所以理論上7牌堆如果出現壓住隱藏牌的那一張未來完全無法移動，那就代表死局。
+決定判斷死局的演算法(有誤) 雖然看了很多篇文章也理解死局的構成就是壓在蓋牌上的牌無法移動， 但有沒有相對簡單的判斷的方法&amp;hellip;
+在邊玩接龍邊思考死局判斷的過程中，想到一個判斷方法在此命名為異色大一若隱即死局。
+名稱聽起來很中二，檢查方式是7牌堆共7行，每一直行最上面壓住隱牌的第一張牌視為檢查點(Ex: 梅花6)， 檢查隱藏牌中是否有兩個花色與檢查點不同且大一號的數字(Ex: 紅心7、方塊7)，若有則視為此局已無解(死局)，若無則繼續檢查其他的檢查點。
+範例圖: 黑色框為隱藏牌、紫色為檢查點、橘色為相對檢查點大一號的異色牌 小結 實作後發現此演算法有錯誤會出現判斷活局/死局相反的情況，
+但還是把程式碼推上去，明天繼續研究是否有其他方法解🫡。
+程式碼: https://github.com/kabuto412rock/ithelp-pokergame/tree/day28
+參考文件
+知乎-深度剖析微软《纸牌》玩法 Quora-Does the solitaire game always have a solution? </description>
+    </item>
+    
     <item>
       <title>Day27 當牌全開時自動結算</title>
       <link>https://kabuto412rock.github.io/posts/it-day27/</link>
