@@ -10,7 +10,20 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 07 Oct 2023 07:34:01 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Oct 2023 00:23:02 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day29 簡單評估是否還有活路</title>
+      <link>https://kabuto412rock.github.io/posts/it-day29/</link>
+      <pubDate>Sun, 08 Oct 2023 00:23:02 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day29/</guid>
+      <description>目前所製作的經典紙牌接龍其實是源自於Klondike Solitaire的規則，只是發牌區是一次抽一張的循環制，因為網路上有看到每次都是抽3張但只能移動最上面那一張的規則，那種非常難玩挑戰性也很大。
+判斷紙牌接龍無解這個問題這兩天困擾我很久，在查過無數資料略讀幾篇論文後，尤其實際有用的資料大多是英文論文😭，發現這絕對不是一兩天的空餘時間就可以理解的目標，所以決定降低目標不去判斷是否已經死局，改為【簡單評估是否還有活路】。
+簡單評估是否還有活路 尋找活路的最容易想到的3種可能移動方式:
+七牌堆最後一張後面要接的牌存在於發牌區中 任一七牌堆壓在隱藏牌上放的那張可以接在其他七牌堆的後面 發牌區任一張牌或七牌堆的最後一張 可移動結算牌堆 開始實作 按照簡單評估的三項規則依序檢查，若有檢查可移動的方式為true就不會繼續檢查後續的規則，以下為程式碼:
+// poker-helper.js /** 檢查是否還有效的移動卡牌 * @param {CardStacks} cardStacks * @returns {boolean} 有有效移動為true 可能沒有為false */ function checkValidMove(cardStacks) { const dealerStacksValues = cardStacks[&amp;#39;dealerStacks&amp;#39;].map((card) =&amp;gt; card.value); const seventLastValues = {}; // 1. `七牌堆`最後一張後面要接的牌存在於`發牌區`中 let haveMove1 = SEVEN_STACKS.some((name) =&amp;gt; { const stack = cardStacks[name]; if (stack.length === 0) { return false; } const lastCard = stack[stack.length - 1]; const lastCardNumber = lastCard.value % 13; seventLastValues[name] = lastCard.</description>
+    </item>
+    
     <item>
       <title>Day28 評估是否無牌可走，建議棄權的提示(嘗試失敗)</title>
       <link>https://kabuto412rock.github.io/posts/it-day28/</link>
