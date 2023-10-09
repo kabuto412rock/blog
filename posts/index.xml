@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on 程式開發者的冒險</title>
-    <link>https://kabuto412rock.github.io/blog/posts/</link>
+    <link>https://kabuto412rock.github.io/posts/</link>
     <description>Recent content in Posts on 程式開發者的冒險</description>
     <image>
-      <url>https://kabuto412rock.github.io/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://kabuto412rock.github.io/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://kabuto412rock.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://kabuto412rock.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 08 Oct 2023 00:23:02 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Oct 2023 00:23:02 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Day29 簡單評估是否還有活路</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day29/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day29/</link>
       <pubDate>Sun, 08 Oct 2023 00:23:02 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day29/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day29/</guid>
       <description>目前所製作的經典紙牌接龍其實是源自於Klondike Solitaire的規則，只是發牌區是一次抽一張的循環制，因為網路上有看到每次都是抽3張但只能移動最上面那一張的規則，那種非常難玩挑戰性也很大。
 判斷紙牌接龍無解這個問題這兩天困擾我很久，在查過無數資料略讀幾篇論文後，尤其實際有用的資料大多是英文論文😭，發現這絕對不是一兩天的空餘時間就可以理解的目標，所以決定降低目標不去判斷是否已經死局，改為【簡單評估是否還有活路】。
 簡單評估是否還有活路 尋找活路的最容易想到的3種可能移動方式:
@@ -26,10 +26,10 @@
     
     <item>
       <title>Day28 評估是否無牌可走，建議棄權的提示(嘗試失敗)</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day28/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day28/</link>
       <pubDate>Sat, 07 Oct 2023 07:34:01 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day28/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day28/</guid>
       <description>前言 因為在玩紙牌接龍的過程中可能會被玩到進入無解的情況，也就是再怎麼移動撲克牌都無法完成，所以如何在遊玩中告知玩家這件事情蠻重要的，避免不必要的嘗試。
 思考如何實現 老實說這篇文章可能是對我來說最難寫的，雖然身為開發者可以知道7牌堆全部的蓋牌底下是什麼花色數字， 但如何知道場上已經無解又是一回事。
 基本上不考慮暴力的窮舉法，其實查到的結果大致可以推導無解的情況，不論是先天或是後天操作導致的無解都是因為疊在蓋牌上方的牌無法移動導致蓋牌無法打開，所以昨天自動結算才可以依照已經沒有蓋牌的情況下當作全部完成。
@@ -46,10 +46,10 @@
     
     <item>
       <title>Day27 當牌全開時自動結算</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day27/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day27/</link>
       <pubDate>Fri, 06 Oct 2023 05:25:00 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day27/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day27/</guid>
       <description>前言 如標題所言，今天要做的就是補上『當牌全開時視為已完成遊戲』自動結算遊戲時間、分數， 有實際在現實世界中用撲克牌玩過接龍的應該知道其實最麻煩的就是收牌結尾，因為最後只是慢慢把所有牌都移到結算牌堆。
 事先說明: 此篇不會實作自動移牌的動畫效果。
 開發前思考 判斷牌全開不難! 不需要判斷全部牌是否已打開， 只需要判斷7牌堆每堆最上面第一張牌是否已打開，若有蓋著那就不能結算， 若每堆第一張都沒蓋著就可以開始結算。
@@ -61,10 +61,10 @@
     
     <item>
       <title>Day26 實作功能【返回上一步】</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day26/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day26/</link>
       <pubDate>Thu, 05 Oct 2023 02:04:38 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day26/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day26/</guid>
       <description>前言 因為玩接龍有時會有按錯步，這時候沒有返回上一步的機制就只能硬著頭皮玩下去或按重置，今天想解決這個問題。
 開發前的思考 在ReactJS官方學習文件中OOXX遊戲Tic-Tac-Toe也有提到時光旅行的實作，基本上就是每一步更動後的結果狀態都推入(Push)陣列變數history裡面，時光回朔就是將結果狀態直接設為history[index]。
 目前開發下來的程式碼大概要回到上一步的只有分數、牌組、發牌的索引， 經過的時間應該就不用上一步。
@@ -75,10 +75,10 @@ const history = ref([]); 宣告函數pushStateToHistory()負責撰寫把最新�
     
     <item>
       <title>Day25 紙牌接龍-結算畫面採用Modal和修正移牌優先權</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day25/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day25/</link>
       <pubDate>Wed, 04 Oct 2023 03:05:48 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day25/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day25/</guid>
       <description>前言 今天會調整結算畫面的顯示、修正連點移牌的優先權錯誤(應該最優先移入結算牌堆而非七牌堆)。
 結算畫面調整 安裝套件 bootstrap-vue-next 昨日完成的結算畫面是跳出來的瀏覽器訊息，畫面完全看各家的瀏覽器制式化只能點確認，即使擋住原本的遊戲畫面是我想要的效果，但更想要的是可客製化頁面的互動視窗Modal。
 雖然可以自己土炮撰寫Modal但看帳號名字就知道我很懶，我打算撿現成的套件看能不能快速客製化介面&amp;hellip;然後就找到bootstrap-vue-next這個套件，聽名字就知道是針對Vue3特別拉出來的實現。
@@ -90,10 +90,10 @@ npm i bootstrap bootstrap-vue-next npm i unplugin-vue-components -D 這個 unplu
     
     <item>
       <title>Day24 紙牌接龍-結算畫面</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day24/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day24/</link>
       <pubDate>Tue, 03 Oct 2023 03:42:16 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day24/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day24/</guid>
       <description>前言 目前實作的紙牌接龍還沒有結算畫面，所以今天就來做!
 初步思考 製作結算畫面本身不是問題，畢竟畫面沒有要做得超級漂亮的情況下都是沒問題的!
 問題是何時跳出結算畫面? 我想到的情形有兩種:
@@ -107,10 +107,10 @@ npm i bootstrap bootstrap-vue-next npm i unplugin-vue-components -D 這個 unplu
     
     <item>
       <title>Day23 連點2下自動移牌</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day23/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day23/</link>
       <pubDate>Mon, 02 Oct 2023 03:45:32 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day23/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day23/</guid>
       <description>前言 今天要實做的是點擊自動移牌的功能也算是昨天提示的延伸，差別只在會實際移動卡牌。
 我打算連點移牌功能只做在七牌堆和發牌區，結算牌堆就不提供此功能。
 實作過程 處理連點事件 調整發牌區/七牌堆的卡片元件&amp;lt;Card&amp;gt;添加對應的屬性@dblclick=&amp;quot;emit(&#39;card-click&#39;, element)&amp;quot;， 這會讓卡牌元件&amp;lt;Card&amp;gt;被連點兩下(Double Click)時，向父元件發送事件card-click然後攜帶的參數element則是Card物件
@@ -122,10 +122,10 @@ npm i bootstrap bootstrap-vue-next npm i unplugin-vue-components -D 這個 unplu
     
     <item>
       <title>Day22 接龍移牌提示</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day22/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day22/</link>
       <pubDate>Sun, 01 Oct 2023 01:10:38 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day22/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day22/</guid>
       <description>前言 今天要實作接龍移牌提示，以下是會需要處理的題目:
 怎麼取得場上牌的拖曳路線? 找到拖曳路線後，如何顯示要拖曳至哪個地方的提示(文字or動畫)? 取得拖曳路線 目前可知拖曳區塊有7牌堆、發牌區、結算牌堆，其中卡牌可拖曳的方向有:
 7牌堆可以內部自拖曳或結算牌堆 發牌區只能拖曳至7牌堆、結算牌堆 結算牌堆只能拖曳至7牌堆 初步分析: 可以先計算可以移入7牌堆、結算牌堆牌尾的撲克牌
@@ -135,10 +135,10 @@ npm i bootstrap bootstrap-vue-next npm i unplugin-vue-components -D 這個 unplu
     
     <item>
       <title>Day21 顯示接龍分數、遊戲時間</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day21/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day21/</link>
       <pubDate>Fri, 29 Sep 2023 23:38:40 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day21/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day21/</guid>
       <description>前言 今天預計實作的項目顯示分數、顯示遊玩時間， 但實作顯示分數必須配合實作累計分數的功能，不然分數都不會變動也是尷尬😂。
 儲存分數、遊玩時間的變數宣告:
 const gameScore = ref(0); const gameTime = ref(0); const gameTimer = ref(null); 實作遊戲分數 實作分數累計規則 先整理出接龍的分數在什麼情況會增加?
@@ -148,10 +148,10 @@ const gameScore = ref(0); const gameTime = ref(0); const gameTimer = ref(null); 
     
     <item>
       <title>Day20 實作結算牌堆元件(四) 實作移入7牌堆的拖曳&amp;遊戲重置</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day20/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day20/</link>
       <pubDate>Fri, 29 Sep 2023 03:39:17 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day20/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day20/</guid>
       <description>前言 今天會先實作結算牌堆的牌要可以拖曳至7牌堆， 另外因為每次要重新開始都要切換頁面或按F5重新整理也會實作一個重置遊戲的按鈕
 拖曳結算牌堆的牌 至 7牌堆 原本以為會花點時間想怎麼做，但實際上思考、實作都沒花多少時間就完成。
 因為結算牌堆拖曳的牌一次只會拖曳一張，且拖曳到7牌堆的過程判斷基本上抄之前7牌堆自己的拖曳判斷方法就差不多完成，只多了一個先判斷拖曳的目標牌堆是否為七牌堆，甚至不用像其他牌堆拖曳:move還要額外去寫『拖曳成功後要觸發修改陣列』的函數changeOption.vlaue。
@@ -163,10 +163,10 @@ onMounted(() =&amp;gt; { const data = geneateShuffleDeck(52); const everyIndex =
     
     <item>
       <title>Day 19 實作結算牌堆元件(三)整合至接龍頁面</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day19/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day19/</link>
       <pubDate>Thu, 28 Sep 2023 03:28:44 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day19/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day19/</guid>
       <description>前言 今天會實作發牌區、7牌堆的牌可以拖曳到結算牌堆，且拖曳的過程需遵守結算牌堆的同色疊牌由A至K的規則。
 整理重複的函數 先將昨天在DealerAreaView.vue撰寫的程式碼移動到拖曳練習的頁面DragDemo.vue。
 樣板的部分是沒什麼問題，只是發現有太多函數宣告出現在DragDemo.vue，所以將常數FOUR_SUITS和判斷結算牌堆規則的checkNextOk2函數先移入工具目錄utils/內的程式碼，DragDemo.vue改用import的方式載入通用的常數、函數。
@@ -177,10 +177,10 @@ onMounted(() =&amp;gt; { const data = geneateShuffleDeck(52); const everyIndex =
     
     <item>
       <title>Day 18 實作結算牌堆元件(二) 整合拖曳相容不同規則</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day18/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day18/</link>
       <pubDate>Wed, 27 Sep 2023 06:51:23 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day18/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day18/</guid>
       <description>前言 昨天完成結算牌堆樣版的部分，今天接著處理整合拖曳到接龍之前的步驟， 先調整結算牌堆的內部結構、方法。
 調整結算牌堆 FinishedArea 先調整結算牌堆&amp;lt;FinishedArea /&amp;gt;內部需要的props結構，就底下這三種:
 props.fourCards對應四個牌堆的陣列 props.moveCard對應&amp;lt;draggable&amp;gt;元件的屬性:move判斷是否可以拖曳成功的函數 props.change對應&amp;lt;draggable&amp;gt;內的列表更新時觸發的函數(這部分等等再說明) 程式碼如下:
@@ -190,10 +190,10 @@ props.fourCards對應四個牌堆的陣列 props.moveCard對應&amp;lt;draggable
     
     <item>
       <title>Day 17 實作結算牌堆元件(一)樣板&amp;資料結構</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day17/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day17/</link>
       <pubDate>Tue, 26 Sep 2023 03:54:14 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day17/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day17/</guid>
       <description>前言 今日要製作結算牌堆，跟中間的7疊牌不同，結算牌堆只有4堆且只能允許同花色疊在上面，必須由小到大(A-&amp;gt;K)放上去，放上去的牌會擋住底下的牌。
 修正發牌區拖曳Bug 在開發今日功能前，測試遊玩發牌區到中間七牌堆發現能任意插到七牌堆的中間， 在函數dealerMove中補上evt.draggedContext.futureIndex == cardStacks[to].length的判斷後才正常，以下是修正後的程式碼:
 /** 發牌區移動 */ function dealerMove(evt) { const to = getDomName(evt.to); const dealerCard = evt.draggedContext.element; // 只能移動至目標牌堆的最後一張牌 let result = futureIndex == cardStacks[to].length; // 檢查疊牌順序、花色是否正確 result = result &amp;amp;&amp;amp; checkNextOk(cardStacks[to], dealerCard); if (result) { changeOption.value = () =&amp;gt; { cardStacks.dealerStacks = cardStacks.dealerStacks.filter(card =&amp;gt; card.value !== dealerCard.value); changeOption.value = null; }; } return result; } 製作結算牌堆樣板 看一下草稿圖，接著想像畫面應該會有四個長方塊並排，四個長方都有個底圖對應花色， 底圖上方都可以擺一張牌。
@@ -203,10 +203,10 @@ props.fourCards對應四個牌堆的陣列 props.moveCard對應&amp;lt;draggable
     
     <item>
       <title>Day16 接龍發牌區功能實作(三)拖曳與疊牌區整合</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day16/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day16/</link>
       <pubDate>Mon, 25 Sep 2023 07:05:48 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day16/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day16/</guid>
       <description>前言 今天要來處理&amp;lt;DealerArea&amp;gt;內的元素如何整合拖曳移動到7個牌堆， 這部分會拆成2個部分來看:
 可將&amp;lt;DealerArea&amp;gt;卡牌移入至牌堆上方，且遵守移動遊戲規則的條件 其他牌堆的牌無法移入&amp;lt;DealerArea&amp;gt;牌堆中 實作將&amp;lt;DealerArea&amp;gt;卡牌移入牌堆 這邊在DragDemo.vue中設定提供給發牌區&amp;lt;DealerArea&amp;gt;判斷用的:move函數，因為這個函數不像函數limitLocalMove函數是同時給7個牌堆各自使用，所以可以看到沒有特別提到from的部分，因為不用特別想就可以知道一定是來自(from)發牌區。
 如果不清楚limitLocalMove是做什麼的，這部分從 第10天~第12天 的文章都有提到，主要是對應&amp;lt;draggable&amp;gt;元件的:move函數判斷使否可拖曳成功。
@@ -218,10 +218,10 @@ props.fourCards對應四個牌堆的陣列 props.moveCard對應&amp;lt;draggable
     
     <item>
       <title>Day15 接龍發牌區功能實作(二)拖曳功能及CSS發牌動畫</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day15/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day15/</link>
       <pubDate>Sat, 23 Sep 2023 12:19:58 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day15/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day15/</guid>
       <description>前言 今天要來補強昨日缺少的拖曳功能和將整個頁面封裝成提供整合至接龍遊戲的元件發牌區。
 移牌區改為可拖曳 首先將移牌區的部分調整成從原生HTML元素div替換成這幾天都在使用draggable元件，程式碼如下:
 &amp;lt;!-- 移牌區 - 左邊水平疊牌最多三張 --&amp;gt; &amp;lt;draggable :list=&amp;#34;canTakeCards&amp;#34; group=&amp;#34;pokers&amp;#34; itemKey=&amp;#34;value&amp;#34; class=&amp;#34;list-group&amp;#34; &amp;gt; &amp;lt;template #item=&amp;#34;{ element, index }&amp;#34;&amp;gt; &amp;lt;Card :value=&amp;#34;element.value&amp;#34; :isOpen=&amp;#34;element.isOpen&amp;#34; /&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;/draggable&amp;gt; 發牌區調整動畫 雖然移牌區感覺在加牌的時候應該要套用動畫，但無奈vue.draggable.next的transition-group有Bug存在且已被官方棄養，在issue也有許多類似問題issue with transition-group in composition API就不細講。
@@ -232,20 +232,20 @@ props.fourCards對應四個牌堆的陣列 props.moveCard對應&amp;lt;draggable
     
     <item>
       <title>Day14 接龍發牌區功能實作(一)發牌循環</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day14/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day14/</link>
       <pubDate>Sat, 23 Sep 2023 00:33:59 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day14/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day14/</guid>
       <description>為了實現接龍發牌區功能，必須先思考如何讓撲克牌循環利用，這部分程式碼我是先拆一個頁面來練習實作，避免單一頁面的程式碼邏輯太過混亂。
 發牌區的樣板 今日實作的目標會是一個左邊移牌區右邊發牌堆結合在一起的， 點擊發牌堆會將牌發到移牌區顯示，移牌區最多同時顯示三張牌。 實作的樣板程式碼 // DealerAreaView.vue &amp;lt;GameBoard&amp;gt; &amp;lt;div class=&amp;#34;text&amp;#34;&amp;gt;發牌區&amp;lt;/div&amp;gt; &amp;lt;div style=&amp;#34;display: grid; grid-template-columns: 1.5fr 1fr; gap:3rem; width: fit-content;&amp;#34;&amp;gt; &amp;lt;!-- 移牌區 - 左邊水平疊牌最多三張 --&amp;gt; &amp;lt;div style=&amp;#34;display: grid; grid-template-columns: repeat(3, 3rem);&amp;#34;&amp;gt; &amp;lt;div v-for=&amp;#34;card in canTakeCards&amp;#34; :key=&amp;#34;card.value&amp;#34;&amp;gt; &amp;lt;Card :value=&amp;#34;card.value&amp;#34; :isOpen=&amp;#34;true&amp;#34; /&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;!-- 發牌堆 --&amp;gt; &amp;lt;div class=&amp;#34;card-box&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;card&amp;#34; style=&amp;#34;visibility: hidden;&amp;#34;&amp;gt; &amp;lt;div style=&amp;#34;visibility: visible; width: 100%;height: 100%; &amp;#34;&amp;gt; &amp;lt;Transition name=&amp;#34;slide-left&amp;#34;&amp;gt; &amp;lt;div v-if=&amp;#34;deckState == &amp;#39;empty&amp;#39;&amp;#34;&amp;gt;無牌可用&amp;lt;/div&amp;gt; &amp;lt;div v-else-if=&amp;#34;deckState == &amp;#39;full&amp;#39;&amp;#34; class=&amp;#34;card&amp;#34; @click=&amp;#34;clickCard&amp;#34;&amp;gt;重新循環&amp;lt;/div&amp;gt; &amp;lt;div v-else-if=&amp;#34;deckState == &amp;#39;normal&amp;#39;&amp;#34; @click=&amp;#34;clickCard&amp;#34; class=&amp;#34;card-back&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/Transition&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/GameBoard&amp;gt; 可以注意到發牌堆使用&amp;lt;Transition&amp;gt;包裹，裡面的元件使用v-if和v-else-if去判斷三種情況顯示元件， 這邊使用到的deckState是一個計算結果。</description>
     </item>
     
     <item>
       <title>Day13 牌尾自動翻牌、限制疊牌順序</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day13/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day13/</link>
       <pubDate>Fri, 22 Sep 2023 04:58:26 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day13/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day13/</guid>
       <description>今日預計實作項目:
 ☑️ 只能對牌尾進行翻牌 ☑️ 牌尾自動翻牌 ☑️ 限制疊牌順序 只能對牌尾進行翻牌 新增函數openCard(cards, element)因為需要確認點擊卡牌確實是在牌尾， 所以需要參數cards對應原本的卡牌陣列、參數element對應點擊的卡牌元素。
 檢查牌尾就單純檢查element的數字(value)是否跟陣列cards的最後一筆數字相同， 在這邊的情況不用擔心cards的長度為0，因為所在牌堆沒有卡牌自然就不會渲染使用openCard函數的&amp;lt;Card&amp;gt;元件。
@@ -257,10 +257,10 @@ watch(cardStacks, (stacks) =&amp;gt; { // 檢查每組牌堆最後一張 [&amp;#
     
     <item>
       <title>Day 12 實作拖曳卡牌只能置放到目標牌堆的牌尾、蓋牌無法拖曳</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day12/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day12/</link>
       <pubDate>Thu, 21 Sep 2023 04:36:25 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day12/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day12/</guid>
       <description>今天預計實作接龍紙牌的拖曳規則
 ☑️ 拖曳卡牌只能置放到目標牌堆的牌尾 -&amp;gt; 只能置放至目標最後 ☑️ 牌堆只有打開的牌才能進行拖曳 -&amp;gt; 蓋牌無法拖曳 拖曳卡牌只能置放到目標牌堆的牌尾 檢查方式很簡單，首先將昨日的:move函數內的變數result判斷先改成用let宣告， 因為不能任意插入前面的順序，所以增加判斷只有新目標位置futureIndex等於目標牌堆陣列的長度cardStacks[to].length時才可以進行移動。
 如果要移動到的目標牌堆沒有牌，futureIndex就需要等於0 如果要移動到目標牌堆有1張牌，futureIndex就需要等於1 總之目標牌堆有N張牌，futureIndex就要為N，以此類推&amp;hellip; 實際程式碼 function limitLocalMove(evt) { // 限制同個牌堆無法拖曳 let result = evt.from !== evt.to; // 取得牌堆的來源、目標名稱，對應reactive`cardStacks`內的名稱 const from = getDomName(evt.from); const to = getDomName(evt.to); const { index, futureIndex } = evt.draggedContext; // 只能移動目標牌堆的最後一張牌 result = result &amp;amp;&amp;amp; futureIndex == cardStacks[to].length; if (result) { // 中間略 } return result; } 牌堆只有打開的牌才能進行拖曳 先初始化改為39張牌均分給3個牌堆且將所有牌都闔上， 這樣接下來才能測試闔牌狀態不能拖曳。
@@ -269,10 +269,10 @@ const cardStacks = reactive({ first: [], second: [], third: [] }); onMounted(() 
     
     <item>
       <title>Day 11 拖曳紙牌的效果(三)如何一次拖曳多張卡牌</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day11/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day11/</link>
       <pubDate>Wed, 20 Sep 2023 03:25:18 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day11/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day11/</guid>
       <description>今日預計只實作如何一次拖曳 多張卡牌
 多張卡牌拖曳的考察研究 這部分可能會讓很多人(我)失望，因為vue.draggable.next最近一次的合併更新在2021年8月， 所以目前Vue3無法像原本Vue2能使用vue.draggable的Multi-drag的擴充功能，所以我捨棄使用套件原生多筆拖曳的想法和 拖曳多張牌完美的畫面效果。
 如果願意改變資料結構為巢狀Vue3版本還是有辦法對巢狀物件進行一次性的拖曳，但對我來說在未來資料處理的靈活性降低又提高判斷卡牌順序的複雜度因此不考慮。
@@ -282,10 +282,10 @@ const cardStacks = reactive({ first: [], second: [], third: [] }); onMounted(() 
     
     <item>
       <title>Day 10 拖曳紙牌的效果(二)限制內部拖曳</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day10/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day10/</link>
       <pubDate>Tue, 19 Sep 2023 03:49:59 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day10/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day10/</guid>
       <description>今天來研究兩個列表的拖曳和如何限制列表的拖曳，學習內容主要來自vue.draggable文件的內容和親身實作進行分析。
 先實現兩個列表的拖曳 昨天已學過如何製作單一列表的拖曳，先將相同的&amp;lt;draggable&amp;gt;內容複製往下貼， 複製的另一個&amp;lt;draggable&amp;gt;只需要調整屬性:list成想要對應的另一個陣列，並且兩個&amp;lt;draggable&amp;gt;添加相同的屬性group則自動實現兩個列表拖曳的關聯。
 &amp;lt;template&amp;gt; &amp;lt;div&amp;gt; &amp;lt;draggable :list=&amp;#34;firstCardStack&amp;#34; group=&amp;#34;pokers&amp;#34; itemKey=&amp;#34;value&amp;#34;&amp;gt; &amp;lt;template #item=&amp;#34;{ element, index }&amp;#34;&amp;gt; &amp;lt;Card :value=&amp;#34;element.value&amp;#34; :isOpen=&amp;#34;element.isOpen&amp;#34; /&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;/draggable&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div&amp;gt; &amp;lt;draggable :list=&amp;#34;secondCardStack&amp;#34; group=&amp;#34;pokers&amp;#34; itemKey=&amp;#34;value&amp;#34;&amp;gt; &amp;lt;template #item=&amp;#34;{ element, index }&amp;#34;&amp;gt; &amp;lt;Card :value=&amp;#34;element.value&amp;#34; :isOpen=&amp;#34;element.isOpen&amp;#34; /&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;/draggable&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; 如何限制列表的拖曳 前面已先實現了兩列表的拖曳，但為求理解仍保留著@change=&amp;quot;console.log&amp;quot;，在限制拖曳之前，我必須先觀察拖曳完成前能得到的資訊，所以我必須先觀察變動後@change實際印了什麼有用的資訊。
@@ -299,10 +299,10 @@ function onMoveCallback(evt, originalEvent){ ... // return false; — for cancel
     
     <item>
       <title>Day 09 拖曳紙牌的效果(一)</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day9/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day9/</link>
       <pubDate>Mon, 18 Sep 2023 05:13:22 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day9/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day9/</guid>
       <description>玩紙牌接龍最重要的就是卡牌會移來移去，之前都是用點的移動定點， 今天來試試看如何撰寫拖曳紙牌的功能。
 安裝依賴 因為重頭學習理解拖曳，對我來說太麻煩也太無聊， 乾脆就使用現成的套件Vue.Draggable吧!
 因為使用的是Vue3專案，所以必須安裝有標註next的版本。
@@ -318,10 +318,10 @@ npm i -S vuedraggable@next 單一列表的拖曳使用 我也還在理解該套�
     
     <item>
       <title>Day 08 牌堆的卡牌移動動畫</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day8/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day8/</link>
       <pubDate>Sat, 16 Sep 2023 07:22:58 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day8/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day8/</guid>
       <description>重點提醒: 沒有真的成功實作卡牌無中斷的移動 在實作的過程中遇到了一些問題，找到替代方案先記錄下來。
 最初的思路 在前一篇文章中，我們已經完成了牌堆的製作，接下來我們要來製作牌堆的卡牌移動動畫。 在開始實作之前，我必須決定要用CSS或是JS實現?
 如果牌堆的位置永遠是固定的，或許可以用CSS來實現，但是我們要移動的是牌堆位置不一定永遠在那， 而且牌堆的卡牌數量是不固定的，更加深了預設的座標位置，所以我想這必須用JS來實現， 至少需要JS取得動態元素的位置。
@@ -334,10 +334,10 @@ npm i -S vuedraggable@next 單一列表的拖曳使用 我也還在理解該套�
     
     <item>
       <title>Day 07 卡牌垂直重疊</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day7/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day7/</link>
       <pubDate>Fri, 15 Sep 2023 23:48:02 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day7/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day7/</guid>
       <description>今日完成目標 多張卡牌實現垂直重疊，但露出非交疊的部分 垂直重疊 為了產生重疊的效果，個人覺得最酷的方式應該是使用CSS的grid排版， 所以在這之前我利用一個GRID GARDEN的網站練習了一下。
 原本問ChatGPT是得知用每一張卡堆疊都還要套用不同的CSS，如果要多一張牌就要多一個class，或是用sass的寫法達成，但以上這些我都不想要，一來太麻煩、二來sass還要額外引入新依賴，畢竟我只是想堆疊卡牌而已。
 接著說明實際我達成的方式是靠display: grid;要求格狀排列，然後設定grid-template-rows為 repeat(13, 3rem);，這樣就可以讓每一張牌所在的格子都只有3rem的高度，設定13是因為我認為這樣垂直重疊排列卡牌最多只有13張，畢竟紙牌接龍不同花色暫時串再一起也就13張，在現實還是虛擬我的認知都是這樣，當然在設定比13高一點也不會影響，但如果出現第14、15張就會有卡牌不重疊，這點還請注意。
@@ -351,10 +351,10 @@ npm i -S vuedraggable@next 單一列表的拖曳使用 我也還在理解該套�
     
     <item>
       <title>Day 06 實現自訂義牌堆</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day6/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day6/</link>
       <pubDate>Fri, 15 Sep 2023 04:08:21 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day6/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day6/</guid>
       <description>今日目標 研究如何製作牌堆 製作牌堆 製作CardBox元件負責用來擺放卡片的容器，所以結構上就只是比原本卡片元件的稍寬，所以設計成可放子元件進去的樣板，然後當沒放牌時會產生跟牌一個寬高的隱藏區塊到slot裡面。
 // CardBox.vue &amp;lt;template &amp;gt; &amp;lt;div class=&amp;#34;card-box&amp;#34;&amp;gt; &amp;lt;slot&amp;gt; &amp;lt;div class=&amp;#34;card&amp;#34; style=&amp;#34;visibility: hidden;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/slot&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; 所以目前首頁是長這樣，放了兩個空的CardBox佔位置。
 // HomeView.vue &amp;lt;div style=&amp;#34;display: grid; grid-template-columns: 1fr 1fr;&amp;#34;&amp;gt; &amp;lt;CardBox&amp;gt;&amp;lt;/CardBox&amp;gt; &amp;lt;CardBox&amp;gt;&amp;lt;/CardBox&amp;gt; &amp;lt;/div&amp;gt; 接著思考如何實作卡牌從A點發到B點，看著畫面思考發現， 不如今天就來實作兩邊卡堆點擊後會移動到對方卡堆的功能。
@@ -364,10 +364,10 @@ npm i -S vuedraggable@next 單一列表的拖曳使用 我也還在理解該套�
     
     <item>
       <title>Day 05 引入Vue Router切換頁面</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day5/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day5/</link>
       <pubDate>Thu, 14 Sep 2023 03:20:17 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day5/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day5/</guid>
       <description>因為想留著昨天完成的撲克牌連連看，預計將不同遊戲的頁面可以做保留並切換， 所以我打算在做牌堆之前，首先應該要了解Vue3在路由頁面的實作是如何切換頁面。
 引入 Vue Router 接下來步驟我是參考『直接使用npm create vue@latest指令產生預設攜帶有用Vue Router專案的檔案架構』 下去調整的，所以步驟草率請敬請見諒。
 安裝依賴Vue Router npm install vue-router@4 在src底下新增兩個資料夾views和router 在views資料夾底下新增兩個頁面檔Game1View.vue和HomeView.vue src ├─App.vue ├─main.js ├─views | ├─Game1View.vue # 撲克連連看 | └─HomeView.vue # 首頁 ├─utils | ├─constants.js | └─poker-helper.js ├─router | └─index.js ├─components | ├─Card.vue | ├─FoxyHeader.vue | ├─GameBoard.vue | 略... 如果想知道是怎麼產生樹狀目錄，我是在src目錄下執行npx treer -e ./result.txt 便會 將樹狀結構寫到當前的result.txt文件中
@@ -376,10 +376,10 @@ npm i -S vuedraggable@next 單一列表的拖曳使用 我也還在理解該套�
     
     <item>
       <title>Day 04 調整翻牌效果&amp;實作洗牌&amp;外加撲克牌連連看</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day4/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day4/</link>
       <pubDate>Wed, 13 Sep 2023 06:25:37 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day4/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day4/</guid>
       <description>改變翻牌效果 研究Transition的文件後發現跟我想像的動畫變換不同，官方用法&amp;lt;Transition&amp;gt;&amp;lt;/Transition&amp;gt; 包裹內的新舊元件其中一個在動畫過程會先被移除掉或新增，但我先前設計好的CSS會是兩個元素都存在只是一個會被轉到CSS效果轉到背後，因此我的水平翻轉動畫需要兩個元素都存在HTML上。
 為了在時間內完成，我打消原本水平翻轉的作法，我改採Transition結合v-if的方式去顯示卡牌正反兩面， 發現用漸進式出現消失也是不錯的效果，以下是樣板的改變:
 // Card.vue &amp;lt;template&amp;gt; &amp;lt;div class=&amp;#34;card &amp;#34; @click=&amp;#34;emit(&amp;#39;poker-flip&amp;#39;, value)&amp;#34;&amp;gt; &amp;lt;Transition name=&amp;#34;card-flip&amp;#34;&amp;gt; &amp;lt;div v-if=&amp;#34;isOpen&amp;#34; class=&amp;#34;card-front&amp;#34; :class=&amp;#34;numberClass&amp;#34;&amp;gt;{{ content }}&amp;lt;/div&amp;gt; &amp;lt;div v-else class=&amp;#34;card-back&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/Transition&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; 參考Vue官方的範例， 在style添加以下後綴是-enter-active/leave-active/-enter-from/-leave-to的class，是為了讓Transition知道動畫要如何改變。
@@ -388,20 +388,20 @@ npm i -S vuedraggable@next 單一列表的拖曳使用 我也還在理解該套�
     
     <item>
       <title>Day 03 完成卡牌自動翻面的效果，但還不完整</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day3/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day3/</link>
       <pubDate>Tue, 12 Sep 2023 03:51:05 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day3/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day3/</guid>
       <description>原本今天預計製作發牌和卡牌自動翻面的效果，希望兩個都能有動畫效果， 但現實的能力讓我想先說說今天的開發方式
 實際思考/開發的過程 卡牌翻面 想像的實作過程 沿用原本的Card.vue內的樣板，在裡面分成兩個div區塊， 一個div區塊放正面有花色數字的牌面，另一個則放一張背圖。 在Card.vue內撰寫 @click 去改變卡片的狀態 撰寫CSS的動畫去實現翻面的過程 現實開發 先調整撲克牌背面的樣板，花了些時間讓圖片不會超出卡牌寬高 background-size: cover; 上網查詢是怎麼做翻轉撲克的效果，甚至查到有人做出6個div欄位做出3D方塊，但嘗試改成只有前後的div欄位但發現景深會產生兩張卡片交疊的一點位移就放棄這個寫法 意外查到IT邦上有個純CSS挑戰撲克翻轉，所以就先照著原作的CSS翻轉寫法調整Card.vue樣板 並且添加@click 會觸發emit將點到的卡牌數字回傳至上層進行更新 // Card.vue &amp;lt;template&amp;gt; &amp;lt;div class=&amp;#34;card &amp;#34; @click=&amp;#34;emit(&amp;#39;poker-flip&amp;#39;, value)&amp;#34; :class=&amp;#34;backCardClass&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;card-front&amp;#34; :class=&amp;#34;numberClass&amp;#34;&amp;gt;{{ content }}&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;card-back&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; 因為我Vue3是採用SFC(Single-File Components)的寫法，所以定義emit的方式如下所示: // Card.vue const emit = defineEmits([&amp;#34;poker-flip&amp;#34;]); 在上層的元件要接會使用剛剛定義在defineEmits的名稱 @poker-flip // GameBoard.vue 其他都略 &amp;lt;Card v-for=&amp;#34;card in boardCards&amp;#34; key=&amp;#34;card.value&amp;#34; :value=&amp;#34;card.value&amp;#34; :isOpen=&amp;#34;card.isOpen&amp;#34; @poker-flip=&amp;#34;toggleFlip&amp;#34; /&amp;gt; 可能因為練習過ReactJS官網的的關係，知道狀態提升(Lifting State Up)的概念，所以目前所有卡牌資料依然是先放在上層的GameBoard.vue裡面，toggleFlip是我撰寫 // GameBoard.vue function toggleFlip(num) { // 找到對應的開牌狀態且翻轉 const targetIdx = boardCards.</description>
     </item>
     
     <item>
       <title>Day 02 調整css調整桌面&amp;產生52張紙牌</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day2/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day2/</link>
       <pubDate>Mon, 11 Sep 2023 11:36:54 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day2/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day2/</guid>
       <description>動工前的準備 因為昨天標題在畫面縮放的情況下會擋住放卡牌的地方，所以早上就先看CSS相關的網站學習並且如何在Vue專案中使用。
 意外發現原來App.vue檔(放置卡牌區的元件)在&amp;lt;style scoped&amp;gt;&amp;lt;/style&amp;gt;定義的class雖然會套用到App.vue的&amp;lt;template&amp;gt;的元件中，但卻不影響App.vue內引入的GameBoard.vue&amp;lt;template&amp;gt;內使用相同class名稱的元素
 修正重疊問題 關於排版的部分身為前端菜雞，就現學現賣使用將元件內部flex-wrap: wrap將包裹標題和卡牌區的main元素進行調整，如下所示:
@@ -416,10 +416,10 @@ header { padding: 1rem; display: flex; align-items: center; width: fit-content; 
     
     <item>
       <title>Day 01 開發遊戲前先設定目標策略</title>
-      <link>https://kabuto412rock.github.io/blog/posts/it-day1/</link>
+      <link>https://kabuto412rock.github.io/posts/it-day1/</link>
       <pubDate>Sun, 10 Sep 2023 07:51:40 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/it-day1/</guid>
+      <guid>https://kabuto412rock.github.io/posts/it-day1/</guid>
       <description>前言 最終目標是做一個個人版的紙牌接龍，中途也會嘗試做一些延伸的紙牌遊戲。
 遊戲的畫面預計會使用我不熟悉的前端框架 Vue3，若有充足的時間我也會結合後端去做整合， 此次參賽也是為了督促自己在前端的技術進步。
 原本是想單純參加自我挑戰組， 因為曾在2014參賽第9天就中斷，所以接下來想先在Day 1設定一些目標讓自己可以達成， 過了9年後的我可不想在同個地方掛彩。
@@ -430,10 +430,10 @@ git init git commit -am &amp;#39;initial&amp;#39; 在Github建好一個新的儲
     
     <item>
       <title>參加2023鐵人賽前的自我回顧</title>
-      <link>https://kabuto412rock.github.io/blog/posts/adventure-again/</link>
+      <link>https://kabuto412rock.github.io/posts/adventure-again/</link>
       <pubDate>Sun, 10 Sep 2023 02:35:25 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/adventure-again/</guid>
+      <guid>https://kabuto412rock.github.io/posts/adventure-again/</guid>
       <description>前言 參賽動力 工作經歷 第一份工作-軟體工程師 第二份工作-後端工程師 現在的工作? 參賽主題方向 結論 前言 因為要參加鐵人賽，所以比賽前想先鍛鍊自己的寫作能力， 撰寫為什麼要參加比賽的原因? 同時回顧自己開始工作後的經歷
 參賽動力 從大學時期就知道有鐵人賽的存在，當初覺得自己技術不強、文筆也不夠好所以就不參加， 但回頭來看只是害怕失敗和變化而已
 補充: 原來我曾經參加過2014鐵人賽，但沒搞清規則是連續30天在Day 9放棄了&amp;hellip; c++第十二天-字串是用陣列存取 這次參賽起因是查詢技術資料的時候，意外看到今年鐵人賽又要開始了， 或許是經過社會的摩擦後，這次我不想再逃避了!!
@@ -460,20 +460,20 @@ git init git commit -am &amp;#39;initial&amp;#39; 在Github建好一個新的儲
     
     <item>
       <title>使用Docker建立Node容器&#43;MySQL容器的範本</title>
-      <link>https://kabuto412rock.github.io/blog/posts/express-mysql-docker/</link>
+      <link>https://kabuto412rock.github.io/posts/express-mysql-docker/</link>
       <pubDate>Tue, 06 Jun 2023 14:08:22 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/express-mysql-docker/</guid>
+      <guid>https://kabuto412rock.github.io/posts/express-mysql-docker/</guid>
       <description>前言 距離上一篇文章使用Docker建立Nodejs開發環境範本 已經有1年啦! 那時竟然還擔心部落格太多文章，Github page是否會被限制
 Node.js (Express.js + MySQL Server) 建置流程(快速克隆 -&amp;gt; 趕時間) 直接使用git clone語法下載範例 $ git clone https://github.com/kabuto412rock/node-demo.git --branch express-mysql --single-branch 啟動服務、關閉服務 # 進到目錄底層 $ cd node-demo # 啟動Docker服務 (node-demo) $ docker-compose up -d # 停止Docker服務 (node-demo) $ docker-compose down 相對上篇文章的差異 使用sequelize-cli進行Sequelize的設定，畢竟手寫migration、seeds太累 docker-compose.yaml多加MySQL容器、Adminer容器 express-mysqldb: image: mysql:8.0 # WARNIGN:正式環境請不要直接使用原生密碼，這只是開發偷懶用 command: --default-authentication-plugin=mysql_native_password restart: always ports: - &amp;#34;3308:3306&amp;#34; environment: # root的密碼 MYSQL_ROOT_PASSWORD: PyoA2hGpSDQordaDAbuiQIIDS # 預設建立的DB名稱 MYSQL_DATABASE: mydb # DB使用者的帳號 MYSQL_USER: dbuser # DB使用者的密碼 MYSQL_PASSWORD: youiIIDSA2hGpassword my-app資料夾可以注意到config/config.</description>
     </item>
     
     <item>
       <title>如何解決動態載入(Dynamic Import)不支援智能提示</title>
-      <link>https://kabuto412rock.github.io/blog/posts/gen-import-file/</link>
+      <link>https://kabuto412rock.github.io/posts/gen-import-file/</link>
       <pubDate>Tue, 01 Nov 2022 23:28:43 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/gen-import-file/</guid>
+      <guid>https://kabuto412rock.github.io/posts/gen-import-file/</guid>
       <description>前言 因為同事目前使用動態載入資料夾內多個程式檔案時，最後由一個特定檔案輸出，但VSCode編輯引用特定檔案的程式碼時，無法看到相對應的智能提示、引用路徑
 我手上的NodeJS專案也有類似的例子，比如說多個Model檔定義在一個models資料夾， 最後統一由models/index.js做查詢檔案動態載入所有Model檔案，最後使用任一Model時只需要引用index.js
 好處 只要在models新增一個新Model檔，不用特別修改index.js 需要任一Model時只需要引用index.js 壞處 失去了開發時可以享受靜態引用的VSCode提示(AutoComplete、Intellisense)
@@ -486,10 +486,10 @@ Node.js (Express.js + MySQL Server) 建置流程(快速克隆 -&amp;gt; 趕時�
     
     <item>
       <title>Linux指令-設定檔案讀寫權限 chmod</title>
-      <link>https://kabuto412rock.github.io/blog/posts/chmod-777/</link>
+      <link>https://kabuto412rock.github.io/posts/chmod-777/</link>
       <pubDate>Sun, 30 Oct 2022 04:00:14 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/chmod-777/</guid>
+      <guid>https://kabuto412rock.github.io/posts/chmod-777/</guid>
       <description>問題: WSL2跑Docker也可以寫原本在Ubuntu寫的hugo，又不用額外安裝homebrew 想用VSCode編輯Docker容器產生的文章後，發現我VSCode竟然沒有權限修改檔案。
 解法: 辦法很簡單，修改檔案權限全開
 chmod -R 777 content/ 這篇是用來測試Github action是否還有正常運作</description>
@@ -497,10 +497,10 @@ chmod -R 777 content/ 這篇是用來測試Github action是否還有正常運作
     
     <item>
       <title>[教學] 使用Docker建立Nodejs開發環境範本</title>
-      <link>https://kabuto412rock.github.io/blog/posts/node-docker/</link>
+      <link>https://kabuto412rock.github.io/posts/node-docker/</link>
       <pubDate>Sun, 03 Apr 2022 22:22:27 +0800</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/node-docker/</guid>
+      <guid>https://kabuto412rock.github.io/posts/node-docker/</guid>
       <description>大綱
 前言 為什麼要用Docker部屬 Node.js (Express.js) 建置流程Ver 1(快速克隆 -&amp;gt; 趕時間) 建置流程Ver 2 (手動 -&amp;gt; 練習過程) node-demo/app/package.json node-demo/app/src/index.js node-demo/docker-compose.yaml 資料夾結構 docker-compose建置說明 version services app (實際上可以取你自己喜歡的名稱web-app之類的) 結語 前言 最近想紀錄一下可重複使用的程式碼片段，這樣之後找就從自己的部落格找會比較方便，尤其是最近常用Docker建立部屬環境。
 想看docker-compose建置Express + MYSQL環境，請走這
@@ -512,10 +512,10 @@ Node.js (Express.js) 建置流程Ver 1(快速克隆 -&amp;gt; 趕時間) 直接�
     
     <item>
       <title>[Debug過程] 學Hugo並發布到Github page</title>
-      <link>https://kabuto412rock.github.io/blog/posts/my-first-post/</link>
+      <link>https://kabuto412rock.github.io/posts/my-first-post/</link>
       <pubDate>Sat, 27 Nov 2021 23:03:49 +0800</pubDate>
       
-      <guid>https://kabuto412rock.github.io/blog/posts/my-first-post/</guid>
+      <guid>https://kabuto412rock.github.io/posts/my-first-post/</guid>
       <description>前言 如果你正在尋找一篇Hugo建立GithubPag的教學文，請你繼續搜尋其他文章， 因為這是我第一次使用Hugo跌跌撞撞的除錯紀錄， 而大部分問題都是我自己不照教學走導致需要Debug的文章， 但如果想知道怎麼出錯解錯就繼續看下去，但不建議跟著做下去。
 Bug1 前幾次hugo server -D啟動正常，後來卻出錯? 本來想說安裝extended版本比較好，所以重新用snap安裝穩定版， 結果啟動伺服器得到以下結果：
 hugo v0.89.4 linux/amd64 BuildDate=2021-11-17T14:49:26Z Error: Error building site: TOCSS: failed to transform &amp;#34;ananke/css/main.css&amp;#34; (text/css). Check your Hugo installation; you need the extended version to build SCSS/SASS.: this feature is not available in your current Hugo version, see https://goo.gl/YMrWcn for more information Built in 14 ms 我是在Ubuntu的環境下用 snap install hugo安裝Hugo， 而錯誤的原因是用extended版產生部落格，後面又重新切換Hugo穩定版， 但原本的部落格資料需要SCSS/SASS的支援所以才會出現這樣的錯誤。
