@@ -10,7 +10,21 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 08 Oct 2023 00:23:02 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Oct 2023 07:24:04 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/challenge/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Day30 使用Cloudflare部屬Vue靜態網站</title>
+      <link>https://kabuto412rock.github.io/posts/it-day30/</link>
+      <pubDate>Mon, 09 Oct 2023 07:24:04 +0000</pubDate>
+      
+      <guid>https://kabuto412rock.github.io/posts/it-day30/</guid>
+      <description>目前撲克牌遊戲網站都是在自己的電腦用npm run dev啟動，今天會介紹如何部屬Vue專案到CloudFlare提供對外連線的網站，操作有誤的地方再請多多指教。
+使用Github Aciton建立 以下的操作需要事先註冊Cloudflare的帳號 和GitHub的帳號
+第0步 建立CloudFlare Page的Project 我是參考這個YouTube影片學習如何建立Cloudflare Page專案， 但跟影片不同的部分我在1:56我是選only-select-repositories選擇單一Repo的權限並命名專案名稱ithelp-game-test。
+影片看到5分鐘的時候，Cloudflare網站本身停止回應，後面的步驟就沒跟著影片教學做，後面第1~3步驟是我一步步看文件試出來的並非完全照官方建議走，因為需按專案本身調整。 第1步 建立 Cloudflare API Token 參考Cloudflare Pages GitHub Action說明以下只是我再額外自己截圖實作的步驟。
+登入帳號來到Cloudflare的儀表板，先點選左下角的Workers &amp;amp; Pages 接著點擊右手邊連結Manage API tokens進入管理API Token的頁面 點擊藍色按鈕Create Token前往建立API Token的頁面 來到API Tokens頁面後點選Create Custom Token旁的藍色按鈕Get Started 填寫Token name這邊幫Token取名為Deploy with github 在Permisions區塊點選Add新增一個權限Account/Cloudflare/Edit ，接著畫面拉到最下方點擊藍色按鈕Continue to summary。 此時Cloudflare會讓你再次確認權限，只需要注意畫面上有出現All accounts - Cloudflare Pages:Edit這個，沒問題就繼續點擊藍色按鈕Create Token。 至此Cloudflare API Token建立成功，點擊按鈕Copy先複製起來 第2步 將Cloudflare API Token設置於Github Repo 此處Github儲存庫是kabuto412rock/ithelp-pokergame
+前往Github的儲存庫點擊Setting-&amp;gt;Secrets and Variables-&amp;gt;Actions 來到Actions secrets and variables頁面後點擊綠色按鈕New Repository secret 設置新的密鑰CLOUDFLARE_API_TOKEN 填入先前取得的Cloudflare API Token 設置新的密鑰CLOUDFLARE_ACCOUNT_ID填入在Cloudflare的儀表板右手邊Manage API tokens上方的Account ID 在分支main加入檔案.</description>
+    </item>
+    
     <item>
       <title>Day29 簡單評估是否還有活路</title>
       <link>https://kabuto412rock.github.io/posts/it-day29/</link>
