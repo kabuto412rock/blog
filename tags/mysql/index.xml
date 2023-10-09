@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>MySQL on 程式開發者的冒險</title>
-    <link>https://kabuto412rock.github.io/tags/mysql/</link>
+    <link>https://kabuto412rock.github.io/blog/tags/mysql/</link>
     <description>Recent content in MySQL on 程式開發者的冒險</description>
     <image>
-      <url>https://kabuto412rock.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://kabuto412rock.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://kabuto412rock.github.io/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://kabuto412rock.github.io/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 06 Jun 2023 14:08:22 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Jun 2023 14:08:22 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/blog/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用Docker建立Node容器&#43;MySQL容器的範本</title>
-      <link>https://kabuto412rock.github.io/posts/express-mysql-docker/</link>
+      <link>https://kabuto412rock.github.io/blog/posts/express-mysql-docker/</link>
       <pubDate>Tue, 06 Jun 2023 14:08:22 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/posts/express-mysql-docker/</guid>
+      <guid>https://kabuto412rock.github.io/blog/posts/express-mysql-docker/</guid>
       <description>前言 距離上一篇文章使用Docker建立Nodejs開發環境範本 已經有1年啦! 那時竟然還擔心部落格太多文章，Github page是否會被限制
 Node.js (Express.js + MySQL Server) 建置流程(快速克隆 -&amp;gt; 趕時間) 直接使用git clone語法下載範例 $ git clone https://github.com/kabuto412rock/node-demo.git --branch express-mysql --single-branch 啟動服務、關閉服務 # 進到目錄底層 $ cd node-demo # 啟動Docker服務 (node-demo) $ docker-compose up -d # 停止Docker服務 (node-demo) $ docker-compose down 相對上篇文章的差異 使用sequelize-cli進行Sequelize的設定，畢竟手寫migration、seeds太累 docker-compose.yaml多加MySQL容器、Adminer容器 express-mysqldb: image: mysql:8.0 # WARNIGN:正式環境請不要直接使用原生密碼，這只是開發偷懶用 command: --default-authentication-plugin=mysql_native_password restart: always ports: - &amp;#34;3308:3306&amp;#34; environment: # root的密碼 MYSQL_ROOT_PASSWORD: PyoA2hGpSDQordaDAbuiQIIDS # 預設建立的DB名稱 MYSQL_DATABASE: mydb # DB使用者的帳號 MYSQL_USER: dbuser # DB使用者的密碼 MYSQL_PASSWORD: youiIIDSA2hGpassword my-app資料夾可以注意到config/config.</description>
     </item>

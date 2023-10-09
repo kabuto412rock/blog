@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Diary on 程式開發者的冒險</title>
-    <link>https://kabuto412rock.github.io/tags/diary/</link>
+    <link>https://kabuto412rock.github.io/blog/tags/diary/</link>
     <description>Recent content in Diary on 程式開發者的冒險</description>
     <image>
-      <url>https://kabuto412rock.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://kabuto412rock.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://kabuto412rock.github.io/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://kabuto412rock.github.io/blog/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 10 Sep 2023 02:35:25 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/tags/diary/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Sep 2023 02:35:25 +0000</lastBuildDate><atom:link href="https://kabuto412rock.github.io/blog/tags/diary/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>參加2023鐵人賽前的自我回顧</title>
-      <link>https://kabuto412rock.github.io/posts/adventure-again/</link>
+      <link>https://kabuto412rock.github.io/blog/posts/adventure-again/</link>
       <pubDate>Sun, 10 Sep 2023 02:35:25 +0000</pubDate>
       
-      <guid>https://kabuto412rock.github.io/posts/adventure-again/</guid>
+      <guid>https://kabuto412rock.github.io/blog/posts/adventure-again/</guid>
       <description>前言 參賽動力 工作經歷 第一份工作-軟體工程師 第二份工作-後端工程師 現在的工作? 參賽主題方向 結論 前言 因為要參加鐵人賽，所以比賽前想先鍛鍊自己的寫作能力， 撰寫為什麼要參加比賽的原因? 同時回顧自己開始工作後的經歷
 參賽動力 從大學時期就知道有鐵人賽的存在，當初覺得自己技術不強、文筆也不夠好所以就不參加， 但回頭來看只是害怕失敗和變化而已
 補充: 原來我曾經參加過2014鐵人賽，但沒搞清規則是連續30天在Day 9放棄了&amp;hellip; c++第十二天-字串是用陣列存取 這次參賽起因是查詢技術資料的時候，意外看到今年鐵人賽又要開始了， 或許是經過社會的摩擦後，這次我不想再逃避了!!
