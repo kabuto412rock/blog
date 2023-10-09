@@ -1,4 +1,4 @@
-baseURL: "https://kabuto412rock.github.io/"
+baseURL: "https://zongjia.me/"
 title: 程式開發者的冒險
 paginate: 5
 theme: PaperMod
@@ -92,7 +92,7 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/kabuto412rock/kabuto412rock.github.io/blob/main/content"
+    URL: "https://github.com/kabuto412rock/blog/blob/main/content"
 
     Text: "編輯內容" # edit text
     appendFilePath: true # to append file path to Edit link
