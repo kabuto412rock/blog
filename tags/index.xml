@@ -11,8 +11,22 @@
     </image>
     <generator>Hugo -- 0.151.0</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Oct 2023 07:24:04 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Oct 2025 04:03:15 +0000</lastBuildDate>
     <atom:link href="https://zongjia.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Context</title>
+      <link>https://zongjia.me/tags/context/</link>
+      <pubDate>Sun, 05 Oct 2025 04:03:15 +0000</pubDate>
+      <guid>https://zongjia.me/tags/context/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Go</title>
+      <link>https://zongjia.me/tags/go/</link>
+      <pubDate>Sun, 05 Oct 2025 04:03:15 +0000</pubDate>
+      <guid>https://zongjia.me/tags/go/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Challenge</title>
       <link>https://zongjia.me/tags/challenge/</link>
