@@ -5,52 +5,230 @@
     <link>https://zongjia.me/tags/nodejs/</link>
     <description>Recent content in Nodejs on 程式開發者的冒險</description>
     <image>
+      <title>程式開發者的冒險</title>
       <url>https://zongjia.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://zongjia.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.151.0</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 06 Jun 2023 14:08:22 +0000</lastBuildDate><atom:link href="https://zongjia.me/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Jun 2023 14:08:22 +0000</lastBuildDate>
+    <atom:link href="https://zongjia.me/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用Docker建立Node容器&#43;MySQL容器的範本</title>
       <link>https://zongjia.me/posts/express-mysql-docker/</link>
       <pubDate>Tue, 06 Jun 2023 14:08:22 +0000</pubDate>
-      
       <guid>https://zongjia.me/posts/express-mysql-docker/</guid>
-      <description>前言 距離上一篇文章使用Docker建立Nodejs開發環境範本 已經有1年啦! 那時竟然還擔心部落格太多文章，Github page是否會被限制
-Node.js (Express.js + MySQL Server) 建置流程(快速克隆 -&amp;gt; 趕時間) 直接使用git clone語法下載範例 $ git clone https://github.com/kabuto412rock/node-demo.git --branch express-mysql --single-branch 啟動服務、關閉服務 # 進到目錄底層 $ cd node-demo # 啟動Docker服務 (node-demo) $ docker-compose up -d # 停止Docker服務 (node-demo) $ docker-compose down 相對上篇文章的差異 使用sequelize-cli進行Sequelize的設定，畢竟手寫migration、seeds太累 docker-compose.yaml多加MySQL容器、Adminer容器 express-mysqldb: image: mysql:8.0 # WARNIGN:正式環境請不要直接使用原生密碼，這只是開發偷懶用 command: --default-authentication-plugin=mysql_native_password restart: always ports: - &amp;#34;3308:3306&amp;#34; environment: # root的密碼 MYSQL_ROOT_PASSWORD: PyoA2hGpSDQordaDAbuiQIIDS # 預設建立的DB名稱 MYSQL_DATABASE: mydb # DB使用者的帳號 MYSQL_USER: dbuser # DB使用者的密碼 MYSQL_PASSWORD: youiIIDSA2hGpassword my-app資料夾可以注意到config/config.</description>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;距離上一篇文章&lt;a href=&#34;../node-docker&#34;&gt;使用Docker建立Nodejs開發環境範本
+&lt;/a&gt;已經有1年啦!
+那時竟然還擔心部落格太多文章，Github page是否會被限制&lt;/p&gt;
+&lt;h1 id=&#34;nodejs-expressjs--mysql-server&#34;&gt;Node.js (Express.js + MySQL Server)&lt;/h1&gt;
+&lt;h2 id=&#34;建置流程快速克隆---趕時間&#34;&gt;建置流程(快速克隆 -&amp;gt; 趕時間)&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;直接使用git clone語法下載範例&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git clone https://github.com/kabuto412rock/node-demo.git --branch express-mysql --single-branch
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;啟動服務、關閉服務&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 進到目錄底層&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd node-demo
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 啟動Docker服務&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;node-demo&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; $ docker-compose up -d
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 停止Docker服務&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;node-demo&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; $ docker-compose down
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;相對上篇文章的差異&#34;&gt;相對上篇文章的差異&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;使用sequelize-cli進行Sequelize的設定，畢竟手寫migration、seeds太累&lt;/li&gt;
+&lt;li&gt;docker-compose.yaml多加MySQL容器、Adminer容器
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;express-mysqldb&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;mysql:8.0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# WARNIGN:正式環境請不要直接使用原生密碼，這只是開發偷懶用&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;command&lt;/span&gt;: --&lt;span style=&#34;color:#ae81ff&#34;&gt;default-authentication-plugin=mysql_native_password&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;restart&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;always&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;ports&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;3308:3306&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;environment&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# root的密碼&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;PyoA2hGpSDQordaDAbuiQIIDS&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# 預設建立的DB名稱&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;MYSQL_DATABASE&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;mydb&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# DB使用者的帳號&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;MYSQL_USER&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;dbuser&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# DB使用者的密碼&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;MYSQL_PASSWORD&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;youiIIDSA2hGpassword&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;my-app資料夾可以注意到&lt;code&gt;config/config.json&lt;/code&gt;的host值與MySQL容器名稱相同，這是因為容器的&lt;code&gt;hostname&lt;/code&gt;預設與名稱相同，其他password等設定可以參考上面對照&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;development&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;username&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;dbuser&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;password&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;youiIIDSA2hGpassword&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;database&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;mydb&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;host&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;express-mysqldb&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;dialect&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;mysql&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  // 略...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;結語&#34;&gt;結語&lt;/h2&gt;
+&lt;p&gt;還好當初有在blog的repo設定好Github Aciton和寫README備忘，才可以像現在簡單git push一下就能生成新文章。&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>如何解決動態載入(Dynamic Import)不支援智能提示</title>
       <link>https://zongjia.me/posts/gen-import-file/</link>
       <pubDate>Tue, 01 Nov 2022 23:28:43 +0000</pubDate>
-      
       <guid>https://zongjia.me/posts/gen-import-file/</guid>
-      <description>前言 因為同事目前使用動態載入資料夾內多個程式檔案時，最後由一個特定檔案輸出，但VSCode編輯引用特定檔案的程式碼時，無法看到相對應的智能提示、引用路徑
-我手上的NodeJS專案也有類似的例子，比如說多個Model檔定義在一個models資料夾， 最後統一由models/index.js做查詢檔案動態載入所有Model檔案，最後使用任一Model時只需要引用index.js
-好處 只要在models新增一個新Model檔，不用特別修改index.js 需要任一Model時只需要引用index.js 壞處 失去了開發時可以享受靜態引用的VSCode提示(AutoComplete、Intellisense)
-所以問題是如何保持好處且消除壞處
-思考路境 動態載入不會被VSCode支援提示是因為Intellisense只支援靜態分析， 若改為添加靜態引用就失去原本的動態載入的方便。
-除非添加靜態引用這件事本身是自動的&amp;hellip;
-解法 使用腳本生成靜態引用，如果行得通甚至可以使用類似nodemon去watch特定資料夾內的檔案變化，達到自動生成靜態引用的功能。
-範例 https://github.com/kabuto412rock/gen-static-import</description>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;因為同事目前使用&lt;code&gt;動態載入&lt;/code&gt;資料夾內多個程式檔案時，最後由一個特定檔案輸出，但VSCode編輯引用特定檔案的程式碼時，無法看到相對應的智能提示、引用路徑&lt;/p&gt;
+&lt;p&gt;我手上的NodeJS專案也有類似的例子，比如說多個Model檔定義在一個models資料夾，
+最後統一由models/&lt;code&gt;index.js&lt;/code&gt;做查詢檔案動態載入所有Model檔案，最後使用任一Model時只需要引用&lt;code&gt;index.js&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;好處&#34;&gt;好處&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;只要在models新增一個新Model檔，不用特別修改&lt;code&gt;index.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;需要任一Model時只需要引用&lt;code&gt;index.js&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;壞處&#34;&gt;壞處&lt;/h2&gt;
+&lt;p&gt;失去了開發時可以享受靜態引用的&lt;code&gt;VSCode&lt;/code&gt;提示(AutoComplete、Intellisense)&lt;/p&gt;
+&lt;p&gt;所以問題是如何保持好處且消除壞處&lt;/p&gt;
+&lt;h1 id=&#34;思考路境&#34;&gt;思考路境&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;動態載入&lt;/code&gt;不會被VSCode支援提示是因為Intellisense只支援靜態分析，
+若改為&lt;code&gt;添加靜態引用&lt;/code&gt;就失去原本的動態載入的方便。&lt;/p&gt;
+&lt;p&gt;除非&lt;code&gt;添加靜態引用&lt;/code&gt;這件事本身是&lt;code&gt;自動&lt;/code&gt;的&amp;hellip;&lt;/p&gt;
+&lt;h1 id=&#34;解法&#34;&gt;解法&lt;/h1&gt;
+&lt;p&gt;使用腳本&lt;code&gt;生成靜態引用&lt;/code&gt;，如果行得通甚至可以使用類似nodemon去watch特定資料夾內的檔案變化，達到&lt;code&gt;自動生成靜態引用&lt;/code&gt;的功能。&lt;/p&gt;
+&lt;h1 id=&#34;範例&#34;&gt;範例&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/kabuto412rock/gen-static-import&#34;&gt;https://github.com/kabuto412rock/gen-static-import&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>[教學] 使用Docker建立Nodejs開發環境範本</title>
       <link>https://zongjia.me/posts/node-docker/</link>
       <pubDate>Sun, 03 Apr 2022 22:22:27 +0800</pubDate>
-      
       <guid>https://zongjia.me/posts/node-docker/</guid>
-      <description>大綱
-前言 為什麼要用Docker部屬 Node.js (Express.js) 建置流程Ver 1(快速克隆 -&amp;gt; 趕時間) 建置流程Ver 2 (手動 -&amp;gt; 練習過程) node-demo/app/package.json node-demo/app/src/index.js node-demo/docker-compose.yaml 資料夾結構 docker-compose建置說明 version services app (實際上可以取你自己喜歡的名稱web-app之類的) 結語 前言 最近想紀錄一下可重複使用的程式碼片段，這樣之後找就從自己的部落格找會比較方便，尤其是最近常用Docker建立部屬環境。
-想看docker-compose建置Express + MYSQL環境，請走這
-為什麼要用Docker部屬 雖然網路上可以找到很多理由，但我的理由是：
-使用git版本控制，設定檔本身就取代環境建置說明文件 不弄髒本地環境，想刪就刪 替換依賴容易，Ex: MySQL -&amp;gt; Postgresl Docker基本上語法不複雜設定起來也很容易，尤其在建立不熟悉的環境亂試也可以， 且因為Docker有cache layer的關係，所以修改重新跑docker-compose up 也很快就可以建立。
-廢話不多說，開始部屬吧&amp;hellip;
-Node.js (Express.js) 建置流程Ver 1(快速克隆 -&amp;gt; 趕時間) 直接使用git clone語法下載範例 $ git clone https://github.com/kabuto412rock/node-demo.git --branch express_template --single-branch 啟動服務、關閉服務 # 進到目錄底層 $ cd node-demo # 啟動Docker服務 (node-demo) $ docker-compose up -d # 停止Docker服務 (node-demo) $ docker-compose down 檢查實際結果 http://localhost/ 建置流程Ver 2 (手動 -&amp;gt; 練習過程) 建立相關的檔案＆安裝Express（主要是為了產生package.</description>
+      <description>&lt;p&gt;大綱&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#%E5%89%8D%E8%A8%80&#34;&gt;前言&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E7%82%BA%E4%BB%80%E9%BA%BC%E8%A6%81%E7%94%A8docker%E9%83%A8%E5%B1%AC&#34;&gt;為什麼要用Docker部屬&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#nodejs-expressjs&#34;&gt;Node.js (Express.js)&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#%E5%BB%BA%E7%BD%AE%E6%B5%81%E7%A8%8Bver-1%E5%BF%AB%E9%80%9F%E5%85%8B%E9%9A%86---%E8%B6%95%E6%99%82%E9%96%93&#34;&gt;建置流程Ver 1(快速克隆 -&amp;gt; 趕時間)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E5%BB%BA%E7%BD%AE%E6%B5%81%E7%A8%8Bver-2-%E6%89%8B%E5%8B%95---%E7%B7%B4%E7%BF%92%E9%81%8E%E7%A8%8B&#34;&gt;建置流程Ver 2 (手動 -&amp;gt; 練習過程)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#node-demoapppackagejson&#34;&gt;node-demo/app/package.json&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#node-demoappsrcindexjs&#34;&gt;node-demo/app/src/index.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#node-demodocker-composeyaml&#34;&gt;node-demo/docker-compose.yaml&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E8%B3%87%E6%96%99%E5%A4%BE%E7%B5%90%E6%A7%8B&#34;&gt;資料夾結構&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#docker-compose%E5%BB%BA%E7%BD%AE%E8%AA%AA%E6%98%8E&#34;&gt;docker-compose建置說明&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#version&#34;&gt;version&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#services&#34;&gt;services&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#app-%E5%AF%A6%E9%9A%9B%E4%B8%8A%E5%8F%AF%E4%BB%A5%E5%8F%96%E4%BD%A0%E8%87%AA%E5%B7%B1%E5%96%9C%E6%AD%A1%E7%9A%84%E5%90%8D%E7%A8%B1web-app%E4%B9%8B%E9%A1%9E%E7%9A%84&#34;&gt;app (實際上可以取你自己喜歡的名稱web-app之類的)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E7%B5%90%E8%AA%9E&#34;&gt;結語&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;最近想紀錄一下可重複使用的程式碼片段，這樣之後找就從自己的部落格找會比較方便，尤其是最近常用Docker建立部屬環境。&lt;/p&gt;
+&lt;p&gt;想看docker-compose建置Express + MYSQL環境，&lt;a href=&#34;../express-mysql-docker&#34;&gt;請走這&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;為什麼要用docker部屬&#34;&gt;為什麼要用Docker部屬&lt;/h1&gt;
+&lt;p&gt;雖然網路上可以找到很多理由，但我的理由是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用git版本控制，設定檔本身就取代環境建置說明文件&lt;/li&gt;
+&lt;li&gt;不弄髒本地環境，想刪就刪&lt;/li&gt;
+&lt;li&gt;替換依賴容易，Ex: MySQL -&amp;gt; Postgresl&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Docker基本上語法不複雜設定起來也很容易，尤其在建立不熟悉的環境亂試也可以，
+且因為Docker有cache layer的關係，所以修改重新跑docker-compose up 也很快就可以建立。&lt;/p&gt;
+&lt;p&gt;廢話不多說，開始部屬吧&amp;hellip;&lt;/p&gt;
+&lt;h1 id=&#34;nodejs-expressjs&#34;&gt;Node.js (Express.js)&lt;/h1&gt;
+&lt;h2 id=&#34;建置流程ver-1快速克隆---趕時間&#34;&gt;建置流程Ver 1(快速克隆 -&amp;gt; 趕時間)&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;直接使用git clone語法下載範例&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git clone https://github.com/kabuto412rock/node-demo.git --branch express_template --single-branch
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;啟動服務、關閉服務&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 進到目錄底層&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd node-demo
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 啟動Docker服務&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;node-demo&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; $ docker-compose up -d
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 停止Docker服務&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;node-demo&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; $ docker-compose down
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;檢查實際結果 http://localhost/&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;建置流程ver-2-手動---練習過程&#34;&gt;建置流程Ver 2 (手動 -&amp;gt; 練習過程)&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;建立相關的檔案＆安裝Express（主要是為了產生package.json）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mkdir -p node-demo/app/src
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd node-demo
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ touch app/package.json &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; touch app/src/index.js &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; touch docker-compose.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;複製以下程式碼貼到對應的檔案&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;node-demoapppackagejson&#34;&gt;node-demo/app/package.json&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;node-demo&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;version&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1.0.0&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;main&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;index.js&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;scripts&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;start&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;nodemon src/index.js&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;license&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;MIT&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;dependencies&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;express&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;^4.17.3&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;devDependencies&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;nodemon&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;^2.0.15&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;node-demoappsrcindexjs&#34;&gt;node-demo/app/src/index.js&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;express&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;require&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;express&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;port&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;8000&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;app&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;express&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;app&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;get&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/&amp;#34;&lt;/span&gt;, (&lt;span style=&#34;color:#a6e22e&#34;&gt;req&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;status&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;200&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;json&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;message&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;app&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;listen&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;port&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;node-demodocker-composeyaml&#34;&gt;node-demo/docker-compose.yaml&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;3.1&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;services&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;app&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;node:16-alpine&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;command&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;sh -c &amp;#34;yarn install &amp;amp;&amp;amp; yarn run start&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;ports&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#ae81ff&#34;&gt;80&lt;/span&gt;:&lt;span style=&#34;color:#ae81ff&#34;&gt;8000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;working_dir&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;/app&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;volumes&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;./app/src:/app/src&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;./app/package.json:/app/package.json&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;./app/yarn.lock:/app/yarn.lock&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;啟動服務、關閉服務&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 進到目錄底層&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd node-demo
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 啟動Docker服務&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;node-demo&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; $ docker-compose up -d
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 停止Docker服務&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;node-demo&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; $ docker-compose down
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;檢查實際結果 http://localhost/&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;資料夾結構&#34;&gt;資料夾結構&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;├── app&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;│   ├── package.json&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;│   ├── src&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;│   │   └── index.js&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;│   └── yarn.lock&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;└── docker-compose.yaml&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;docker-compose建置說明&#34;&gt;docker-compose建置說明&lt;/h2&gt;
+&lt;p&gt;說明一下docker-compose.yaml內的細節，因為這些設定的屬性都是docker-compose up時參考的定義，一定要了解一下。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

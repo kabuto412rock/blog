@@ -5,83 +5,69 @@
     <link>https://zongjia.me/tags/</link>
     <description>Recent content in Tags on 程式開發者的冒險</description>
     <image>
+      <title>程式開發者的冒險</title>
       <url>https://zongjia.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://zongjia.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.151.0</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Oct 2023 07:24:04 +0000</lastBuildDate><atom:link href="https://zongjia.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Oct 2023 07:24:04 +0000</lastBuildDate>
+    <atom:link href="https://zongjia.me/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>challenge</title>
+      <title>Challenge</title>
       <link>https://zongjia.me/tags/challenge/</link>
       <pubDate>Mon, 09 Oct 2023 07:24:04 +0000</pubDate>
-      
       <guid>https://zongjia.me/tags/challenge/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Diary</title>
       <link>https://zongjia.me/tags/diary/</link>
       <pubDate>Sun, 10 Sep 2023 02:35:25 +0000</pubDate>
-      
       <guid>https://zongjia.me/tags/diary/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Docker</title>
       <link>https://zongjia.me/tags/docker/</link>
       <pubDate>Tue, 06 Jun 2023 14:08:22 +0000</pubDate>
-      
       <guid>https://zongjia.me/tags/docker/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>MySQL</title>
       <link>https://zongjia.me/tags/mysql/</link>
       <pubDate>Tue, 06 Jun 2023 14:08:22 +0000</pubDate>
-      
       <guid>https://zongjia.me/tags/mysql/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Nodejs</title>
       <link>https://zongjia.me/tags/nodejs/</link>
       <pubDate>Tue, 06 Jun 2023 14:08:22 +0000</pubDate>
-      
       <guid>https://zongjia.me/tags/nodejs/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>linux</title>
+      <title>Linux</title>
       <link>https://zongjia.me/tags/linux/</link>
       <pubDate>Sun, 30 Oct 2022 04:00:14 +0000</pubDate>
-      
       <guid>https://zongjia.me/tags/linux/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>debug</title>
+      <title>Debug</title>
       <link>https://zongjia.me/tags/debug/</link>
       <pubDate>Sat, 27 Nov 2021 23:03:49 +0800</pubDate>
-      
       <guid>https://zongjia.me/tags/debug/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hugo</title>
+      <title>Hugo</title>
       <link>https://zongjia.me/tags/hugo/</link>
       <pubDate>Sat, 27 Nov 2021 23:03:49 +0800</pubDate>
-      
       <guid>https://zongjia.me/tags/hugo/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

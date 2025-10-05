@@ -5,21 +5,73 @@
     <link>https://zongjia.me/tags/mysql/</link>
     <description>Recent content in MySQL on 程式開發者的冒險</description>
     <image>
+      <title>程式開發者的冒險</title>
       <url>https://zongjia.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://zongjia.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.151.0</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 06 Jun 2023 14:08:22 +0000</lastBuildDate><atom:link href="https://zongjia.me/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Jun 2023 14:08:22 +0000</lastBuildDate>
+    <atom:link href="https://zongjia.me/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用Docker建立Node容器&#43;MySQL容器的範本</title>
       <link>https://zongjia.me/posts/express-mysql-docker/</link>
       <pubDate>Tue, 06 Jun 2023 14:08:22 +0000</pubDate>
-      
       <guid>https://zongjia.me/posts/express-mysql-docker/</guid>
-      <description>前言 距離上一篇文章使用Docker建立Nodejs開發環境範本 已經有1年啦! 那時竟然還擔心部落格太多文章，Github page是否會被限制
-Node.js (Express.js + MySQL Server) 建置流程(快速克隆 -&amp;gt; 趕時間) 直接使用git clone語法下載範例 $ git clone https://github.com/kabuto412rock/node-demo.git --branch express-mysql --single-branch 啟動服務、關閉服務 # 進到目錄底層 $ cd node-demo # 啟動Docker服務 (node-demo) $ docker-compose up -d # 停止Docker服務 (node-demo) $ docker-compose down 相對上篇文章的差異 使用sequelize-cli進行Sequelize的設定，畢竟手寫migration、seeds太累 docker-compose.yaml多加MySQL容器、Adminer容器 express-mysqldb: image: mysql:8.0 # WARNIGN:正式環境請不要直接使用原生密碼，這只是開發偷懶用 command: --default-authentication-plugin=mysql_native_password restart: always ports: - &amp;#34;3308:3306&amp;#34; environment: # root的密碼 MYSQL_ROOT_PASSWORD: PyoA2hGpSDQordaDAbuiQIIDS # 預設建立的DB名稱 MYSQL_DATABASE: mydb # DB使用者的帳號 MYSQL_USER: dbuser # DB使用者的密碼 MYSQL_PASSWORD: youiIIDSA2hGpassword my-app資料夾可以注意到config/config.</description>
+      <description>&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+&lt;p&gt;距離上一篇文章&lt;a href=&#34;../node-docker&#34;&gt;使用Docker建立Nodejs開發環境範本
+&lt;/a&gt;已經有1年啦!
+那時竟然還擔心部落格太多文章，Github page是否會被限制&lt;/p&gt;
+&lt;h1 id=&#34;nodejs-expressjs--mysql-server&#34;&gt;Node.js (Express.js + MySQL Server)&lt;/h1&gt;
+&lt;h2 id=&#34;建置流程快速克隆---趕時間&#34;&gt;建置流程(快速克隆 -&amp;gt; 趕時間)&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;直接使用git clone語法下載範例&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ git clone https://github.com/kabuto412rock/node-demo.git --branch express-mysql --single-branch
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;啟動服務、關閉服務&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 進到目錄底層&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cd node-demo
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 啟動Docker服務&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;node-demo&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; $ docker-compose up -d
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 停止Docker服務&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;node-demo&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; $ docker-compose down
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;相對上篇文章的差異&#34;&gt;相對上篇文章的差異&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;使用sequelize-cli進行Sequelize的設定，畢竟手寫migration、seeds太累&lt;/li&gt;
+&lt;li&gt;docker-compose.yaml多加MySQL容器、Adminer容器
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;express-mysqldb&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;mysql:8.0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# WARNIGN:正式環境請不要直接使用原生密碼，這只是開發偷懶用&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;command&lt;/span&gt;: --&lt;span style=&#34;color:#ae81ff&#34;&gt;default-authentication-plugin=mysql_native_password&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;restart&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;always&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;ports&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    - &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;3308:3306&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;environment&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# root的密碼&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;PyoA2hGpSDQordaDAbuiQIIDS&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# 預設建立的DB名稱&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;MYSQL_DATABASE&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;mydb&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# DB使用者的帳號&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;MYSQL_USER&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;dbuser&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;# DB使用者的密碼&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;MYSQL_PASSWORD&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;youiIIDSA2hGpassword&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;my-app資料夾可以注意到&lt;code&gt;config/config.json&lt;/code&gt;的host值與MySQL容器名稱相同，這是因為容器的&lt;code&gt;hostname&lt;/code&gt;預設與名稱相同，其他password等設定可以參考上面對照&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;development&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;username&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;dbuser&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;password&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;youiIIDSA2hGpassword&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;database&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;mydb&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;host&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;express-mysqldb&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;dialect&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;mysql&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  // 略...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;結語&#34;&gt;結語&lt;/h2&gt;
+&lt;p&gt;還好當初有在blog的repo設定好Github Aciton和寫README備忘，才可以像現在簡單git push一下就能生成新文章。&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>
