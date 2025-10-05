@@ -1,22 +1,35 @@
 # 紀錄一下Hugo的啟動和日常操作
 
-## 如何啟動
-> 記得在`main`分支啟動容器做調整，當我git push之後會自動執行github action
-> 最後Github Action會在`gh-pages`分支public目錄屬於輸出 靜態html的部分
+## 開發環境啟動
+
+### 使用 DevContainer 🚀
+使用 VS Code 的 DevContainer 功能，自動設置完整的 Hugo 開發環境：
+
+1. 確保已安裝 VS Code 和 DevContainer 擴展
+2. 用 VS Code 開啟此專案
+3. 按 `Ctrl+Shift+P` 並執行 "Dev Containers: Reopen in Container"
+4. 等待容器建構完成（第一次會比較久）
+
+DevContainer 會自動：
+- 安裝最新版本的 Hugo Extended (v0.151.0)
+- 設定正確的檔案權限
+- 配置開發環境
 
 ```bash
-# 啟動Hugo容器並將當前資料夾與容器內的/src目錄進行同步
-docker compose up -d
-# 進入容器`hugo-blog`的終端機
-docker exec -it hugo-blog bash
+# 在 DevContainer 中的常用指令
+hugo new posts/my-new-article.md    # 建立新文章
+hugo server --bind 0.0.0.0          # 啟動開發服務器
+hugo                                 # 建構靜態網站
 ```
 
 ## 常用的hugo指令
 ```bash
 # 啟動開發用blog server
-hugo server
+hugo server --bind 0.0.0.0 --buildDrafts
 # 新增文章
 hugo new posts/gen-import-file.md
+# 建構靜態網站
+hugo
 ```
 
 
