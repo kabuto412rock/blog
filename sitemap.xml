@@ -5,7 +5,10 @@
     <loc>https://zongjia.me/tags/context/</loc>
     <lastmod>2025-10-05T04:03:15+00:00</lastmod>
   </url><url>
-    <loc>https://zongjia.me/posts/gin-context-problem/</loc>
+    <loc>https://zongjia.me/tags/debug/</loc>
+    <lastmod>2025-10-05T04:03:15+00:00</lastmod>
+  </url><url>
+    <loc>https://zongjia.me/tags/gin/</loc>
     <lastmod>2025-10-05T04:03:15+00:00</lastmod>
   </url><url>
     <loc>https://zongjia.me/tags/go/</loc>
@@ -15,6 +18,9 @@
     <lastmod>2025-10-05T04:03:15+00:00</lastmod>
   </url><url>
     <loc>https://zongjia.me/tags/</loc>
+    <lastmod>2025-10-05T04:03:15+00:00</lastmod>
+  </url><url>
+    <loc>https://zongjia.me/posts/gin-context-problem/</loc>
     <lastmod>2025-10-05T04:03:15+00:00</lastmod>
   </url><url>
     <loc>https://zongjia.me/</loc>
@@ -144,9 +150,6 @@
     <lastmod>2022-04-03T22:22:27+08:00</lastmod>
   </url><url>
     <loc>https://zongjia.me/posts/my-first-post/</loc>
-    <lastmod>2021-11-27T23:03:49+08:00</lastmod>
-  </url><url>
-    <loc>https://zongjia.me/tags/debug/</loc>
     <lastmod>2021-11-27T23:03:49+08:00</lastmod>
   </url><url>
     <loc>https://zongjia.me/tags/hugo/</loc>
