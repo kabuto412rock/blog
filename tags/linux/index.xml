@@ -9,7 +9,7 @@
       <url>https://zongjia.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://zongjia.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- 0.151.0</generator>
+    <generator>Hugo -- 0.164.0</generator>
     <language>en</language>
     <lastBuildDate>Sun, 30 Oct 2022 04:00:14 +0000</lastBuildDate>
     <atom:link href="https://zongjia.me/tags/linux/index.xml" rel="self" type="application/rss+xml" />
@@ -23,7 +23,7 @@
 想用&lt;code&gt;VSCode&lt;/code&gt;編輯Docker容器產生的文章後，發現我&lt;code&gt;VSCode&lt;/code&gt;竟然沒有權限修改檔案。&lt;/p&gt;
 &lt;h2 id=&#34;解法&#34;&gt;解法:&lt;/h2&gt;
 &lt;p&gt;辦法很簡單，修改檔案權限全開&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chmod -R &lt;span style=&#34;color:#ae81ff&#34;&gt;777&lt;/span&gt; content/
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chmod -R &lt;span style=&#34;color:#ae81ff&#34;&gt;777&lt;/span&gt; content/
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;這篇是用來測試Github action是否還有正常運作&lt;/p&gt;</description>
     </item>
   </channel>

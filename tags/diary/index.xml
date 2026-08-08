@@ -9,7 +9,7 @@
       <url>https://zongjia.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://zongjia.me/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
-    <generator>Hugo -- 0.151.0</generator>
+    <generator>Hugo -- 0.164.0</generator>
     <language>en</language>
     <lastBuildDate>Sun, 10 Sep 2023 02:35:25 +0000</lastBuildDate>
     <atom:link href="https://zongjia.me/tags/diary/index.xml" rel="self" type="application/rss+xml" />
@@ -64,7 +64,8 @@
 &lt;p&gt;那時還被面試官問說你前端寫的還不錯，怎麼會想投後端工程師?&lt;br&gt;
 我還很誠實地回應是CSS框架夠好&amp;gt;口&amp;lt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;那時使用的便是 &lt;a href=&#34;https://daisyui.com/&#34;&gt;daisyUI&lt;/a&gt; ，官網的範例都蠻清楚的(適合喜歡撿現成美感的朋友)&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;那時使用的便是 &lt;a href=&#34;https://daisyui.com/&#34;&gt;daisyUI&lt;/a&gt; ，官網的範例都蠻清楚的(適合喜歡撿現成美感的朋友)&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;話題扯遠了!&lt;/p&gt;
 &lt;p&gt;在這間後端開發是使用NodeJS的 ExpressJS，後端工程師需要先(後)寫API文件，
 中期還引入Jira進行專案管理，需要工程師根據PM開的Story 開任務票、估時數。&lt;/p&gt;
@@ -72,7 +73,8 @@
 &lt;p&gt;後端部屬的部分內部是用aaPanel(江湖名稱: 寶塔)，對外部屬就不提囉，我相信很多公司都有自己的部屬方式。 &lt;br&gt;
 畢竟我只是想分享經驗，而非洩漏機密! 這點非常重要!&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;技術總是層出不窮，身為工程師也只能適應變化 by 我&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;技術總是層出不窮，身為工程師也只能適應變化 by 我&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&#34;現在的工作&#34;&gt;現在的工作?&lt;/h2&gt;
 &lt;p&gt;待業，規律生活鍛鍊身體&amp;hellip;還有學習新知?!&lt;/p&gt;
 &lt;p&gt;或許是慣性思維在後端，即使離職後我在Hahow上 &lt;a href=&#34;https://hahow.in/courses/5fe22e7fe810e10fc483dd78&#34;&gt;Java Spring Boot課程&lt;/a&gt;，學習其他工程師是如何利用成熟的框架是去開發/測試API，畢竟ExpressJS的架構有點太無主見，反而需要花費更多心力在更多後端庫的結合上&lt;/p&gt;

@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://zongjia.me/tags/codex/</loc>
+    <lastmod>2026-08-08T11:26:30+00:00</lastmod>
+  </url><url>
+    <loc>https://zongjia.me/tags/dev-container/</loc>
+    <lastmod>2026-08-08T11:26:30+00:00</lastmod>
+  </url><url>
+    <loc>https://zongjia.me/tags/docker/</loc>
+    <lastmod>2026-08-08T11:26:30+00:00</lastmod>
+  </url><url>
+    <loc>https://zongjia.me/posts/</loc>
+    <lastmod>2026-08-08T11:26:30+00:00</lastmod>
+  </url><url>
+    <loc>https://zongjia.me/tags/</loc>
+    <lastmod>2026-08-08T11:26:30+00:00</lastmod>
+  </url><url>
+    <loc>https://zongjia.me/posts/container-share-codex/</loc>
+    <lastmod>2026-08-08T11:26:30+00:00</lastmod>
+  </url><url>
+    <loc>https://zongjia.me/</loc>
+    <lastmod>2026-08-08T11:26:30+00:00</lastmod>
+  </url><url>
     <loc>https://zongjia.me/tags/context/</loc>
     <lastmod>2025-10-05T04:03:15+00:00</lastmod>
   </url><url>
@@ -14,16 +35,7 @@
     <loc>https://zongjia.me/tags/go/</loc>
     <lastmod>2025-10-05T04:03:15+00:00</lastmod>
   </url><url>
-    <loc>https://zongjia.me/posts/</loc>
-    <lastmod>2025-10-05T04:03:15+00:00</lastmod>
-  </url><url>
-    <loc>https://zongjia.me/tags/</loc>
-    <lastmod>2025-10-05T04:03:15+00:00</lastmod>
-  </url><url>
     <loc>https://zongjia.me/posts/gin-context-problem/</loc>
-    <lastmod>2025-10-05T04:03:15+00:00</lastmod>
-  </url><url>
-    <loc>https://zongjia.me/</loc>
     <lastmod>2025-10-05T04:03:15+00:00</lastmod>
   </url><url>
     <loc>https://zongjia.me/tags/challenge/</loc>
@@ -124,9 +136,6 @@
   </url><url>
     <loc>https://zongjia.me/posts/adventure-again/</loc>
     <lastmod>2023-09-10T02:35:25+00:00</lastmod>
-  </url><url>
-    <loc>https://zongjia.me/tags/docker/</loc>
-    <lastmod>2023-06-06T14:08:22+00:00</lastmod>
   </url><url>
     <loc>https://zongjia.me/tags/mysql/</loc>
     <lastmod>2023-06-06T14:08:22+00:00</lastmod>
