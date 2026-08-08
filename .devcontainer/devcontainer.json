@@ -1,11 +1,13 @@
 {
     "name": "Hugo Blog Development",
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspaces/blog",
     // 容器啟動後的初始化命令
     "postCreateCommand": [
         "bash",
         "-c",
-        "sudo apt-get update && sudo apt-get install -y wget && wget -q https://github.com/gohugoio/hugo/releases/download/v0.151.0/hugo_extended_0.151.0_linux-amd64.deb && sudo dpkg -i hugo_extended_0.151.0_linux-amd64.deb && rm hugo_extended_0.151.0_linux-amd64.deb && git config --global --add safe.directory /workspaces/blog && sudo chown -R vscode:vscode /workspaces/blog && git submodule update --init --recursive && hugo version"
+        "sudo apt-get update && sudo apt-get install -y wget && wget -q https://github.com/gohugoio/hugo/releases/download/v0.151.0/hugo_extended_0.151.0_linux-amd64.deb && sudo dpkg -i hugo_extended_0.151.0_linux-amd64.deb && rm hugo_extended_0.151.0_linux-amd64.deb && git config --global --add safe.directory /workspaces/blog && sudo chown -R vscode:vscode /workspaces/blog && git submodule update --init --recursive && hugo version && (test -x \"$HOME/.codex/bin/codex\" || curl -fsSL https://chatgpt.com/codex/install.sh | env CODEX_INSTALL_DIR=\"$HOME/.codex/bin\" CODEX_NON_INTERACTIVE=true sh)"
     ],
     // VS Code 設定
     "customizations": {
