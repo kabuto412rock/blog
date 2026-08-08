@@ -5,7 +5,7 @@
     "postCreateCommand": [
         "bash",
         "-c",
-        "sudo apt-get update && sudo apt-get install -y wget && wget -q https://github.com/gohugoio/hugo/releases/download/v0.151.0/hugo_extended_0.151.0_linux-amd64.deb && sudo dpkg -i hugo_extended_0.151.0_linux-amd64.deb && rm hugo_extended_0.151.0_linux-amd64.deb && git config --global --add safe.directory /workspaces/blog && sudo chown -R vscode:vscode /workspaces/blog && chmod -R 755 /workspaces/blog/public && hugo version"
+        "sudo apt-get update && sudo apt-get install -y wget && wget -q https://github.com/gohugoio/hugo/releases/download/v0.151.0/hugo_extended_0.151.0_linux-amd64.deb && sudo dpkg -i hugo_extended_0.151.0_linux-amd64.deb && rm hugo_extended_0.151.0_linux-amd64.deb && git config --global --add safe.directory /workspaces/blog && sudo chown -R vscode:vscode /workspaces/blog && git submodule update --init --recursive && hugo version"
     ],
     // VS Code 設定
     "customizations": {
@@ -15,7 +15,6 @@
                 "files.eol": "\n"
             },
             "extensions": [
-                "bungcip.better-toml",
                 "davidanson.vscode-markdownlint",
                 "yzhang.markdown-all-in-one",
                 "ms-vscode.vscode-json"
